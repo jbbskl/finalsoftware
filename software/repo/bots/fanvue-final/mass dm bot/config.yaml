@@ -1,0 +1,162 @@
+runtime:
+  headless: true                 # use --headed to debug
+  slow_mo_ms: 0
+  base_url: https://www.fanvue.com
+  viewport_width: 1280
+  viewport_height: 800
+  default_timeout_ms: 25000
+  cookie_path: ./cookies.json     # <-- your exported cookies
+
+jobs:
+  # 1) Text-only blast to ALL (exclusive)
+  - name: text_to_all
+    mode: text
+    caption: "Hey 👋 got something new for you soon… stay tuned!"
+    send_to: ["All contacts"]
+    exclude: []                  # exclude doesn't allow "All contacts"
+    price: null
+
+  # 2) Paid media to subscribers + auto-renewing, exclude expired
+  - name: paid_media_core
+    mode: media
+    send_to: ["Subscribers", "Auto-renewing"]
+    exclude: ["Expired subscribers"]
+    media:
+      folder_filter: "naked videos"
+      random_n: 2
+      search_name: null
+      search_pick_n: 1
+    price: 7.99                  # min 3, max 500
+
+  # 3) Teaser: text + media to followers, no price, vault search by name
+  - name: teaser_followers
+    mode: text_media
+    caption: "sneak peek 👀💋"
+    send_to: ["Followers"]
+    exclude: []
+    media:
+      folder_filter: null
+      random_n: 1
+      search_name: "IMG_6500"    # use vault search then pick matching card(s)
+      search_pick_n: 1
+    price: null
+
+  # 4) Uses a caption pulled from Excel (sequential)
+  - name: excel_text_to_followers
+    mode: text
+    send_to: ["Followers"]
+    exclude: []
+    # omit 'caption:' on purpose — we'll read from Excel
+    caption_source:
+      path: ./captions.xlsx     # Excel file path
+      sheet: Sheet1             # or omit for first sheet
+      column: caption           # column name in Excel
+      strategy: sequential      # or: random
+      state_path: ./captions.state.json  # optional; stores last used index
+      drop_duplicates: true
+      strip: true
+      min_len: 1
+
+  # 5) you can also mix with text+media / media jobs
+  - name: excel_text_media_paid
+    mode: text_media
+    send_to: ["Subscribers"]
+    exclude: ["Expired subscribers"]
+    caption_source:
+      path: ./captions.xlsx
+      sheet: Sheet1
+      column: caption
+      strategy: random
+    media:
+      folder_filter: "promos"
+      random_n: 1
+    price: 7.99
+
+  # 6) Test all audience types except All contacts and Free trial subscribers
+  - name: test_all_audience_types
+    mode: text
+    caption: "Testing all audience types! 🎯"
+    send_to: ["Online", "Followers", "Subscribers", "Non-renewing", "Auto-renewing", "Expired subscribers", "Spent more than $50"]
+    exclude: []
+
+  # 7) Test exclude functionality with All contacts
+  - name: test_exclude_with_all_contacts
+    mode: text
+    caption: "Testing exclude with All contacts! 📢"
+    send_to: ["All contacts"]
+    exclude: ["Expired subscribers", "Non-renewing"]
+
+  # 8) Test exclude functionality with specific audience types
+  - name: test_exclude_with_specific_audience
+    mode: text
+    caption: "Testing exclude with specific audience! 🎯"
+    send_to: ["Subscribers", "Auto-renewing"]
+    exclude: ["Expired subscribers", "Non-renewing"]
+
+  # 9) Test invalid exclude (should show warning)
+  - name: test_invalid_exclude
+    mode: text
+    caption: "Testing invalid exclude! ⚠️"
+    send_to: ["Subscribers", "Followers"]
+    exclude: ["Subscribers"]  # This should show a warning since Subscribers is in send_to
+
+  # 10) Test media-only job with random selection
+  - name: test_media_random
+    mode: media
+    send_to: ["Subscribers"]
+    exclude: []
+    media:
+      folder_filter: null
+      random_n: 2
+      search_name: null
+      search_pick_n: 1
+    price: 5.99
+
+  # 11) Test media with folder filter
+  - name: test_media_folder_filter
+    mode: media
+    send_to: ["Followers"]
+    exclude: []
+    media:
+      folder_filter: "naked videos"
+      random_n: 1
+      search_name: null
+      search_pick_n: 1
+    price: 3.99
+
+  # 12) Test media with search name
+  - name: test_media_search_name
+    mode: media
+    send_to: ["Subscribers", "Auto-renewing"]
+    exclude: []
+    media:
+      folder_filter: null
+      random_n: 1
+      search_name: "IMG_1174"
+      search_pick_n: 1
+    price: 7.99
+
+  # 13) Test text + media combination
+  - name: test_text_media_combo
+    mode: text_media
+    caption: "Check out this amazing content! 🔥"
+    send_to: ["All contacts"]
+    exclude: ["Expired subscribers"]
+    media:
+      folder_filter: null
+      random_n: 1
+      search_name: null
+      search_pick_n: 1
+    price: 9.99
+
+  # 14) Test media without price (free content)
+  - name: test_media_no_price
+    mode: media
+    send_to: ["Followers"]
+    exclude: []
+    media:
+      folder_filter: null
+      random_n: 1
+      search_name: null
+      search_pick_n: 1
+    price: null

@@ -1,0 +1,4364 @@
+Traceback (most recent call last):
+  File "/Users/julianbik/Desktop/clients/f2f final/f2f ryan final/posting bot/main.py", line 14, in <module>
+    import pandas as pd
+ModuleNotFoundError: No module named 'pandas'
+Traceback (most recent call last):
+  File "/Users/julianbik/Desktop/clients/f2f final/f2f ryan final/posting bot/main.py", line 14, in <module>
+    import pandas as pd
+ModuleNotFoundError: No module named 'pandas'
+=== Bot Starting at Sat Sep 20 02:59:52 EEST 2025 ===
+Python: Python 3.10.11
+Python path: /Users/julianbik/.pyenv/versions/3.10.11/bin/python3
+✅ Pandas import successful
+[F2F] ========================================================================
+[F2F] F2F POSTING BOT - ROTATION MODE
+[F2F] ========================================================================
+[F2F] 🔄 ROTATION MODE - Starting from Cycle: 1
+[F2F] 🤖 Will auto-complete ALL cycles until finished!
+[F2F] ========================================================================
+[F2F] 🔄 CYCLE 1
+[F2F] ========================================================================
+[F2F] 📋 Cycle 1: 4 models to post
+[F2F] ==================================================
+[F2F] MODEL 1/4: Nathalya - Post 1 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Nathalya
+Traceback (most recent call last):
+  File "/Users/julianbik/.pyenv/versions/3.10.11/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/Users/julianbik/.pyenv/versions/3.10.11/lib/python3.10/asyncio/base_events.py", line 636, in run_until_complete
+    self.run_forever()
+  File "/Users/julianbik/.pyenv/versions/3.10.11/lib/python3.10/asyncio/base_events.py", line 603, in run_forever
+    self._run_once()
+  File "/Users/julianbik/.pyenv/versions/3.10.11/lib/python3.10/asyncio/base_events.py", line 1871, in _run_once
+    event_list = self._selector.select(timeout)
+  File "/Users/julianbik/.pyenv/versions/3.10.11/lib/python3.10/selectors.py", line 562, in select
+    kev_list = self._selector.control(None, max_ev, timeout)
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/julianbik/Desktop/clients/f2f final/f2f ryan final/posting bot/main.py", line 1000, in <module>
+    asyncio.run(main())
+  File "/Users/julianbik/.pyenv/versions/3.10.11/lib/python3.10/asyncio/runners.py", line 47, in run
+    _cancel_all_tasks(loop)
+  File "/Users/julianbik/.pyenv/versions/3.10.11/lib/python3.10/asyncio/runners.py", line 63, in _cancel_all_tasks
+    loop.run_until_complete(tasks.gather(*to_cancel, return_exceptions=True))
+  File "/Users/julianbik/.pyenv/versions/3.10.11/lib/python3.10/asyncio/base_events.py", line 636, in run_until_complete
+    self.run_forever()
+  File "/Users/julianbik/.pyenv/versions/3.10.11/lib/python3.10/asyncio/base_events.py", line 603, in run_forever
+    self._run_once()
+  File "/Users/julianbik/.pyenv/versions/3.10.11/lib/python3.10/asyncio/base_events.py", line 1871, in _run_once
+    event_list = self._selector.select(timeout)
+  File "/Users/julianbik/.pyenv/versions/3.10.11/lib/python3.10/selectors.py", line 562, in select
+    kev_list = self._selector.control(None, max_ev, timeout)
+KeyboardInterrupt
+=== Bot Starting at Sat Sep 20 09:30:00 EEST 2025 ===
+Python: Python 3.10.11
+Python path: /Users/julianbik/.pyenv/versions/3.10.11/bin/python3
+✅ Pandas import successful
+[F2F] ========================================================================
+[F2F] F2F POSTING BOT - ROTATION MODE
+[F2F] ========================================================================
+[F2F] 🔄 ROTATION MODE - Starting from Cycle: 1
+[F2F] 🤖 Will auto-complete ALL cycles until finished!
+[F2F] ========================================================================
+[F2F] 🔄 CYCLE 1
+[F2F] ========================================================================
+[F2F] 📋 Cycle 1: 4 models to post
+[F2F] ==================================================
+[F2F] MODEL 1/4: Nathalya - Post 1 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Nathalya
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/nathalya/library/2a2be475-8b9a-42fc-ba0e-33e33ce1590c/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 147
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 147 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [SPECIAL] Using fixed caption for Nathalya
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [SKIP] Not archiving Nathalya's fixed caption
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Nathalya post 1
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 2/4: Lunaa - Post 1 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Lunaa
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/lunaa/library/0cb9cc33-f531-467d-a4b1-8d744810786d/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 170
+📸 Media count increased: 170 → 190
+📸 Media count increased: 190 → 210
+📸 Media count increased: 210 → 230
+📸 Media count increased: 230 → 250
+📸 Media count increased: 250 → 270
+📸 Media count increased: 270 → 290
+📸 Media count increased: 290 → 310
+📸 Media count increased: 310 → 330
+📸 Media count increased: 330 → 350
+📸 Media count increased: 350 → 370
+📸 Media count increased: 370 → 390
+📸 Media count increased: 390 → 410
+📸 Media count increased: 410 → 430
+📸 Media count increased: 430 → 450
+📸 Media count increased: 450 → 470
+📸 Media count increased: 470 → 490
+📸 Media count increased: 490 → 510
+📸 Media count increased: 510 → 530
+📸 Media count increased: 530 → 550
+📸 Media count increased: 550 → 570
+📸 Media count increased: 570 → 590
+📸 Media count increased: 590 → 610
+📸 Media count increased: 610 → 630
+📸 Media count increased: 630 → 647
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 647 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Lunaa post 1
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 3/4: Lauraclauw - Post 1 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Lauraclauw
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/lauraclauw/library/02c3c813-42ad-46b7-9a85-40c1e090f53d/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 154
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 154 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Lauraclauw post 1
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 4/4: Naomivanstraatten - Post 1 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Naomivanstraatten
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/naomivanstraatten/library/e3efa342-6274-462a-9a10-6862c685eb9c/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 170
+📸 Media count increased: 170 → 190
+📸 Media count increased: 190 → 210
+📸 Media count increased: 210 → 230
+📸 Media count increased: 230 → 250
+📸 Media count increased: 250 → 270
+📸 Media count increased: 270 → 290
+📸 Media count increased: 290 → 310
+📸 Media count increased: 310 → 330
+📸 Media count increased: 330 → 338
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 338 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Naomivanstraatten post 1
+[F2F] ========================================================================
+[F2F] 🎉 CYCLE 1 COMPLETED!
+[F2F] 📊 Current progress: {'Nathalya': 1, 'Lunaa': 1, 'Lauraclauw': 1, 'Naomivanstraatten': 1}
+[F2F] 📋 Nathalya: 1/9 posts completed
+[F2F] 📋 Lunaa: 1/8 posts completed
+[F2F] 📋 Lauraclauw: 1/8 posts completed
+[F2F] 📋 Naomivanstraatten: 1/10 posts completed
+[F2F] 🔄 Starting next cycle in 20 minutes...
+[F2F] ⏳ Waiting 1200 seconds (between cycles)...
+[F2F] ========================================================================
+[F2F] 🔄 CYCLE 2
+[F2F] ========================================================================
+[F2F] 📋 Cycle 2: 4 models to post
+[F2F] ==================================================
+[F2F] MODEL 1/4: Nathalya - Post 2 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Nathalya
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/nathalya/library/2a2be475-8b9a-42fc-ba0e-33e33ce1590c/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 147
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 147 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [SPECIAL] Using fixed caption for Nathalya
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [SKIP] Not archiving Nathalya's fixed caption
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Nathalya post 2
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 2/4: Lunaa - Post 2 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Lunaa
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/lunaa/library/0cb9cc33-f531-467d-a4b1-8d744810786d/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 170
+📸 Media count increased: 170 → 190
+📸 Media count increased: 190 → 210
+📸 Media count increased: 210 → 230
+📸 Media count increased: 230 → 250
+📸 Media count increased: 250 → 270
+📸 Media count increased: 270 → 290
+📸 Media count increased: 290 → 310
+📸 Media count increased: 310 → 330
+📸 Media count increased: 330 → 350
+📸 Media count increased: 350 → 370
+📸 Media count increased: 370 → 390
+📸 Media count increased: 390 → 410
+📸 Media count increased: 410 → 430
+📸 Media count increased: 430 → 450
+📸 Media count increased: 450 → 470
+📸 Media count increased: 470 → 490
+📸 Media count increased: 490 → 510
+📸 Media count increased: 510 → 530
+📸 Media count increased: 530 → 550
+📸 Media count increased: 550 → 570
+📸 Media count increased: 570 → 590
+📸 Media count increased: 590 → 610
+📸 Media count increased: 610 → 630
+📸 Media count increased: 630 → 647
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 647 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Lunaa post 2
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 3/4: Lauraclauw - Post 2 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Lauraclauw
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/lauraclauw/library/02c3c813-42ad-46b7-9a85-40c1e090f53d/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 154
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 154 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Lauraclauw post 2
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 4/4: Naomivanstraatten - Post 2 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Naomivanstraatten
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/naomivanstraatten/library/e3efa342-6274-462a-9a10-6862c685eb9c/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 170
+📸 Media count increased: 170 → 190
+📸 Media count increased: 190 → 210
+📸 Media count increased: 210 → 230
+📸 Media count increased: 230 → 250
+📸 Media count increased: 250 → 270
+📸 Media count increased: 270 → 290
+📸 Media count increased: 290 → 310
+📸 Media count increased: 310 → 330
+📸 Media count increased: 330 → 338
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 338 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Naomivanstraatten post 2
+[F2F] ========================================================================
+[F2F] 🎉 CYCLE 2 COMPLETED!
+[F2F] 📊 Current progress: {'Nathalya': 2, 'Lunaa': 2, 'Lauraclauw': 2, 'Naomivanstraatten': 2}
+[F2F] 📋 Nathalya: 2/9 posts completed
+[F2F] 📋 Lunaa: 2/8 posts completed
+[F2F] 📋 Lauraclauw: 2/8 posts completed
+[F2F] 📋 Naomivanstraatten: 2/10 posts completed
+[F2F] 🔄 Starting next cycle in 20 minutes...
+[F2F] ⏳ Waiting 1200 seconds (between cycles)...
+[F2F] ========================================================================
+[F2F] 🔄 CYCLE 3
+[F2F] ========================================================================
+[F2F] 📋 Cycle 3: 4 models to post
+[F2F] ==================================================
+[F2F] MODEL 1/4: Nathalya - Post 3 (FANS)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Nathalya
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie video's'
+[F2F] # [FOUND] Matched folder: 'lingerie video's' (href: /agency/creators/nathalya/library/a962ceb8-897b-45b7-8f46-c108ee8639b6/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie video's'
+[F2F] # [STEP] Load & select 1 media items (type=video)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 60
+📸 Media count increased: 60 → 80
+📸 Media count increased: 80 → 100
+📸 Media count increased: 100 → 120
+📸 Media count increased: 120 → 126
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 126 media items
+🎬 Selecting 1 random video(s)...
+✅ Selected video item 1/1
+✅ Selected 1 random video(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [SPECIAL] Using fixed caption for Nathalya
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [SKIP] Not archiving Nathalya's fixed caption
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Paid path selected
+[F2F] # [STEP] Toggle all "Free" chips to paid
+[F2F] # [INFO] Clicking Free for 1 media items individually
+[F2F] # [BTN] Clicking Free for media item 1/1
+[F2F] # [SUCCESS] Clicked Free for media 1 using selector: div.access-status span.free
+[F2F] # [STEP] Completed Free button clicking for 1 media items
+[F2F] # [BTN] Next (popup)
+[F2F] # [OPT] Fans only -> Next
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Nathalya post 3
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 2/4: Lunaa - Post 3 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Lunaa
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/lunaa/library/0cb9cc33-f531-467d-a4b1-8d744810786d/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 170
+📸 Media count increased: 170 → 190
+📸 Media count increased: 190 → 210
+📸 Media count increased: 210 → 230
+📸 Media count increased: 230 → 250
+📸 Media count increased: 250 → 270
+📸 Media count increased: 270 → 290
+📸 Media count increased: 290 → 310
+📸 Media count increased: 310 → 330
+📸 Media count increased: 330 → 350
+📸 Media count increased: 350 → 370
+📸 Media count increased: 370 → 390
+📸 Media count increased: 390 → 410
+📸 Media count increased: 410 → 430
+📸 Media count increased: 430 → 450
+📸 Media count increased: 450 → 470
+📸 Media count increased: 470 → 490
+📸 Media count increased: 490 → 510
+📸 Media count increased: 510 → 530
+📸 Media count increased: 530 → 550
+📸 Media count increased: 550 → 570
+📸 Media count increased: 570 → 590
+📸 Media count increased: 590 → 610
+📸 Media count increased: 610 → 630
+📸 Media count increased: 630 → 647
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 647 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Lunaa post 3
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 3/4: Lauraclauw - Post 3 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Lauraclauw
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/lauraclauw/library/02c3c813-42ad-46b7-9a85-40c1e090f53d/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 154
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 154 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Lauraclauw post 3
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 4/4: Naomivanstraatten - Post 3 (FANS)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Naomivanstraatten
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/naomivanstraatten/library/e3efa342-6274-462a-9a10-6862c685eb9c/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=video)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 170
+📸 Media count increased: 170 → 190
+📸 Media count increased: 190 → 210
+📸 Media count increased: 210 → 230
+📸 Media count increased: 230 → 250
+📸 Media count increased: 250 → 270
+📸 Media count increased: 270 → 290
+📸 Media count increased: 290 → 310
+📸 Media count increased: 310 → 330
+📸 Media count increased: 330 → 338
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 338 media items
+🎬 Selecting 1 random video(s)...
+✅ Selected video item 1/1
+✅ Selected 1 random video(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Paid path selected
+[F2F] # [STEP] Toggle all "Free" chips to paid
+[F2F] # [INFO] Clicking Free for 1 media items individually
+[F2F] # [BTN] Clicking Free for media item 1/1
+[F2F] # [SUCCESS] Clicked Free for media 1 using selector: div.access-status span.free
+[F2F] # [STEP] Completed Free button clicking for 1 media items
+[F2F] # [BTN] Next (popup)
+[F2F] # [OPT] Fans only -> Next
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Naomivanstraatten post 3
+[F2F] ========================================================================
+[F2F] 🎉 CYCLE 3 COMPLETED!
+[F2F] 📊 Current progress: {'Nathalya': 3, 'Lunaa': 3, 'Lauraclauw': 3, 'Naomivanstraatten': 3}
+[F2F] 📋 Nathalya: 3/9 posts completed
+[F2F] 📋 Lunaa: 3/8 posts completed
+[F2F] 📋 Lauraclauw: 3/8 posts completed
+[F2F] 📋 Naomivanstraatten: 3/10 posts completed
+[F2F] 🔄 Starting next cycle in 20 minutes...
+[F2F] ⏳ Waiting 1200 seconds (between cycles)...
+[F2F] ========================================================================
+[F2F] 🔄 CYCLE 4
+[F2F] ========================================================================
+[F2F] 📋 Cycle 4: 4 models to post
+[F2F] ==================================================
+[F2F] MODEL 1/4: Nathalya - Post 4 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Nathalya
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/nathalya/library/2a2be475-8b9a-42fc-ba0e-33e33ce1590c/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 147
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 147 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [SPECIAL] Using fixed caption for Nathalya
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [SKIP] Not archiving Nathalya's fixed caption
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Nathalya post 4
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 2/4: Lunaa - Post 4 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Lunaa
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/lunaa/library/0cb9cc33-f531-467d-a4b1-8d744810786d/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 170
+📸 Media count increased: 170 → 190
+📸 Media count increased: 190 → 210
+📸 Media count increased: 210 → 230
+📸 Media count increased: 230 → 250
+📸 Media count increased: 250 → 270
+📸 Media count increased: 270 → 290
+📸 Media count increased: 290 → 310
+📸 Media count increased: 310 → 330
+📸 Media count increased: 330 → 350
+📸 Media count increased: 350 → 370
+📸 Media count increased: 370 → 390
+📸 Media count increased: 390 → 410
+📸 Media count increased: 410 → 430
+📸 Media count increased: 430 → 450
+📸 Media count increased: 450 → 470
+📸 Media count increased: 470 → 490
+📸 Media count increased: 490 → 510
+📸 Media count increased: 510 → 530
+📸 Media count increased: 530 → 550
+📸 Media count increased: 550 → 570
+📸 Media count increased: 570 → 590
+📸 Media count increased: 590 → 610
+📸 Media count increased: 610 → 630
+📸 Media count increased: 630 → 647
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 647 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Lunaa post 4
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 3/4: Lauraclauw - Post 4 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Lauraclauw
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/lauraclauw/library/02c3c813-42ad-46b7-9a85-40c1e090f53d/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 154
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 154 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Lauraclauw post 4
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 4/4: Naomivanstraatten - Post 4 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Naomivanstraatten
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/naomivanstraatten/library/e3efa342-6274-462a-9a10-6862c685eb9c/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 170
+📸 Media count increased: 170 → 190
+📸 Media count increased: 190 → 210
+📸 Media count increased: 210 → 230
+📸 Media count increased: 230 → 250
+📸 Media count increased: 250 → 270
+📸 Media count increased: 270 → 290
+📸 Media count increased: 290 → 310
+📸 Media count increased: 310 → 330
+📸 Media count increased: 330 → 338
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 338 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Naomivanstraatten post 4
+[F2F] ========================================================================
+[F2F] 🎉 CYCLE 4 COMPLETED!
+[F2F] 📊 Current progress: {'Nathalya': 4, 'Lunaa': 4, 'Lauraclauw': 4, 'Naomivanstraatten': 4}
+[F2F] 📋 Nathalya: 4/9 posts completed
+[F2F] 📋 Lunaa: 4/8 posts completed
+[F2F] 📋 Lauraclauw: 4/8 posts completed
+[F2F] 📋 Naomivanstraatten: 4/10 posts completed
+[F2F] 🔄 Starting next cycle in 20 minutes...
+[F2F] ⏳ Waiting 1200 seconds (between cycles)...
+[F2F] ========================================================================
+[F2F] 🔄 CYCLE 5
+[F2F] ========================================================================
+[F2F] 📋 Cycle 5: 4 models to post
+[F2F] ==================================================
+[F2F] MODEL 1/4: Nathalya - Post 5 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Nathalya
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/nathalya/library/2a2be475-8b9a-42fc-ba0e-33e33ce1590c/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 147
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 147 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [SPECIAL] Using fixed caption for Nathalya
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [SKIP] Not archiving Nathalya's fixed caption
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Nathalya post 5
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 2/4: Lunaa - Post 5 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Lunaa
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/lunaa/library/0cb9cc33-f531-467d-a4b1-8d744810786d/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 100
+📸 Media count increased: 100 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 170
+📸 Media count increased: 170 → 190
+📸 Media count increased: 190 → 210
+📸 Media count increased: 210 → 230
+📸 Media count increased: 230 → 250
+📸 Media count increased: 250 → 270
+📸 Media count increased: 270 → 290
+📸 Media count increased: 290 → 310
+📸 Media count increased: 310 → 330
+📸 Media count increased: 330 → 350
+📸 Media count increased: 350 → 370
+📸 Media count increased: 370 → 390
+📸 Media count increased: 390 → 410
+📸 Media count increased: 410 → 430
+📸 Media count increased: 430 → 450
+📸 Media count increased: 450 → 470
+📸 Media count increased: 470 → 490
+📸 Media count increased: 490 → 510
+📸 Media count increased: 510 → 530
+📸 Media count increased: 530 → 550
+📸 Media count increased: 550 → 570
+📸 Media count increased: 570 → 590
+📸 Media count increased: 590 → 610
+📸 Media count increased: 610 → 630
+📸 Media count increased: 630 → 647
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 647 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Lunaa post 5
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 3/4: Lauraclauw - Post 5 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Lauraclauw
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/lauraclauw/library/02c3c813-42ad-46b7-9a85-40c1e090f53d/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 154
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 154 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Lauraclauw post 5
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 4/4: Naomivanstraatten - Post 5 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Naomivanstraatten
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/naomivanstraatten/library/e3efa342-6274-462a-9a10-6862c685eb9c/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 170
+📸 Media count increased: 170 → 190
+📸 Media count increased: 190 → 210
+📸 Media count increased: 210 → 230
+📸 Media count increased: 230 → 250
+📸 Media count increased: 250 → 270
+📸 Media count increased: 270 → 290
+📸 Media count increased: 290 → 310
+📸 Media count increased: 310 → 330
+📸 Media count increased: 330 → 338
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 338 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Naomivanstraatten post 5
+[F2F] ========================================================================
+[F2F] 🎉 CYCLE 5 COMPLETED!
+[F2F] 📊 Current progress: {'Nathalya': 5, 'Lunaa': 5, 'Lauraclauw': 5, 'Naomivanstraatten': 5}
+[F2F] 📋 Nathalya: 5/9 posts completed
+[F2F] 📋 Lunaa: 5/8 posts completed
+[F2F] 📋 Lauraclauw: 5/8 posts completed
+[F2F] 📋 Naomivanstraatten: 5/10 posts completed
+[F2F] 🔄 Starting next cycle in 20 minutes...
+[F2F] ⏳ Waiting 1200 seconds (between cycles)...
+[F2F] ========================================================================
+[F2F] 🔄 CYCLE 6
+[F2F] ========================================================================
+[F2F] 📋 Cycle 6: 4 models to post
+[F2F] ==================================================
+[F2F] MODEL 1/4: Nathalya - Post 6 (FANS)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Nathalya
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie video's'
+[F2F] # [FOUND] Matched folder: 'lingerie video's' (href: /agency/creators/nathalya/library/a962ceb8-897b-45b7-8f46-c108ee8639b6/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie video's'
+[F2F] # [STEP] Load & select 1 media items (type=video)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 126
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 126 media items
+🎬 Selecting 1 random video(s)...
+✅ Selected video item 1/1
+✅ Selected 1 random video(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [SPECIAL] Using fixed caption for Nathalya
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [SKIP] Not archiving Nathalya's fixed caption
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Paid path selected
+[F2F] # [STEP] Toggle all "Free" chips to paid
+[F2F] # [INFO] Clicking Free for 1 media items individually
+[F2F] # [BTN] Clicking Free for media item 1/1
+[F2F] # [SUCCESS] Clicked Free for media 1 using selector: div.access-status span.free
+[F2F] # [STEP] Completed Free button clicking for 1 media items
+[F2F] # [BTN] Next (popup)
+[F2F] # [OPT] Fans only -> Next
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Nathalya post 6
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 2/4: Lunaa - Post 6 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Lunaa
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/lunaa/library/0cb9cc33-f531-467d-a4b1-8d744810786d/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 170
+📸 Media count increased: 170 → 190
+📸 Media count increased: 190 → 210
+📸 Media count increased: 210 → 230
+📸 Media count increased: 230 → 250
+📸 Media count increased: 250 → 270
+📸 Media count increased: 270 → 290
+📸 Media count increased: 290 → 310
+📸 Media count increased: 310 → 330
+📸 Media count increased: 330 → 350
+📸 Media count increased: 350 → 370
+📸 Media count increased: 370 → 390
+📸 Media count increased: 390 → 410
+📸 Media count increased: 410 → 430
+📸 Media count increased: 430 → 450
+📸 Media count increased: 450 → 470
+📸 Media count increased: 470 → 490
+📸 Media count increased: 490 → 510
+📸 Media count increased: 510 → 530
+📸 Media count increased: 530 → 550
+📸 Media count increased: 550 → 570
+📸 Media count increased: 570 → 590
+📸 Media count increased: 590 → 610
+📸 Media count increased: 610 → 630
+📸 Media count increased: 630 → 647
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 647 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Lunaa post 6
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 3/4: Lauraclauw - Post 6 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Lauraclauw
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/lauraclauw/library/02c3c813-42ad-46b7-9a85-40c1e090f53d/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 154
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 154 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Lauraclauw post 6
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 4/4: Naomivanstraatten - Post 6 (FANS)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Naomivanstraatten
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/naomivanstraatten/library/e3efa342-6274-462a-9a10-6862c685eb9c/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=video)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 170
+📸 Media count increased: 170 → 190
+📸 Media count increased: 190 → 210
+📸 Media count increased: 210 → 230
+📸 Media count increased: 230 → 250
+📸 Media count increased: 250 → 270
+📸 Media count increased: 270 → 290
+📸 Media count increased: 290 → 310
+📸 Media count increased: 310 → 330
+📸 Media count increased: 330 → 338
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 338 media items
+🎬 Selecting 1 random video(s)...
+✅ Selected video item 1/1
+✅ Selected 1 random video(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Paid path selected
+[F2F] # [STEP] Toggle all "Free" chips to paid
+[F2F] # [INFO] Clicking Free for 1 media items individually
+[F2F] # [BTN] Clicking Free for media item 1/1
+[F2F] # [SUCCESS] Clicked Free for media 1 using selector: div.access-status span.free
+[F2F] # [STEP] Completed Free button clicking for 1 media items
+[F2F] # [BTN] Next (popup)
+[F2F] # [OPT] Fans only -> Next
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Naomivanstraatten post 6
+[F2F] ========================================================================
+[F2F] 🎉 CYCLE 6 COMPLETED!
+[F2F] 📊 Current progress: {'Nathalya': 6, 'Lunaa': 6, 'Lauraclauw': 6, 'Naomivanstraatten': 6}
+[F2F] 📋 Nathalya: 6/9 posts completed
+[F2F] 📋 Lunaa: 6/8 posts completed
+[F2F] 📋 Lauraclauw: 6/8 posts completed
+[F2F] 📋 Naomivanstraatten: 6/10 posts completed
+[F2F] 🔄 Starting next cycle in 20 minutes...
+[F2F] ⏳ Waiting 1200 seconds (between cycles)...
+[F2F] ========================================================================
+[F2F] 🔄 CYCLE 7
+[F2F] ========================================================================
+[F2F] 📋 Cycle 7: 4 models to post
+[F2F] ==================================================
+[F2F] MODEL 1/4: Nathalya - Post 7 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Nathalya
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/nathalya/library/2a2be475-8b9a-42fc-ba0e-33e33ce1590c/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 147
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 147 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [SPECIAL] Using fixed caption for Nathalya
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [SKIP] Not archiving Nathalya's fixed caption
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Nathalya post 7
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 2/4: Lunaa - Post 7 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Lunaa
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/lunaa/library/0cb9cc33-f531-467d-a4b1-8d744810786d/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 170
+📸 Media count increased: 170 → 190
+📸 Media count increased: 190 → 210
+📸 Media count increased: 210 → 230
+📸 Media count increased: 230 → 250
+📸 Media count increased: 250 → 270
+📸 Media count increased: 270 → 290
+📸 Media count increased: 290 → 310
+📸 Media count increased: 310 → 330
+📸 Media count increased: 330 → 350
+📸 Media count increased: 350 → 370
+📸 Media count increased: 370 → 390
+📸 Media count increased: 390 → 410
+📸 Media count increased: 410 → 430
+📸 Media count increased: 430 → 450
+📸 Media count increased: 450 → 470
+📸 Media count increased: 470 → 490
+📸 Media count increased: 490 → 510
+📸 Media count increased: 510 → 530
+📸 Media count increased: 530 → 550
+📸 Media count increased: 550 → 570
+📸 Media count increased: 570 → 590
+📸 Media count increased: 590 → 610
+📸 Media count increased: 610 → 630
+📸 Media count increased: 630 → 647
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 647 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Lunaa post 7
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 3/4: Lauraclauw - Post 7 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Lauraclauw
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/lauraclauw/library/02c3c813-42ad-46b7-9a85-40c1e090f53d/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 154
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 154 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Lauraclauw post 7
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 4/4: Naomivanstraatten - Post 7 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Naomivanstraatten
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/naomivanstraatten/library/e3efa342-6274-462a-9a10-6862c685eb9c/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 170
+📸 Media count increased: 170 → 190
+📸 Media count increased: 190 → 210
+📸 Media count increased: 210 → 230
+📸 Media count increased: 230 → 250
+📸 Media count increased: 250 → 270
+📸 Media count increased: 270 → 290
+📸 Media count increased: 290 → 310
+📸 Media count increased: 310 → 330
+📸 Media count increased: 330 → 338
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 338 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Naomivanstraatten post 7
+[F2F] ========================================================================
+[F2F] 🎉 CYCLE 7 COMPLETED!
+[F2F] 📊 Current progress: {'Nathalya': 7, 'Lunaa': 7, 'Lauraclauw': 7, 'Naomivanstraatten': 7}
+[F2F] 📋 Nathalya: 7/9 posts completed
+[F2F] 📋 Lunaa: 7/8 posts completed
+[F2F] 📋 Lauraclauw: 7/8 posts completed
+[F2F] 📋 Naomivanstraatten: 7/10 posts completed
+[F2F] 🔄 Starting next cycle in 20 minutes...
+[F2F] ⏳ Waiting 1200 seconds (between cycles)...
+[F2F] ========================================================================
+[F2F] 🔄 CYCLE 8
+[F2F] ========================================================================
+[F2F] 📋 Cycle 8: 4 models to post
+[F2F] ==================================================
+[F2F] MODEL 1/4: Nathalya - Post 8 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Nathalya
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/nathalya/library/2a2be475-8b9a-42fc-ba0e-33e33ce1590c/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 147
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 147 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [SPECIAL] Using fixed caption for Nathalya
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [SKIP] Not archiving Nathalya's fixed caption
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Nathalya post 8
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 2/4: Lunaa - Post 8 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Lunaa
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/lunaa/library/0cb9cc33-f531-467d-a4b1-8d744810786d/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 170
+📸 Media count increased: 170 → 190
+📸 Media count increased: 190 → 210
+📸 Media count increased: 210 → 230
+📸 Media count increased: 230 → 250
+📸 Media count increased: 250 → 270
+📸 Media count increased: 270 → 290
+📸 Media count increased: 290 → 310
+📸 Media count increased: 310 → 330
+📸 Media count increased: 330 → 350
+📸 Media count increased: 350 → 370
+📸 Media count increased: 370 → 390
+📸 Media count increased: 390 → 410
+📸 Media count increased: 410 → 430
+📸 Media count increased: 430 → 450
+📸 Media count increased: 450 → 470
+📸 Media count increased: 470 → 490
+📸 Media count increased: 490 → 510
+📸 Media count increased: 510 → 530
+📸 Media count increased: 530 → 550
+📸 Media count increased: 550 → 570
+📸 Media count increased: 570 → 590
+📸 Media count increased: 590 → 610
+📸 Media count increased: 610 → 630
+📸 Media count increased: 630 → 647
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 647 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Lunaa post 8
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 3/4: Lauraclauw - Post 8 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Lauraclauw
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/lauraclauw/library/02c3c813-42ad-46b7-9a85-40c1e090f53d/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 154
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 154 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Lauraclauw post 8
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 4/4: Naomivanstraatten - Post 8 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Naomivanstraatten
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/naomivanstraatten/library/e3efa342-6274-462a-9a10-6862c685eb9c/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 170
+📸 Media count increased: 170 → 190
+📸 Media count increased: 190 → 210
+📸 Media count increased: 210 → 230
+📸 Media count increased: 230 → 250
+📸 Media count increased: 250 → 270
+📸 Media count increased: 270 → 290
+📸 Media count increased: 290 → 310
+📸 Media count increased: 310 → 330
+📸 Media count increased: 330 → 338
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 338 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Naomivanstraatten post 8
+[F2F] ========================================================================
+[F2F] 🎉 CYCLE 8 COMPLETED!
+[F2F] 📊 Current progress: {'Nathalya': 8, 'Lunaa': 8, 'Lauraclauw': 8, 'Naomivanstraatten': 8}
+[F2F] 📋 Nathalya: 8/9 posts completed
+[F2F] ✅ Lunaa: ALL 8 posts completed
+[F2F] ✅ Lauraclauw: ALL 8 posts completed
+[F2F] 📋 Naomivanstraatten: 8/10 posts completed
+[F2F] 🔄 Starting next cycle in 20 minutes...
+[F2F] ⏳ Waiting 1200 seconds (between cycles)...
+[F2F] ========================================================================
+[F2F] 🔄 CYCLE 9
+[F2F] ========================================================================
+[F2F] # [SKIP] Lunaa completed all 8 posts
+[F2F] # [SKIP] Lauraclauw completed all 8 posts
+[F2F] 📋 Cycle 9: 2 models to post
+[F2F] ==================================================
+[F2F] MODEL 1/2: Nathalya - Post 9 (FANS)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Nathalya
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie video's'
+[F2F] # [FOUND] Matched folder: 'lingerie video's' (href: /agency/creators/nathalya/library/a962ceb8-897b-45b7-8f46-c108ee8639b6/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie video's'
+[F2F] # [STEP] Load & select 1 media items (type=video)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 120
+📸 Media count increased: 120 → 126
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 126 media items
+🎬 Selecting 1 random video(s)...
+✅ Selected video item 1/1
+✅ Selected 1 random video(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [SPECIAL] Using fixed caption for Nathalya
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [SKIP] Not archiving Nathalya's fixed caption
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Paid path selected
+[F2F] # [STEP] Toggle all "Free" chips to paid
+[F2F] # [INFO] Clicking Free for 1 media items individually
+[F2F] # [BTN] Clicking Free for media item 1/1
+[F2F] # [SUCCESS] Clicked Free for media 1 using selector: div.access-status span.free
+[F2F] # [STEP] Completed Free button clicking for 1 media items
+[F2F] # [BTN] Next (popup)
+[F2F] # [OPT] Fans only -> Next
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Nathalya post 9
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 2/2: Naomivanstraatten - Post 9 (FANS)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Naomivanstraatten
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/naomivanstraatten/library/e3efa342-6274-462a-9a10-6862c685eb9c/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=video)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 170
+📸 Media count increased: 170 → 190
+📸 Media count increased: 190 → 210
+📸 Media count increased: 210 → 230
+📸 Media count increased: 230 → 250
+📸 Media count increased: 250 → 270
+📸 Media count increased: 270 → 290
+📸 Media count increased: 290 → 310
+📸 Media count increased: 310 → 330
+📸 Media count increased: 330 → 338
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 338 media items
+🎬 Selecting 1 random video(s)...
+✅ Selected video item 1/1
+✅ Selected 1 random video(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Paid path selected
+[F2F] # [STEP] Toggle all "Free" chips to paid
+[F2F] # [INFO] Clicking Free for 1 media items individually
+[F2F] # [BTN] Clicking Free for media item 1/1
+[F2F] # [SUCCESS] Clicked Free for media 1 using selector: div.access-status span.free
+[F2F] # [STEP] Completed Free button clicking for 1 media items
+[F2F] # [BTN] Next (popup)
+[F2F] # [OPT] Fans only -> Next
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Naomivanstraatten post 9
+[F2F] ========================================================================
+[F2F] 🎉 CYCLE 9 COMPLETED!
+[F2F] 📊 Current progress: {'Nathalya': 9, 'Lunaa': 8, 'Lauraclauw': 8, 'Naomivanstraatten': 9}
+[F2F] ✅ Nathalya: ALL 9 posts completed
+[F2F] ✅ Lunaa: ALL 8 posts completed
+[F2F] ✅ Lauraclauw: ALL 8 posts completed
+[F2F] 📋 Naomivanstraatten: 9/10 posts completed
+[F2F] 🔄 Starting next cycle in 20 minutes...
+[F2F] ⏳ Waiting 1200 seconds (between cycles)...
+[F2F] ========================================================================
+[F2F] 🔄 CYCLE 10
+[F2F] ========================================================================
+[F2F] # [SKIP] Nathalya completed all 9 posts
+[F2F] # [SKIP] Lunaa completed all 8 posts
+[F2F] # [SKIP] Lauraclauw completed all 8 posts
+[F2F] 📋 Cycle 10: 1 models to post
+[F2F] ==================================================
+[F2F] MODEL 1/1: Naomivanstraatten - Post 10 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Naomivanstraatten
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/naomivanstraatten/library/e3efa342-6274-462a-9a10-6862c685eb9c/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 170
+📸 Media count increased: 170 → 190
+📸 Media count increased: 190 → 210
+📸 Media count increased: 210 → 230
+📸 Media count increased: 230 → 250
+📸 Media count increased: 250 → 270
+📸 Media count increased: 270 → 290
+📸 Media count increased: 290 → 310
+📸 Media count increased: 310 → 330
+📸 Media count increased: 330 → 338
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 338 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Naomivanstraatten post 10
+[F2F] ========================================================================
+[F2F] 🎉 CYCLE 10 COMPLETED!
+[F2F] 📊 Current progress: {'Nathalya': 9, 'Lunaa': 8, 'Lauraclauw': 8, 'Naomivanstraatten': 10}
+[F2F] ✅ Nathalya: ALL 9 posts completed
+[F2F] ✅ Lunaa: ALL 8 posts completed
+[F2F] ✅ Lauraclauw: ALL 8 posts completed
+[F2F] ✅ Naomivanstraatten: ALL 10 posts completed
+[F2F] 🎊 ALL MODELS FULLY COMPLETED! Bot finished successfully.
+[F2F] ⏳ Waiting 5 minutes before resetting for tomorrow...
+[F2F] ⏳ Waiting 300 seconds (before daily reset)...
+[F2F] 🔄 Resetting state for tomorrow's posting cycle...
+[F2F] ✅ State reset complete! Ready for tomorrow's posting cycle.
+[F2F] ========================================================================
+=== Bot Finished at Sat Sep 20 22:26:53 EEST 2025 ===
+=== Bot Starting at Sun Sep 21 09:30:00 EEST 2025 ===
+Python: Python 3.10.11
+Python path: /Users/julianbik/.pyenv/versions/3.10.11/bin/python3
+✅ Pandas import successful
+[F2F] ========================================================================
+[F2F] F2F POSTING BOT - ROTATION MODE
+[F2F] ========================================================================
+[F2F] 🔄 ROTATION MODE - Starting from Cycle: 1
+[F2F] 🤖 Will auto-complete ALL cycles until finished!
+[F2F] ========================================================================
+[F2F] 🔄 CYCLE 1
+[F2F] ========================================================================
+[F2F] 📋 Cycle 1: 4 models to post
+[F2F] ==================================================
+[F2F] MODEL 1/4: Nathalya - Post 1 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Nathalya
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/nathalya/library/2a2be475-8b9a-42fc-ba0e-33e33ce1590c/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 147
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 147 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [SPECIAL] Using fixed caption for Nathalya
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [SKIP] Not archiving Nathalya's fixed caption
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Nathalya post 1
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 2/4: Lunaa - Post 1 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Lunaa
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/lunaa/library/0cb9cc33-f531-467d-a4b1-8d744810786d/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 170
+📸 Media count increased: 170 → 190
+📸 Media count increased: 190 → 210
+📸 Media count increased: 210 → 230
+📸 Media count increased: 230 → 250
+📸 Media count increased: 250 → 270
+📸 Media count increased: 270 → 290
+📸 Media count increased: 290 → 310
+📸 Media count increased: 310 → 330
+📸 Media count increased: 330 → 350
+📸 Media count increased: 350 → 370
+📸 Media count increased: 370 → 390
+📸 Media count increased: 390 → 410
+📸 Media count increased: 410 → 430
+📸 Media count increased: 430 → 450
+📸 Media count increased: 450 → 470
+📸 Media count increased: 470 → 490
+📸 Media count increased: 490 → 510
+📸 Media count increased: 510 → 530
+📸 Media count increased: 530 → 550
+📸 Media count increased: 550 → 570
+📸 Media count increased: 570 → 590
+📸 Media count increased: 590 → 610
+📸 Media count increased: 610 → 630
+📸 Media count increased: 630 → 647
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 647 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Lunaa post 1
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 3/4: Lauraclauw - Post 1 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Lauraclauw
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/lauraclauw/library/02c3c813-42ad-46b7-9a85-40c1e090f53d/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 154
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 154 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Lauraclauw post 1
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 4/4: Naomivanstraatten - Post 1 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Naomivanstraatten
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/naomivanstraatten/library/e3efa342-6274-462a-9a10-6862c685eb9c/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 170
+📸 Media count increased: 170 → 190
+📸 Media count increased: 190 → 210
+📸 Media count increased: 210 → 230
+📸 Media count increased: 230 → 250
+📸 Media count increased: 250 → 270
+📸 Media count increased: 270 → 290
+📸 Media count increased: 290 → 310
+📸 Media count increased: 310 → 330
+📸 Media count increased: 330 → 338
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 338 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Naomivanstraatten post 1
+[F2F] ========================================================================
+[F2F] 🎉 CYCLE 1 COMPLETED!
+[F2F] 📊 Current progress: {'Nathalya': 1, 'Lunaa': 1, 'Lauraclauw': 1, 'Naomivanstraatten': 1}
+[F2F] 📋 Nathalya: 1/9 posts completed
+[F2F] 📋 Lunaa: 1/8 posts completed
+[F2F] 📋 Lauraclauw: 1/8 posts completed
+[F2F] 📋 Naomivanstraatten: 1/10 posts completed
+[F2F] 🔄 Starting next cycle in 20 minutes...
+[F2F] ⏳ Waiting 1200 seconds (between cycles)...
+[F2F] ========================================================================
+[F2F] 🔄 CYCLE 2
+[F2F] ========================================================================
+[F2F] 📋 Cycle 2: 4 models to post
+[F2F] ==================================================
+[F2F] MODEL 1/4: Nathalya - Post 2 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Nathalya
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/nathalya/library/2a2be475-8b9a-42fc-ba0e-33e33ce1590c/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 147
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 147 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [SPECIAL] Using fixed caption for Nathalya
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [SKIP] Not archiving Nathalya's fixed caption
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Nathalya post 2
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 2/4: Lunaa - Post 2 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Lunaa
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/lunaa/library/0cb9cc33-f531-467d-a4b1-8d744810786d/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 170
+📸 Media count increased: 170 → 190
+📸 Media count increased: 190 → 210
+📸 Media count increased: 210 → 230
+📸 Media count increased: 230 → 250
+📸 Media count increased: 250 → 270
+📸 Media count increased: 270 → 290
+📸 Media count increased: 290 → 310
+📸 Media count increased: 310 → 330
+📸 Media count increased: 330 → 350
+📸 Media count increased: 350 → 370
+📸 Media count increased: 370 → 390
+📸 Media count increased: 390 → 410
+📸 Media count increased: 410 → 430
+📸 Media count increased: 430 → 450
+📸 Media count increased: 450 → 470
+📸 Media count increased: 470 → 490
+📸 Media count increased: 490 → 510
+📸 Media count increased: 510 → 530
+📸 Media count increased: 530 → 550
+📸 Media count increased: 550 → 570
+📸 Media count increased: 570 → 590
+📸 Media count increased: 590 → 610
+📸 Media count increased: 610 → 630
+📸 Media count increased: 630 → 647
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 647 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Lunaa post 2
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 3/4: Lauraclauw - Post 2 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Lauraclauw
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/lauraclauw/library/02c3c813-42ad-46b7-9a85-40c1e090f53d/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 154
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 154 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Lauraclauw post 2
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 4/4: Naomivanstraatten - Post 2 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Naomivanstraatten
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/naomivanstraatten/library/e3efa342-6274-462a-9a10-6862c685eb9c/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 170
+📸 Media count increased: 170 → 190
+📸 Media count increased: 190 → 210
+📸 Media count increased: 210 → 230
+📸 Media count increased: 230 → 250
+📸 Media count increased: 250 → 270
+📸 Media count increased: 270 → 290
+📸 Media count increased: 290 → 310
+📸 Media count increased: 310 → 330
+📸 Media count increased: 330 → 338
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 338 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Naomivanstraatten post 2
+[F2F] ========================================================================
+[F2F] 🎉 CYCLE 2 COMPLETED!
+[F2F] 📊 Current progress: {'Nathalya': 2, 'Lunaa': 2, 'Lauraclauw': 2, 'Naomivanstraatten': 2}
+[F2F] 📋 Nathalya: 2/9 posts completed
+[F2F] 📋 Lunaa: 2/8 posts completed
+[F2F] 📋 Lauraclauw: 2/8 posts completed
+[F2F] 📋 Naomivanstraatten: 2/10 posts completed
+[F2F] 🔄 Starting next cycle in 20 minutes...
+[F2F] ⏳ Waiting 1200 seconds (between cycles)...
+[F2F] ========================================================================
+[F2F] 🔄 CYCLE 3
+[F2F] ========================================================================
+[F2F] 📋 Cycle 3: 4 models to post
+[F2F] ==================================================
+[F2F] MODEL 1/4: Nathalya - Post 3 (FANS)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Nathalya
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie video's'
+[F2F] # [FOUND] Matched folder: 'lingerie video's' (href: /agency/creators/nathalya/library/a962ceb8-897b-45b7-8f46-c108ee8639b6/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie video's'
+[F2F] # [STEP] Load & select 1 media items (type=video)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 126
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 126 media items
+🎬 Selecting 1 random video(s)...
+✅ Selected video item 1/1
+✅ Selected 1 random video(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [SPECIAL] Using fixed caption for Nathalya
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [SKIP] Not archiving Nathalya's fixed caption
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Paid path selected
+[F2F] # [STEP] Toggle all "Free" chips to paid
+[F2F] # [INFO] Clicking Free for 1 media items individually
+[F2F] # [BTN] Clicking Free for media item 1/1
+[F2F] # [SUCCESS] Clicked Free for media 1 using selector: div.access-status span.free
+[F2F] # [STEP] Completed Free button clicking for 1 media items
+[F2F] # [BTN] Next (popup)
+[F2F] # [OPT] Fans only -> Next
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Nathalya post 3
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 2/4: Lunaa - Post 3 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Lunaa
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/lunaa/library/0cb9cc33-f531-467d-a4b1-8d744810786d/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+⚠️ No new media (Try 1/5)
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 120
+📸 Media count increased: 120 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 170
+📸 Media count increased: 170 → 180
+📸 Media count increased: 180 → 190
+📸 Media count increased: 190 → 210
+📸 Media count increased: 210 → 230
+📸 Media count increased: 230 → 250
+📸 Media count increased: 250 → 270
+📸 Media count increased: 270 → 290
+📸 Media count increased: 290 → 310
+📸 Media count increased: 310 → 330
+📸 Media count increased: 330 → 350
+📸 Media count increased: 350 → 370
+📸 Media count increased: 370 → 390
+📸 Media count increased: 390 → 410
+📸 Media count increased: 410 → 430
+📸 Media count increased: 430 → 450
+📸 Media count increased: 450 → 470
+📸 Media count increased: 470 → 490
+📸 Media count increased: 490 → 510
+📸 Media count increased: 510 → 530
+📸 Media count increased: 530 → 550
+📸 Media count increased: 550 → 570
+📸 Media count increased: 570 → 590
+📸 Media count increased: 590 → 610
+📸 Media count increased: 610 → 630
+📸 Media count increased: 630 → 647
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 647 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Lunaa post 3
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 3/4: Lauraclauw - Post 3 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Lauraclauw
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/lauraclauw/library/02c3c813-42ad-46b7-9a85-40c1e090f53d/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 154
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 154 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Lauraclauw post 3
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 4/4: Naomivanstraatten - Post 3 (FANS)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Naomivanstraatten
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/naomivanstraatten/library/e3efa342-6274-462a-9a10-6862c685eb9c/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=video)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 170
+📸 Media count increased: 170 → 190
+📸 Media count increased: 190 → 210
+📸 Media count increased: 210 → 230
+📸 Media count increased: 230 → 250
+📸 Media count increased: 250 → 270
+📸 Media count increased: 270 → 290
+📸 Media count increased: 290 → 310
+📸 Media count increased: 310 → 330
+📸 Media count increased: 330 → 338
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 338 media items
+🎬 Selecting 1 random video(s)...
+✅ Selected video item 1/1
+✅ Selected 1 random video(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Paid path selected
+[F2F] # [STEP] Toggle all "Free" chips to paid
+[F2F] # [INFO] Clicking Free for 1 media items individually
+[F2F] # [BTN] Clicking Free for media item 1/1
+[F2F] # [SUCCESS] Clicked Free for media 1 using selector: div.access-status span.free
+[F2F] # [STEP] Completed Free button clicking for 1 media items
+[F2F] # [BTN] Next (popup)
+[F2F] # [OPT] Fans only -> Next
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Naomivanstraatten post 3
+[F2F] ========================================================================
+[F2F] 🎉 CYCLE 3 COMPLETED!
+[F2F] 📊 Current progress: {'Nathalya': 3, 'Lunaa': 3, 'Lauraclauw': 3, 'Naomivanstraatten': 3}
+[F2F] 📋 Nathalya: 3/9 posts completed
+[F2F] 📋 Lunaa: 3/8 posts completed
+[F2F] 📋 Lauraclauw: 3/8 posts completed
+[F2F] 📋 Naomivanstraatten: 3/10 posts completed
+[F2F] 🔄 Starting next cycle in 20 minutes...
+[F2F] ⏳ Waiting 1200 seconds (between cycles)...
+[F2F] ========================================================================
+[F2F] 🔄 CYCLE 4
+[F2F] ========================================================================
+[F2F] 📋 Cycle 4: 4 models to post
+[F2F] ==================================================
+[F2F] MODEL 1/4: Nathalya - Post 4 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Nathalya
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/nathalya/library/2a2be475-8b9a-42fc-ba0e-33e33ce1590c/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 147
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 147 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [SPECIAL] Using fixed caption for Nathalya
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [SKIP] Not archiving Nathalya's fixed caption
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Nathalya post 4
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 2/4: Lunaa - Post 4 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Lunaa
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/lunaa/library/0cb9cc33-f531-467d-a4b1-8d744810786d/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 170
+📸 Media count increased: 170 → 190
+📸 Media count increased: 190 → 210
+📸 Media count increased: 210 → 230
+📸 Media count increased: 230 → 250
+📸 Media count increased: 250 → 270
+📸 Media count increased: 270 → 290
+📸 Media count increased: 290 → 310
+📸 Media count increased: 310 → 330
+📸 Media count increased: 330 → 350
+📸 Media count increased: 350 → 370
+📸 Media count increased: 370 → 390
+📸 Media count increased: 390 → 410
+📸 Media count increased: 410 → 430
+📸 Media count increased: 430 → 450
+📸 Media count increased: 450 → 470
+📸 Media count increased: 470 → 490
+📸 Media count increased: 490 → 510
+📸 Media count increased: 510 → 530
+📸 Media count increased: 530 → 550
+📸 Media count increased: 550 → 570
+📸 Media count increased: 570 → 590
+📸 Media count increased: 590 → 610
+📸 Media count increased: 610 → 630
+📸 Media count increased: 630 → 647
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 647 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Lunaa post 4
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 3/4: Lauraclauw - Post 4 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Lauraclauw
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/lauraclauw/library/02c3c813-42ad-46b7-9a85-40c1e090f53d/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 154
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 154 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Lauraclauw post 4
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 4/4: Naomivanstraatten - Post 4 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Naomivanstraatten
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/naomivanstraatten/library/e3efa342-6274-462a-9a10-6862c685eb9c/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 160
+📸 Media count increased: 160 → 170
+📸 Media count increased: 170 → 190
+📸 Media count increased: 190 → 210
+📸 Media count increased: 210 → 230
+📸 Media count increased: 230 → 250
+📸 Media count increased: 250 → 270
+📸 Media count increased: 270 → 290
+📸 Media count increased: 290 → 310
+📸 Media count increased: 310 → 330
+📸 Media count increased: 330 → 338
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 338 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Naomivanstraatten post 4
+[F2F] ========================================================================
+[F2F] 🎉 CYCLE 4 COMPLETED!
+[F2F] 📊 Current progress: {'Nathalya': 4, 'Lunaa': 4, 'Lauraclauw': 4, 'Naomivanstraatten': 4}
+[F2F] 📋 Nathalya: 4/9 posts completed
+[F2F] 📋 Lunaa: 4/8 posts completed
+[F2F] 📋 Lauraclauw: 4/8 posts completed
+[F2F] 📋 Naomivanstraatten: 4/10 posts completed
+[F2F] 🔄 Starting next cycle in 20 minutes...
+[F2F] ⏳ Waiting 1200 seconds (between cycles)...
+[F2F] ========================================================================
+[F2F] 🔄 CYCLE 5
+[F2F] ========================================================================
+[F2F] 📋 Cycle 5: 4 models to post
+[F2F] ==================================================
+[F2F] MODEL 1/4: Nathalya - Post 5 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Nathalya
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/nathalya/library/2a2be475-8b9a-42fc-ba0e-33e33ce1590c/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 147
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 147 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [SPECIAL] Using fixed caption for Nathalya
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [SKIP] Not archiving Nathalya's fixed caption
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Nathalya post 5
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 2/4: Lunaa - Post 5 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Lunaa
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/lunaa/library/0cb9cc33-f531-467d-a4b1-8d744810786d/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 170
+📸 Media count increased: 170 → 190
+📸 Media count increased: 190 → 210
+📸 Media count increased: 210 → 230
+📸 Media count increased: 230 → 250
+📸 Media count increased: 250 → 270
+📸 Media count increased: 270 → 290
+📸 Media count increased: 290 → 310
+📸 Media count increased: 310 → 330
+📸 Media count increased: 330 → 350
+📸 Media count increased: 350 → 370
+📸 Media count increased: 370 → 390
+📸 Media count increased: 390 → 410
+📸 Media count increased: 410 → 430
+📸 Media count increased: 430 → 450
+📸 Media count increased: 450 → 470
+📸 Media count increased: 470 → 490
+📸 Media count increased: 490 → 510
+📸 Media count increased: 510 → 530
+📸 Media count increased: 530 → 550
+📸 Media count increased: 550 → 570
+📸 Media count increased: 570 → 590
+📸 Media count increased: 590 → 610
+📸 Media count increased: 610 → 630
+📸 Media count increased: 630 → 647
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 647 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Lunaa post 5
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 3/4: Lauraclauw - Post 5 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Lauraclauw
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/lauraclauw/library/02c3c813-42ad-46b7-9a85-40c1e090f53d/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 154
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 154 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Lauraclauw post 5
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 4/4: Naomivanstraatten - Post 5 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Naomivanstraatten
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] ❌ Error: Locator.wait_for: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("div.ywtmnG_buttonsContainer").locator("button._7lrYkG_button._7lrYkG_tertiary:has(span._7lrYkG_text:has-text(\"Create\"))") to be visible
+
+Traceback (most recent call last):
+  File "/Users/julianbik/Desktop/clients/f2f final/f2f ryan final/posting bot/main.py", line 807, in run_single_post
+    await click_create_then_post(page, cfg)
+  File "/Users/julianbik/Desktop/clients/f2f final/f2f ryan final/posting bot/main.py", line 473, in click_create_then_post
+    await safe_click(create_btn, retries=cfg["retries"]["clicks"])
+  File "/Users/julianbik/Desktop/clients/f2f final/f2f ryan final/posting bot/main.py", line 222, in safe_click
+    raise last
+  File "/Users/julianbik/Desktop/clients/f2f final/f2f ryan final/posting bot/main.py", line 215, in safe_click
+    await locator.wait_for(state="visible")
+  File "/Users/julianbik/.pyenv/versions/3.10.11/lib/python3.10/site-packages/playwright/async_api/_generated.py", line 17330, in wait_for
+    await self._impl_obj.wait_for(timeout=timeout, state=state)
+  File "/Users/julianbik/.pyenv/versions/3.10.11/lib/python3.10/site-packages/playwright/_impl/_locator.py", line 670, in wait_for
+    await self._frame.wait_for_selector(
+  File "/Users/julianbik/.pyenv/versions/3.10.11/lib/python3.10/site-packages/playwright/_impl/_frame.py", line 323, in wait_for_selector
+    await self._channel.send("waitForSelector", locals_to_params(locals()))
+  File "/Users/julianbik/.pyenv/versions/3.10.11/lib/python3.10/site-packages/playwright/_impl/_connection.py", line 59, in send
+    return await self._connection.wrap_api_call(
+  File "/Users/julianbik/.pyenv/versions/3.10.11/lib/python3.10/site-packages/playwright/_impl/_connection.py", line 514, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Locator.wait_for: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("div.ywtmnG_buttonsContainer").locator("button._7lrYkG_button._7lrYkG_tertiary:has(span._7lrYkG_text:has-text(\"Create\"))") to be visible
+
+
+Screenshot: logs/screens/Naomivanstraatten_post_5_free_1758462124.png
+[F2F] ❌ Failed Naomivanstraatten post 5: Locator.wait_for: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("div.ywtmnG_buttonsContainer").locator("button._7lrYkG_button._7lrYkG_tertiary:has(span._7lrYkG_text:has-text(\"Create\"))") to be visible
+
+[F2F] ========================================================================
+[F2F] 🎉 CYCLE 5 COMPLETED!
+[F2F] 📊 Current progress: {'Nathalya': 5, 'Lunaa': 5, 'Lauraclauw': 5, 'Naomivanstraatten': 4}
+[F2F] 📋 Nathalya: 5/9 posts completed
+[F2F] 📋 Lunaa: 5/8 posts completed
+[F2F] 📋 Lauraclauw: 5/8 posts completed
+[F2F] 📋 Naomivanstraatten: 4/10 posts completed
+[F2F] 🔄 Starting next cycle in 20 minutes...
+[F2F] ⏳ Waiting 1200 seconds (between cycles)...
+[F2F] ========================================================================
+[F2F] 🔄 CYCLE 6
+[F2F] ========================================================================
+[F2F] 📋 Cycle 6: 4 models to post
+[F2F] ==================================================
+[F2F] MODEL 1/4: Nathalya - Post 6 (FANS)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Nathalya
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie video's'
+[F2F] # [FOUND] Matched folder: 'lingerie video's' (href: /agency/creators/nathalya/library/a962ceb8-897b-45b7-8f46-c108ee8639b6/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie video's'
+[F2F] # [STEP] Load & select 1 media items (type=video)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 126
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 126 media items
+🎬 Selecting 1 random video(s)...
+✅ Selected video item 1/1
+✅ Selected 1 random video(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [SPECIAL] Using fixed caption for Nathalya
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [SKIP] Not archiving Nathalya's fixed caption
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Paid path selected
+[F2F] # [STEP] Toggle all "Free" chips to paid
+[F2F] # [INFO] Clicking Free for 1 media items individually
+[F2F] # [BTN] Clicking Free for media item 1/1
+[F2F] # [SUCCESS] Clicked Free for media 1 using selector: div.access-status span.free
+[F2F] # [STEP] Completed Free button clicking for 1 media items
+[F2F] # [BTN] Next (popup)
+[F2F] # [OPT] Fans only -> Next
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Nathalya post 6
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 2/4: Lunaa - Post 6 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Lunaa
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/lunaa/library/0cb9cc33-f531-467d-a4b1-8d744810786d/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 170
+📸 Media count increased: 170 → 190
+📸 Media count increased: 190 → 210
+📸 Media count increased: 210 → 230
+📸 Media count increased: 230 → 250
+📸 Media count increased: 250 → 270
+📸 Media count increased: 270 → 290
+📸 Media count increased: 290 → 310
+📸 Media count increased: 310 → 330
+📸 Media count increased: 330 → 350
+📸 Media count increased: 350 → 370
+📸 Media count increased: 370 → 390
+📸 Media count increased: 390 → 410
+📸 Media count increased: 410 → 430
+📸 Media count increased: 430 → 450
+📸 Media count increased: 450 → 470
+📸 Media count increased: 470 → 490
+📸 Media count increased: 490 → 510
+📸 Media count increased: 510 → 530
+📸 Media count increased: 530 → 550
+📸 Media count increased: 550 → 570
+📸 Media count increased: 570 → 590
+📸 Media count increased: 590 → 610
+📸 Media count increased: 610 → 630
+📸 Media count increased: 630 → 647
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 647 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Lunaa post 6
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 3/4: Lauraclauw - Post 6 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Lauraclauw
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/lauraclauw/library/02c3c813-42ad-46b7-9a85-40c1e090f53d/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 154
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 154 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Lauraclauw post 6
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 4/4: Naomivanstraatten - Post 5 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Naomivanstraatten
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/naomivanstraatten/library/e3efa342-6274-462a-9a10-6862c685eb9c/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 170
+📸 Media count increased: 170 → 190
+📸 Media count increased: 190 → 210
+📸 Media count increased: 210 → 230
+📸 Media count increased: 230 → 250
+📸 Media count increased: 250 → 270
+📸 Media count increased: 270 → 290
+📸 Media count increased: 290 → 310
+📸 Media count increased: 310 → 330
+📸 Media count increased: 330 → 338
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 338 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Naomivanstraatten post 5
+[F2F] ========================================================================
+[F2F] 🎉 CYCLE 6 COMPLETED!
+[F2F] 📊 Current progress: {'Nathalya': 6, 'Lunaa': 6, 'Lauraclauw': 6, 'Naomivanstraatten': 5}
+[F2F] 📋 Nathalya: 6/9 posts completed
+[F2F] 📋 Lunaa: 6/8 posts completed
+[F2F] 📋 Lauraclauw: 6/8 posts completed
+[F2F] 📋 Naomivanstraatten: 5/10 posts completed
+[F2F] 🔄 Starting next cycle in 20 minutes...
+[F2F] ⏳ Waiting 1200 seconds (between cycles)...
+[F2F] ========================================================================
+[F2F] 🔄 CYCLE 7
+[F2F] ========================================================================
+[F2F] 📋 Cycle 7: 4 models to post
+[F2F] ==================================================
+[F2F] MODEL 1/4: Nathalya - Post 7 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Nathalya
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/nathalya/library/2a2be475-8b9a-42fc-ba0e-33e33ce1590c/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 147
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 147 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [SPECIAL] Using fixed caption for Nathalya
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [SKIP] Not archiving Nathalya's fixed caption
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Nathalya post 7
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 2/4: Lunaa - Post 7 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Lunaa
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/lunaa/library/0cb9cc33-f531-467d-a4b1-8d744810786d/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 170
+📸 Media count increased: 170 → 190
+📸 Media count increased: 190 → 210
+📸 Media count increased: 210 → 230
+📸 Media count increased: 230 → 250
+📸 Media count increased: 250 → 270
+📸 Media count increased: 270 → 290
+📸 Media count increased: 290 → 310
+📸 Media count increased: 310 → 330
+📸 Media count increased: 330 → 350
+📸 Media count increased: 350 → 370
+📸 Media count increased: 370 → 390
+📸 Media count increased: 390 → 410
+📸 Media count increased: 410 → 430
+📸 Media count increased: 430 → 450
+📸 Media count increased: 450 → 470
+📸 Media count increased: 470 → 490
+📸 Media count increased: 490 → 510
+📸 Media count increased: 510 → 530
+📸 Media count increased: 530 → 550
+📸 Media count increased: 550 → 570
+📸 Media count increased: 570 → 590
+📸 Media count increased: 590 → 610
+📸 Media count increased: 610 → 630
+📸 Media count increased: 630 → 647
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 647 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Lunaa post 7
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 3/4: Lauraclauw - Post 7 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Lauraclauw
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/lauraclauw/library/02c3c813-42ad-46b7-9a85-40c1e090f53d/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 154
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 154 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] ♻️ Replenished source captions from archive (97 items).
+[F2F] # [STEP] Replenished captions into source Excel
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Lauraclauw post 7
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 4/4: Naomivanstraatten - Post 6 (FANS)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Naomivanstraatten
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/naomivanstraatten/library/e3efa342-6274-462a-9a10-6862c685eb9c/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=video)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 170
+📸 Media count increased: 170 → 190
+📸 Media count increased: 190 → 210
+📸 Media count increased: 210 → 230
+📸 Media count increased: 230 → 250
+📸 Media count increased: 250 → 270
+📸 Media count increased: 270 → 290
+📸 Media count increased: 290 → 310
+📸 Media count increased: 310 → 330
+📸 Media count increased: 330 → 338
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 338 media items
+🎬 Selecting 1 random video(s)...
+✅ Selected video item 1/1
+✅ Selected 1 random video(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Paid path selected
+[F2F] # [STEP] Toggle all "Free" chips to paid
+[F2F] # [INFO] Clicking Free for 1 media items individually
+[F2F] # [BTN] Clicking Free for media item 1/1
+[F2F] # [SUCCESS] Clicked Free for media 1 using selector: div.access-status span.free
+[F2F] # [STEP] Completed Free button clicking for 1 media items
+[F2F] # [BTN] Next (popup)
+[F2F] # [OPT] Fans only -> Next
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Naomivanstraatten post 6
+[F2F] ========================================================================
+[F2F] 🎉 CYCLE 7 COMPLETED!
+[F2F] 📊 Current progress: {'Nathalya': 7, 'Lunaa': 7, 'Lauraclauw': 7, 'Naomivanstraatten': 6}
+[F2F] 📋 Nathalya: 7/9 posts completed
+[F2F] 📋 Lunaa: 7/8 posts completed
+[F2F] 📋 Lauraclauw: 7/8 posts completed
+[F2F] 📋 Naomivanstraatten: 6/10 posts completed
+[F2F] 🔄 Starting next cycle in 20 minutes...
+[F2F] ⏳ Waiting 1200 seconds (between cycles)...
+[F2F] ========================================================================
+[F2F] 🔄 CYCLE 8
+[F2F] ========================================================================
+[F2F] 📋 Cycle 8: 4 models to post
+[F2F] ==================================================
+[F2F] MODEL 1/4: Nathalya - Post 8 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Nathalya
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/nathalya/library/2a2be475-8b9a-42fc-ba0e-33e33ce1590c/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 147
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 147 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [SPECIAL] Using fixed caption for Nathalya
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [SKIP] Not archiving Nathalya's fixed caption
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Nathalya post 8
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 2/4: Lunaa - Post 8 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Lunaa
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/lunaa/library/0cb9cc33-f531-467d-a4b1-8d744810786d/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 170
+📸 Media count increased: 170 → 190
+📸 Media count increased: 190 → 210
+📸 Media count increased: 210 → 230
+📸 Media count increased: 230 → 250
+📸 Media count increased: 250 → 270
+📸 Media count increased: 270 → 290
+📸 Media count increased: 290 → 310
+📸 Media count increased: 310 → 330
+📸 Media count increased: 330 → 350
+📸 Media count increased: 350 → 370
+📸 Media count increased: 370 → 390
+📸 Media count increased: 390 → 410
+📸 Media count increased: 410 → 430
+📸 Media count increased: 430 → 450
+📸 Media count increased: 450 → 470
+📸 Media count increased: 470 → 490
+📸 Media count increased: 490 → 510
+📸 Media count increased: 510 → 530
+📸 Media count increased: 530 → 550
+📸 Media count increased: 550 → 570
+📸 Media count increased: 570 → 590
+📸 Media count increased: 590 → 610
+📸 Media count increased: 610 → 630
+📸 Media count increased: 630 → 647
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 647 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Lunaa post 8
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 3/4: Lauraclauw - Post 8 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Lauraclauw
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/lauraclauw/library/02c3c813-42ad-46b7-9a85-40c1e090f53d/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 154
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 154 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Lauraclauw post 8
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 4/4: Naomivanstraatten - Post 7 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Naomivanstraatten
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/naomivanstraatten/library/e3efa342-6274-462a-9a10-6862c685eb9c/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 100
+📸 Media count increased: 100 → 120
+📸 Media count increased: 120 → 140
+📸 Media count increased: 140 → 160
+📸 Media count increased: 160 → 180
+📸 Media count increased: 180 → 200
+📸 Media count increased: 200 → 220
+📸 Media count increased: 220 → 240
+📸 Media count increased: 240 → 260
+📸 Media count increased: 260 → 280
+📸 Media count increased: 280 → 300
+📸 Media count increased: 300 → 320
+📸 Media count increased: 320 → 338
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 338 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Naomivanstraatten post 7
+[F2F] ========================================================================
+[F2F] 🎉 CYCLE 8 COMPLETED!
+[F2F] 📊 Current progress: {'Nathalya': 8, 'Lunaa': 8, 'Lauraclauw': 8, 'Naomivanstraatten': 7}
+[F2F] 📋 Nathalya: 8/9 posts completed
+[F2F] ✅ Lunaa: ALL 8 posts completed
+[F2F] ✅ Lauraclauw: ALL 8 posts completed
+[F2F] 📋 Naomivanstraatten: 7/10 posts completed
+[F2F] 🔄 Starting next cycle in 20 minutes...
+[F2F] ⏳ Waiting 1200 seconds (between cycles)...
+[F2F] ========================================================================
+[F2F] 🔄 CYCLE 9
+[F2F] ========================================================================
+[F2F] # [SKIP] Lunaa completed all 8 posts
+[F2F] # [SKIP] Lauraclauw completed all 8 posts
+[F2F] 📋 Cycle 9: 2 models to post
+[F2F] ==================================================
+[F2F] MODEL 1/2: Nathalya - Post 9 (FANS)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Nathalya
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie video's'
+[F2F] # [FOUND] Matched folder: 'lingerie video's' (href: /agency/creators/nathalya/library/a962ceb8-897b-45b7-8f46-c108ee8639b6/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie video's'
+[F2F] # [STEP] Load & select 1 media items (type=video)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 126
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 126 media items
+🎬 Selecting 1 random video(s)...
+✅ Selected video item 1/1
+✅ Selected 1 random video(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [SPECIAL] Using fixed caption for Nathalya
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [SKIP] Not archiving Nathalya's fixed caption
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Paid path selected
+[F2F] # [STEP] Toggle all "Free" chips to paid
+[F2F] # [INFO] Clicking Free for 1 media items individually
+[F2F] # [BTN] Clicking Free for media item 1/1
+[F2F] # [SUCCESS] Clicked Free for media 1 using selector: div.access-status span.free
+[F2F] # [STEP] Completed Free button clicking for 1 media items
+[F2F] # [BTN] Next (popup)
+[F2F] # [OPT] Fans only -> Next
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Nathalya post 9
+[F2F] ⏳ Waiting 1200 seconds (before next model (20 min))...
+[F2F] ==================================================
+[F2F] MODEL 2/2: Naomivanstraatten - Post 8 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Naomivanstraatten
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/naomivanstraatten/library/e3efa342-6274-462a-9a10-6862c685eb9c/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+📸 Media count increased: 90 → 100
+📸 Media count increased: 100 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 170
+📸 Media count increased: 170 → 190
+📸 Media count increased: 190 → 210
+📸 Media count increased: 210 → 230
+📸 Media count increased: 230 → 250
+📸 Media count increased: 250 → 270
+📸 Media count increased: 270 → 290
+📸 Media count increased: 290 → 310
+📸 Media count increased: 310 → 320
+⚠️ No new media (Try 1/5)
+📸 Media count increased: 320 → 338
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 338 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Naomivanstraatten post 8
+[F2F] ========================================================================
+[F2F] 🎉 CYCLE 9 COMPLETED!
+[F2F] 📊 Current progress: {'Nathalya': 9, 'Lunaa': 8, 'Lauraclauw': 8, 'Naomivanstraatten': 8}
+[F2F] ✅ Nathalya: ALL 9 posts completed
+[F2F] ✅ Lunaa: ALL 8 posts completed
+[F2F] ✅ Lauraclauw: ALL 8 posts completed
+[F2F] 📋 Naomivanstraatten: 8/10 posts completed
+[F2F] 🔄 Starting next cycle in 20 minutes...
+[F2F] ⏳ Waiting 1200 seconds (between cycles)...
+[F2F] ========================================================================
+[F2F] 🔄 CYCLE 10
+[F2F] ========================================================================
+[F2F] # [SKIP] Nathalya completed all 9 posts
+[F2F] # [SKIP] Lunaa completed all 8 posts
+[F2F] # [SKIP] Lauraclauw completed all 8 posts
+[F2F] 📋 Cycle 10: 1 models to post
+[F2F] ==================================================
+[F2F] MODEL 1/1: Naomivanstraatten - Post 9 (FANS)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Naomivanstraatten
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/naomivanstraatten/library/e3efa342-6274-462a-9a10-6862c685eb9c/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=video)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 130
+📸 Media count increased: 130 → 150
+📸 Media count increased: 150 → 170
+📸 Media count increased: 170 → 190
+📸 Media count increased: 190 → 210
+📸 Media count increased: 210 → 230
+📸 Media count increased: 230 → 250
+📸 Media count increased: 250 → 270
+📸 Media count increased: 270 → 290
+📸 Media count increased: 290 → 310
+📸 Media count increased: 310 → 330
+📸 Media count increased: 330 → 338
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 338 media items
+🎬 Selecting 1 random video(s)...
+✅ Selected video item 1/1
+✅ Selected 1 random video(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Paid path selected
+[F2F] # [STEP] Toggle all "Free" chips to paid
+[F2F] # [INFO] Clicking Free for 1 media items individually
+[F2F] # [BTN] Clicking Free for media item 1/1
+[F2F] # [SUCCESS] Clicked Free for media 1 using selector: div.access-status span.free
+[F2F] # [STEP] Completed Free button clicking for 1 media items
+[F2F] # [BTN] Next (popup)
+[F2F] # [OPT] Fans only -> Next
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Naomivanstraatten post 9
+[F2F] ========================================================================
+[F2F] 🎉 CYCLE 10 COMPLETED!
+[F2F] 📊 Current progress: {'Nathalya': 9, 'Lunaa': 8, 'Lauraclauw': 8, 'Naomivanstraatten': 9}
+[F2F] ✅ Nathalya: ALL 9 posts completed
+[F2F] ✅ Lunaa: ALL 8 posts completed
+[F2F] ✅ Lauraclauw: ALL 8 posts completed
+[F2F] 📋 Naomivanstraatten: 9/10 posts completed
+[F2F] 🔄 Starting next cycle in 20 minutes...
+[F2F] ⏳ Waiting 1200 seconds (between cycles)...
+[F2F] ========================================================================
+[F2F] 🔄 CYCLE 11
+[F2F] ========================================================================
+[F2F] # [SKIP] Nathalya completed all 9 posts
+[F2F] # [SKIP] Lunaa completed all 8 posts
+[F2F] # [SKIP] Lauraclauw completed all 8 posts
+[F2F] 📋 Cycle 11: 1 models to post
+[F2F] ==================================================
+[F2F] MODEL 1/1: Naomivanstraatten - Post 10 (FREE)
+[F2F] ==================================================
+[F2F] Loaded cookies from ./cookies.json
+[F2F] # [NAV] Go to creators page
+[F2F] # [BTN] Check for cookie popup
+[F2F] # [BTN] Clicked accept cookies
+[F2F] # [STEP] Search creator: Naomivanstraatten
+[F2F] # [BTN] Click Create (not Messages)
+[F2F] # [BTN] Click "Post"
+[F2F] # [STEP] Nested folder structure detected - clicking parent folder 'software' first
+[F2F] # [BTN] Clicking parent folder: software
+[F2F] # [SUCCESS] Clicked parent folder: software
+[F2F] # [INFO] Parent folder clicked, waiting for nested folders to load...
+[F2F] # [STEP] Select folder by name: looking for 'lingerie foto's'
+[F2F] # [FOUND] Matched folder: 'lingerie foto's' (href: /agency/creators/naomivanstraatten/library/e3efa342-6274-462a-9a10-6862c685eb9c/)
+[F2F] # [SUCCESS] Selected folder containing 'lingerie foto's'
+[F2F] # [STEP] Load & select 1 media items (type=photo)
+⏳ Scrolling inside media grid to load more items...
+📸 Media count increased: 0 → 10
+📸 Media count increased: 10 → 30
+📸 Media count increased: 30 → 50
+📸 Media count increased: 50 → 70
+📸 Media count increased: 70 → 90
+📸 Media count increased: 90 → 110
+📸 Media count increased: 110 → 120
+⚠️ No new media (Try 1/5)
+📸 Media count increased: 120 → 140
+📸 Media count increased: 140 → 160
+📸 Media count increased: 160 → 180
+📸 Media count increased: 180 → 200
+📸 Media count increased: 200 → 220
+📸 Media count increased: 220 → 240
+📸 Media count increased: 240 → 260
+📸 Media count increased: 260 → 280
+📸 Media count increased: 280 → 300
+📸 Media count increased: 300 → 320
+📸 Media count increased: 320 → 338
+⚠️ No new media (Try 1/5)
+⚠️ No new media (Try 2/5)
+⚠️ No new media (Try 3/5)
+⚠️ No new media (Try 4/5)
+⚠️ No new media (Try 5/5)
+✅ Finished scrolling, found 338 media items
+🎲 Selecting 1 random photo item(s)...
+✅ Selected photo item 1/1
+✅ Selected 1 random photo item(s)
+[F2F] # [BTN] Next (library)
+[F2F] # [BTN] Click "Edit"
+[F2F] # [FIELD] Caption textarea
+[F2F] # [BTN] Click "Save"
+[F2F] # [BTN] Next (composer)
+[F2F] # [FLOW] Free path selected
+[F2F] # [BTN] Next (popup)
+[F2F] # [BTN] Publish now
+[F2F] ✅ Completed Naomivanstraatten post 10
+[F2F] ========================================================================
+[F2F] 🎉 CYCLE 11 COMPLETED!
+[F2F] 📊 Current progress: {'Nathalya': 9, 'Lunaa': 8, 'Lauraclauw': 8, 'Naomivanstraatten': 10}
+[F2F] ✅ Nathalya: ALL 9 posts completed
+[F2F] ✅ Lunaa: ALL 8 posts completed
+[F2F] ✅ Lauraclauw: ALL 8 posts completed
+[F2F] ✅ Naomivanstraatten: ALL 10 posts completed
+[F2F] 🎊 ALL MODELS FULLY COMPLETED! Bot finished successfully.
+[F2F] ⏳ Waiting 5 minutes before resetting for tomorrow...
+[F2F] ⏳ Waiting 300 seconds (before daily reset)...
+[F2F] 🔄 Resetting state for tomorrow's posting cycle...
+[F2F] ✅ State reset complete! Ready for tomorrow's posting cycle.
+[F2F] ========================================================================
+=== Bot Finished at Sun Sep 21 22:48:52 EEST 2025 ===

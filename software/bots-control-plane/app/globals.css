@@ -1,0 +1,211 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* DARK ADMIN THEME: Professional Dark with White Text */
+    --brand-primary: 220 100% 60%; /* #3b82f6 - Bright Blue */
+    --brand-primary-light: 220 100% 70%; /* #60a5fa */
+    --brand-primary-dark: 220 100% 50%; /* #2563eb */
+    --brand-secondary: 200 100% 50%; /* #06b6d4 - Cyan */
+    --brand-accent: 160 100% 50%; /* #10b981 - Emerald */
+    --brand-muted: 220 20% 20%; /* #374151 - Dark Gray */
+    
+    /* Dark theme colors */
+    --background: 220 20% 8%; /* Very dark blue-gray */
+    --foreground: 0 0% 100%; /* Pure white text */
+    --card: 220 20% 12%; /* Dark card background */
+    --card-foreground: 0 0% 100%; /* White text on cards */
+    --popover: 220 20% 10%; /* Dark popover */
+    --popover-foreground: 0 0% 100%; /* White popover text */
+    --primary: 220 100% 60%; /* Bright blue primary */
+    --primary-foreground: 0 0% 100%; /* White on primary */
+    --secondary: 220 20% 20%; /* Dark secondary */
+    --secondary-foreground: 0 0% 100%; /* White on secondary */
+    --muted: 220 20% 16%; /* Dark muted */
+    --muted-foreground: 220 10% 70%; /* Light gray muted text */
+    --accent: 220 20% 24%; /* Dark accent */
+    --accent-foreground: 0 0% 100%; /* White on accent */
+    --destructive: 0 84% 60%; /* Red destructive */
+    --destructive-foreground: 0 0% 100%; /* White on destructive */
+    --border: 220 20% 20%; /* Dark borders */
+    --input: 220 20% 16%; /* Dark input backgrounds */
+    --ring: 220 100% 60%; /* Blue focus ring */
+    --radius: 0.5rem;
+    
+    /* Chart colors for dark theme */
+    --chart-1: 220 100% 60%; /* Blue */
+    --chart-2: 200 100% 50%; /* Cyan */
+    --chart-3: 160 100% 50%; /* Emerald */
+    --chart-4: 280 100% 70%; /* Purple */
+    --chart-5: 40 100% 60%; /* Orange */
+    
+    /* Dark sidebar colors */
+    --sidebar-background: 220 20% 6%; /* Very dark sidebar */
+    --sidebar-foreground: 0 0% 100%; /* White sidebar text */
+    --sidebar-primary: 220 100% 60%; /* Blue sidebar primary */
+    --sidebar-primary-foreground: 0 0% 100%; /* White on sidebar primary */
+    --sidebar-accent: 220 20% 15%; /* Dark sidebar accent */
+    --sidebar-accent-foreground: 0 0% 100%; /* White on sidebar accent */
+    --sidebar-border: 220 20% 18%; /* Dark sidebar borders */
+    --sidebar-ring: 220 100% 60%; /* Blue sidebar ring */
+  }
+
+  /* PALETTE 2: Modern Teal */
+  .theme-teal {
+    --brand-primary: 20 184 166; /* #14b8a6 - Teal */
+    --brand-primary-light: 45 212 191; /* #2dd4bf */
+    --brand-primary-dark: 15 118 110; /* #0f766e */
+    --brand-secondary: 94 234 212; /* #5eead4 */
+    --brand-accent: 153 246 228; /* #99f6e4 */
+    --brand-muted: 204 251 241; /* #ccfbf1 */
+    
+    --primary: 20 184 166;
+    --primary-foreground: 255 255 255;
+    --ring: 20 184 166;
+    --chart-1: 20 184 166;
+    --chart-2: 45 212 191;
+    --chart-3: 94 234 212;
+    --chart-4: 153 246 228;
+    --chart-5: 204 251 241;
+    
+    --sidebar-primary: 20 184 166;
+    --sidebar-ring: 20 184 166;
+  }
+
+  /* PALETTE 3: Vibrant Purple */
+  .theme-purple {
+    --brand-primary: 147 51 234; /* #9333ea - Purple */
+    --brand-primary-light: 168 85 247; /* #a855f7 */
+    --brand-primary-dark: 124 58 237; /* #7c3aed */
+    --brand-secondary: 196 181 253; /* #c4b5fd */
+    --brand-accent: 221 214 254; /* #ddd6fe */
+    --brand-muted: 243 240 255; /* #f3f0ff */
+    
+    --primary: 147 51 234;
+    --primary-foreground: 255 255 255;
+    --ring: 147 51 234;
+    --chart-1: 147 51 234;
+    --chart-2: 168 85 247;
+    --chart-3: 196 181 253;
+    --chart-4: 221 214 254;
+    --chart-5: 243 240 255;
+    
+    --sidebar-primary: 147 51 234;
+    --sidebar-ring: 147 51 234;
+  }
+
+  /* PALETTE 4: Ocean Blue */
+  .theme-ocean {
+    --brand-primary: 14 116 144; /* #0e7490 - Ocean Blue */
+    --brand-primary-light: 56 189 248; /* #38bdf8 */
+    --brand-primary-dark: 8 47 73; /* #082f49 */
+    --brand-secondary: 125 211 252; /* #7dd3fc */
+    --brand-accent: 186 230 253; /* #bae6fd */
+    --brand-muted: 224 242 254; /* #e0f2fe */
+    
+    --primary: 14 116 144;
+    --primary-foreground: 255 255 255;
+    --ring: 14 116 144;
+    --chart-1: 14 116 144;
+    --chart-2: 56 189 248;
+    --chart-3: 125 211 252;
+    --chart-4: 186 230 253;
+    --chart-5: 224 242 254;
+    
+    --sidebar-primary: 14 116 144;
+    --sidebar-ring: 14 116 144;
+  }
+
+  /* PALETTE 5: Emerald Green */
+  .theme-emerald {
+    --brand-primary: 16 185 129; /* #10b981 - Emerald */
+    --brand-primary-light: 52 211 153; /* #34d399 */
+    --brand-primary-dark: 5 150 105; /* #059669 */
+    --brand-secondary: 110 231 183; /* #6ee7b7 */
+    --brand-accent: 167 243 208; /* #a7f3d0 */
+    --brand-muted: 209 250 229; /* #d1fae5 */
+    
+    --primary: 16 185 129;
+    --primary-foreground: 255 255 255;
+    --ring: 16 185 129;
+    --chart-1: 16 185 129;
+    --chart-2: 52 211 153;
+    --chart-3: 110 231 183;
+    --chart-4: 167 243 208;
+    --chart-5: 209 250 229;
+    
+    --sidebar-primary: 16 185 129;
+    --sidebar-ring: 16 185 129;
+  }
+
+  /* PALETTE 6: Sunset Orange */
+  .theme-sunset {
+    --brand-primary: 249 115 22; /* #f97316 - Orange */
+    --brand-primary-light: 251 146 60; /* #fb923c */
+    --brand-primary-dark: 234 88 12; /* #ea580c */
+    --brand-secondary: 253 186 116; /* #fdba74 */
+    --brand-accent: 254 215 170; /* #fed7aa */
+    --brand-muted: 255 237 213; /* #ffedd5 */
+    
+    --primary: 249 115 22;
+    --primary-foreground: 255 255 255;
+    --ring: 249 115 22;
+    --chart-1: 249 115 22;
+    --chart-2: 251 146 60;
+    --chart-3: 253 186 116;
+    --chart-4: 254 215 170;
+    --chart-5: 255 237 213;
+    
+    --sidebar-primary: 249 115 22;
+    --sidebar-ring: 249 115 22;
+  }
+
+  .dark {
+    /* Dark mode with brand colors */
+    --background: 15 23 42;
+    --foreground: 248 250 252;
+    --card: 30 41 59;
+    --card-foreground: 248 250 252;
+    --popover: 30 41 59;
+    --popover-foreground: 248 250 252;
+    --primary: 64 100 255; /* Lighter brand color for dark mode */
+    --primary-foreground: 15 23 42;
+    --secondary: 51 65 85;
+    --secondary-foreground: 248 250 252;
+    --muted: 51 65 85;
+    --muted-foreground: 148 163 184;
+    --accent: 51 65 85;
+    --accent-foreground: 248 250 252;
+    --destructive: 239 68 68;
+    --destructive-foreground: 248 250 252;
+    --border: 51 65 85;
+    --input: 51 65 85;
+    --ring: 64 100 255;
+    --chart-1: 64 100 255;
+    --chart-2: 120 150 255;
+    --chart-3: 200 210 255;
+    --chart-4: 248 250 252;
+    --chart-5: 51 65 85;
+    
+    /* Sidebar colors - dark mode */
+    --sidebar-background: 15 23 42;
+    --sidebar-foreground: 248 250 252;
+    --sidebar-primary: 64 100 255;
+    --sidebar-primary-foreground: 15 23 42;
+    --sidebar-accent: 51 65 85;
+    --sidebar-accent-foreground: 248 250 252;
+    --sidebar-border: 51 65 85;
+    --sidebar-ring: 64 100 255;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

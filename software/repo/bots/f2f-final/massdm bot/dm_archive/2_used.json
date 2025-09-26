@@ -1,0 +1,16 @@
+{
+  "messages": [
+    {
+      "text": "Hey babe! 💕 How's your day?",
+      "model": "Amalia.a",
+      "campaign": "test_text_followers",
+      "ts": "2025-09-18T12:04:27.929331Z"
+    },
+    {
+      "text": "Good morning beautiful! 😘",
+      "model": "Amalia.a",
+      "campaign": "test_text_followers",
+      "ts": "2025-09-18T12:08:04.196321Z"
+    }
+  ]
+}

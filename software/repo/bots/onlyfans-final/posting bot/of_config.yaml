@@ -1,0 +1,106 @@
+headless: true
+
+timeouts:
+  default_ms: 15000
+  long_ms: 35000
+
+retries:
+  clicks: 3
+
+cookies_path: "./cookies/onlyfans_cookies.json"
+
+# Global pacing between posts (can be overridden per model)
+pace:
+  between_posts:
+    mode: "random"           # "fixed" | "random" | "none"
+    random_min_seconds: 180
+    random_max_seconds: 420
+
+# GLOBAL caption provider (fallbacks if step/post/model omit)
+caption:
+  excel:
+    path: "./captions/global.xlsx"
+    sheet: "Sheet1"
+    column: "A"
+    pick_strategy: "sequential"   # "sequential" | "random"
+
+# GLOBAL archive for used captions
+caption_archive:
+  type: "json"                    # "json" | "excel"
+  json_path: "./of_archive/captions_used.json"
+  excel:
+    path: "./of_archive/captions_used.xlsx"
+    sheet: "Used"
+    column: "A"
+  replenish_when_empty: true
+  after_replenish_clear_archive: false
+
+models:
+  - name: "creator_main"
+
+    # Optional per-model pacing override
+    pace:
+      between_posts:
+        mode: "fixed"
+        fixed_seconds: 90
+
+    # Optional per-model caption provider override
+    caption:
+      excel:
+        path: "./captions/creator_main.xlsx"
+        sheet: "Sheet1"
+        column: "A"
+        pick_strategy: "random"
+
+    # Optional per-model archive override
+    caption_archive:
+      type: "json"
+      json_path: "./of_archive/creator_main_used.json"
+      replenish_when_empty: true
+
+    posts:
+      # 1) Caption from Excel (MOVE) -> Post
+      - name: "caption_excel_move"
+        sequence:
+          - type: caption
+            # You can override Excel here too:
+            # excel: { path: "./captions/special.xlsx", sheet: "S1", column: "A", pick_strategy: "sequential" }
+            # caption_archive: { type: "excel", excel: { path: "./of_archive/special_used.xlsx", sheet: "Used", column: "A" } }
+          - { type: post_now }
+
+      # 2) Quiz + Post (caption comes from Excel at model/global level)
+      - name: "quiz_day3"
+        sequence:
+          - { type: caption }     # no text => pops from Excel provider
+          - type: quiz
+            num_options: 4
+            options: ["Blue", "Red", "Green", "Black"]
+            correct_index: 2
+            duration: "3d"        # no_limit | 1d | 3d | 7d | 30d
+          - { type: post_now }
+
+      # 3) Poll + Media + Post
+      - name: "poll_plus_media"
+        sequence:
+          - { type: caption }
+          - type: poll
+            num_options: 3
+            options: ["Cosplay", "Gym set", "Outdoor"]
+            duration: "1d"
+          - type: media
+            folder_filter: "naked photos"
+            count: 3
+          - { type: post_now }
+
+      # 4) Paid media + expiration + Post
+      - name: "paid_media_expiring"
+        sequence:
+          - { type: caption }
+          - type: media
+            folder_filter: "vip set"
+            count: 2
+          - type: price
+            amount: 12.99
+          - type: expiration
+            value: "7d"
+          - { type: post_now }

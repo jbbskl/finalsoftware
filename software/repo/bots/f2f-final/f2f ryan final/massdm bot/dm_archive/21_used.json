@@ -1,0 +1,16 @@
+{
+  "messages": [
+    {
+      "text": "Check out my new photos! 📸",
+      "model": "Amalia.a",
+      "campaign": "test_media_free_photos",
+      "ts": "2025-09-18T12:30:39.181930Z"
+    },
+    {
+      "text": "What do you think? 😊",
+      "model": "Amalia.a",
+      "campaign": "test_media_free_photos",
+      "ts": "2025-09-18T12:37:04.023733Z"
+    }
+  ]
+}

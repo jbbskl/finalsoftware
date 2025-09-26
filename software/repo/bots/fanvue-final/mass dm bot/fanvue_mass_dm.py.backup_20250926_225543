@@ -1,0 +1,1898 @@
+#!/usr/bin/env python3
+"""
+Fanvue Mass DM Bot - Python Version with Playwright
+Handles 6 phases: 1 bundle+text, 1 photo+text, 4 text-only
+Each with detailed step-by-step control
+"""
+
+import os
+import json
+import time
+import random
+import pandas as pd
+import asyncio
+from datetime import datetime, timedelta
+from playwright.async_api import async_playwright, Page, Browser
+import logging
+
+# Configuration
+CONFIG = {
+    'baseUrl': 'https://www.fanvue.com',
+    'loginUrl': 'https://www.fanvue.com/signin',
+    'messagesUrl': 'https://www.fanvue.com/messages',
+    'cookiesFile': './fanvue-cookies.json',
+    'headless': False,
+    'minDMs': 1,
+    'maxDMs': 1,
+    'delayBetweenDMs': 30,
+    'testMode': False,
+    'buttonDelay': 2,
+    'messageDelay': 5,
+    'debugMode': True,
+}
+
+# 6 Phases Configuration
+PHASES = {
+    '02:00': {
+        'file': '2.xlsx',
+        'type': 'text_only',
+        'description': 'Text only mass DM'
+    },
+    '08:00': {
+        'file': '13.xlsx',
+        'type': 'text_only',
+        'description': 'Text only mass DM'
+    },
+    '13:00': {
+        'file': '17.xlsx',
+        'type': 'bundle_text',
+        'bundle_size': 3,  # Can be changed to 3
+        'price': 15,    # Can be easily changed
+        'filter': 'naked videos',  # Vault filter to use
+        'description': 'Bundle + Text mass DM'
+    },
+    '16:00': {
+        'file': '21.xlsx',
+        'type': 'text_only',
+        'description': 'Text only mass DM'
+    },
+    '18:00': {
+        'file': '18.xlsx',
+        'type': 'photo_text',
+        'filter': 'lingerie photo',  # Vault filter to use
+        'description': 'Photo + Text mass DM'
+    },
+    '21:00': {
+        'file': '22.xlsx',
+        'type': 'text_only',
+        'description': 'Text only mass DM'
+    },
+}
+
+# Set up logging
+logging.basicConfig(
+    level=logging.INFO, 
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    handlers=[
+        logging.FileHandler("/tmp/fanvue_massdm_bot.log"),
+        logging.StreamHandler()
+    ]
+)
+logging.basicConfig(
+    level=logging.INFO, 
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    handlers=[
+        logging.FileHandler("/tmp/fanvue_massdm_bot.log"),
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger(__name__)
+
+class PhaseTracker:
+    def __init__(self):
+        self.tracker_file = 'phase_tracker.json'
+        self.ensure_tracker_file()
+    
+    def ensure_tracker_file(self):
+        """Ensure phase tracker file exists"""
+        if not os.path.exists(self.tracker_file):
+            tracker_data = {
+                'last_reset_date': datetime.now().strftime('%Y-%m-%d'),
+                'completed_phases': {}
+            }
+            with open(self.tracker_file, 'w') as f:
+                json.dump(tracker_data, f, indent=2)
+            logger.info(f"✅ Created phase tracker file: {self.tracker_file}")
+    
+    def reset_if_new_day(self):
+        """Reset tracker if it's a new bot day (3:00 AM boundary)"""
+        try:
+            with open(self.tracker_file, 'r') as f:
+                tracker_data = json.load(f)
+
+            now = datetime.now()
+            # If before 3 AM, use previous day as 'bot day'; otherwise, use today
+            if now.hour < 3:
+                bot_day = (now - timedelta(days=1)).strftime('%Y-%m-%d')
+            else:
+                bot_day = now.strftime('%Y-%m-%d')
+
+            if tracker_data.get('last_reset_date') != bot_day:
+                tracker_data = {
+                    'last_reset_date': bot_day,
+                    'completed_phases': {}
+                }
+                with open(self.tracker_file, 'w') as f:
+                    json.dump(tracker_data, f, indent=2)
+                logger.info(f"✅ Reset phase tracker for new bot day: {bot_day}")
+        except Exception as e:
+            logger.error(f"❌ Error resetting phase tracker: {e}")
+    
+    def is_phase_completed_today(self, phase_time):
+        """Check if a phase has been completed today"""
+        try:
+            self.reset_if_new_day()
+            
+            with open(self.tracker_file, 'r') as f:
+                tracker_data = json.load(f)
+            
+            current_date = datetime.now().strftime('%Y-%m-%d')
+            phase_key = f"{current_date}_{phase_time}"
+            
+            is_completed = tracker_data.get('completed_phases', {}).get(phase_key, False)
+            if is_completed:
+                logger.info(f"✅ Phase {phase_time} already completed today")
+            else:
+                logger.info(f"⏳ Phase {phase_time} not completed today - can run")
+            
+            return is_completed
+        except Exception as e:
+            logger.error(f"❌ Error checking phase completion: {e}")
+            return False
+    
+    def mark_phase_completed(self, phase_time):
+        """Mark a phase as completed today"""
+        try:
+            with open(self.tracker_file, 'r') as f:
+                tracker_data = json.load(f)
+            
+            current_date = datetime.now().strftime('%Y-%m-%d')
+            phase_key = f"{current_date}_{phase_time}"
+            
+            tracker_data['completed_phases'][phase_key] = {
+                'completed_at': datetime.now().isoformat(),
+                'status': 'completed'
+            }
+            
+            with open(self.tracker_file, 'w') as f:
+                json.dump(tracker_data, f, indent=2)
+            
+            logger.info(f"✅ Marked phase {phase_time} as completed today")
+        except Exception as e:
+            logger.error(f"❌ Error marking phase completion: {e}")
+
+class MessageManager:
+    def __init__(self, excel_file):
+        self.excel_file = excel_file
+        self.used_file = f"used_{excel_file}"
+        self.ensure_message_files()
+    
+    def ensure_message_files(self):
+        if not os.path.exists(self.excel_file):
+            logger.error(f"❌ Messages file not found: {self.excel_file}")
+            raise FileNotFoundError(f"Please create {self.excel_file}")
+        
+        if not os.path.exists(self.used_file):
+            df = pd.DataFrame(columns=['Message', 'Used_Date'])
+            df.to_excel(self.used_file, index=False)
+            logger.info(f"✅ Created used messages file: {self.used_file}")
+    
+    def get_random_message(self):
+        try:
+            df = pd.read_excel(self.excel_file)
+            if df.empty:
+                raise ValueError("No messages available")
+            
+            first_column = df.columns[0]
+            message = df.sample(n=1).iloc[0][first_column]
+            logger.info(f"📝 Selected message: '{str(message)[:50]}...'")
+            return str(message)
+        except Exception as e:
+            logger.error(f"❌ Failed to get message: {e}")
+            return "Default message"
+    
+    def move_to_used_messages(self, message):
+        try:
+            used_df = pd.read_excel(self.used_file) if os.path.exists(self.used_file) else pd.DataFrame(columns=['Message', 'Used_Date'])
+            new_row = pd.DataFrame({'Message': [message], 'Used_Date': [datetime.now()]})
+            used_df = pd.concat([used_df, new_row], ignore_index=True)
+            used_df.to_excel(self.used_file, index=False)
+            
+            df = pd.read_excel(self.excel_file)
+            first_column = df.columns[0]
+            df = df[df[first_column] != message]
+            df.to_excel(self.excel_file, index=False)
+            
+            logger.info(f"✅ Moved message to used: '{str(message)[:50]}...'")
+        except Exception as e:
+            logger.error(f"❌ Failed to move message: {e}")
+
+class FanvueMassDMBot:
+    def __init__(self):
+        self.browser = None
+        self.page = None
+        self.message_manager = None
+        self.current_phase = None
+        self.phase_tracker = PhaseTracker()
+    
+    async def init_browser(self):
+        logger.info("🚀 Initializing Playwright browser...")
+        try:
+            self.playwright = await async_playwright().start()
+            self.browser = await self.playwright.chromium.launch(
+                headless=CONFIG['headless'],
+                args=[
+                    '--no-sandbox',
+                    '--disable-setuid-sandbox',
+                    '--disable-dev-shm-usage',
+                    '--disable-accelerated-2d-canvas',
+                    '--no-first-run',
+                    '--no-zygote',
+                    '--disable-gpu'
+                ]
+            )
+            context = await self.browser.new_context(
+                user_agent='Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                viewport={'width': 1920, 'height': 1080}
+            )
+            await self.load_cookies(context)
+            self.page = await context.new_page()
+            logger.info("✅ Playwright browser initialized successfully")
+            return True
+        except Exception as e:
+            logger.error(f"❌ Failed to initialize browser: {e}")
+            return False
+
+    async def load_cookies(self, context):
+        try:
+            if not os.path.exists(CONFIG['cookiesFile']):
+                logger.info("⚠️ No cookies file found")
+                return False
+            with open(CONFIG['cookiesFile'], 'r') as f:
+                cookies = json.load(f)
+            # Fix sameSite values for Playwright compatibility
+            for cookie in cookies:
+                if 'sameSite' in cookie:
+                    if cookie['sameSite'] == 'unspecified':
+                        cookie['sameSite'] = 'Lax'
+                    elif cookie['sameSite'] == 'no_restriction':
+                        cookie['sameSite'] = 'None'
+                    elif cookie['sameSite'] == 'lax':
+                        cookie['sameSite'] = 'Lax'
+                    elif cookie['sameSite'] == 'strict':
+                        cookie['sameSite'] = 'Strict'
+            logger.info(f"📄 Found {len(cookies)} cookies in file")
+            await context.add_cookies(cookies)
+            logger.info(f"✅ Added {len(cookies)} cookies")
+            return True
+        except Exception as e:
+            logger.error(f"❌ Failed to load cookies: {e}")
+            return False
+    
+    async def check_if_logged_in(self):
+        try:
+            logger.info("🔍 Checking login status...")
+            await self.page.goto(CONFIG['baseUrl'])
+            await self.page.wait_for_timeout(3000)
+            
+            try:
+                await self.page.wait_for_selector('[data-testid="user-menu"], .avatar, .profile-menu', timeout=5000)
+                logger.info("✅ User is logged in")
+                return True
+            except:
+                if 'signin' in self.page.url:
+                    logger.warning("⚠️ User is not logged in - redirected to signin page")
+                    return False
+                
+                try:
+                    await self.page.wait_for_selector('a[href*="profile"], .user-menu', timeout=3000)
+                    logger.info("✅ User appears to be logged in")
+                    return True
+                except:
+                    logger.warning("⚠️ Could not determine login status - proceeding anyway")
+                    return True  # Proceed anyway since cookies are loaded
+        except Exception as e:
+            logger.error(f"❌ Error checking login status: {e}")
+            return True  # Proceed anyway since cookies are loaded
+    
+    async def navigate_to_messages(self):
+        try:
+            logger.info("💬 Navigating to base URL first...")
+            await self.page.goto(CONFIG['baseUrl'])
+            await self.page.wait_for_timeout(3000)
+            await self.page.evaluate("document.body.style.zoom = '0.8'")
+            logger.info("✅ Successfully navigated to base URL")
+            return True
+        except Exception as e:
+            logger.error(f"❌ Failed to navigate to base URL: {e}")
+            return False
+    
+    async def get_conversations(self):
+        try:
+            logger.info("📋 Getting conversations list...")
+            
+            await self.page.wait_for_selector('.conversation-item, .chat-item, [data-testid="conversation"]', timeout=10000)
+            
+            conversations = await self.page.query_selector_all('.conversation-item, .chat-item, [data-testid="conversation"]')
+            
+            if not conversations:
+                logger.warning("⚠️ No conversations found")
+                return []
+            
+            logger.info(f"✅ Found {len(conversations)} conversations")
+            return conversations[:CONFIG['maxDMs']]
+            
+        except Exception as e:
+            logger.error(f"❌ Failed to get conversations: {e}")
+            return []
+    
+    # ===== STEP-BY-STEP FUNCTIONS =====
+    
+    async def step_click_conversation(self, conversation_element):
+        """Step 1: Click on conversation"""
+        try:
+            logger.info("🖱️ STEP 1: Clicking on conversation...")
+            await conversation_element.click()
+            await self.page.wait_for_timeout(2000)
+            logger.info("✅ STEP 1: Conversation opened")
+            return True
+        except Exception as e:
+            logger.error(f"❌ STEP 1: Failed to click conversation: {e}")
+            return False
+    
+    async def step_wait_for_message_input(self):
+        """Step 2: Wait for message input"""
+        try:
+            logger.info("⏳ STEP 2: Waiting for message input...")
+            await self.page.wait_for_selector('textarea, input[type="text"], [data-testid="message-input"]', timeout=10000)
+            logger.info("✅ STEP 2: Message input found")
+            return True
+        except Exception as e:
+            logger.error(f"❌ STEP 2: Message input not found: {e}")
+            return False
+    
+    async def step_fill_message_text(self, message):
+        """Step 3: Fill message text"""
+        try:
+            logger.info("📝 STEP 3: Filling message text...")
+            message_input = await self.page.query_selector('textarea, input[type="text"], [data-testid="message-input"]')
+            if message_input:
+                await message_input.fill(message)
+                await self.page.wait_for_timeout(1000)
+                logger.info("✅ STEP 3: Message text filled")
+                return True
+            else:
+                logger.error("❌ STEP 3: Could not find message input")
+                return False
+        except Exception as e:
+            logger.error(f"❌ STEP 3: Failed to fill message text: {e}")
+            return False
+    
+    async def step_click_attach_button(self):
+        """Step 4: Click attach button"""
+        try:
+            logger.info("📎 STEP 4: Looking for attach button...")
+            
+            attach_selectors = [
+                'button[aria-label*="attach"]',
+                'button[aria-label*="file"]',
+                'button[aria-label*="upload"]',
+                '[data-testid="attach-button"]',
+                '[data-testid="file-upload"]',
+                '.attach-button',
+                '.file-upload-button',
+                'input[type="file"]'
+            ]
+            
+            for selector in attach_selectors:
+                try:
+                    attach_button = await self.page.wait_for_selector(selector, timeout=2000)
+                    if attach_button:
+                        await attach_button.click()
+                        await self.page.wait_for_timeout(1000)
+                        logger.info(f"✅ STEP 4: Attach button clicked using selector: {selector}")
+                        return True
+                except:
+                    continue
+            
+            logger.warning("⚠️ STEP 4: No attach button found")
+            return False
+        except Exception as e:
+            logger.error(f"❌ STEP 4: Failed to click attach button: {e}")
+            return False
+    
+    async def step_upload_media(self, file_paths):
+        """Step 5: Upload media files"""
+        try:
+            logger.info(f"📁 STEP 5: Uploading {len(file_paths)} media files...")
+            
+            file_input = await self.page.query_selector('input[type="file"]')
+            if file_input:
+                await file_input.set_input_files(file_paths)
+                await self.page.wait_for_timeout(3000)
+                logger.info("✅ STEP 5: Media files uploaded")
+                return True
+            else:
+                logger.error("❌ STEP 5: Could not find file input")
+                return False
+        except Exception as e:
+            logger.error(f"❌ STEP 5: Failed to upload media files: {e}")
+            return False
+    
+    async def step_select_bundle_option(self, bundle_size):
+        """Step 6: Select bundle option"""
+        try:
+            logger.info(f"📦 STEP 6: Looking for bundle option with {bundle_size} items...")
+            
+            bundle_selectors = [
+                f'[data-testid="bundle-{bundle_size}"]',
+                f'.bundle-option-{bundle_size}',
+                f'button[aria-label*="{bundle_size}"]',
+                f'[data-bundle-size="{bundle_size}"]'
+            ]
+            
+            for selector in bundle_selectors:
+                try:
+                    bundle_button = await self.page.wait_for_selector(selector, timeout=2000)
+                    if bundle_button:
+                        await bundle_button.click()
+                        await self.page.wait_for_timeout(1000)
+                        logger.info(f"✅ STEP 6: Bundle option {bundle_size} selected")
+                        return True
+                except:
+                    continue
+            
+            logger.warning(f"⚠️ STEP 6: No bundle option found for size {bundle_size}")
+            return False
+        except Exception as e:
+            logger.error(f"❌ STEP 6: Failed to select bundle option: {e}")
+            return False
+    
+    async def step_set_price(self, price):
+        """Step 7: Set price"""
+        try:
+            logger.info(f"💰 STEP 7: Setting price to ${price}...")
+            
+            price_selectors = [
+                'input[placeholder*="price"]',
+                'input[placeholder*="Price"]',
+                '[data-testid="price-input"]',
+                '.price-input',
+                'input[type="number"]'
+            ]
+            
+            for selector in price_selectors:
+                try:
+                    price_input = await self.page.wait_for_selector(selector, timeout=2000)
+                    if price_input:
+                        await price_input.fill(str(price))
+                        await self.page.wait_for_timeout(1000)
+                        logger.info(f"✅ STEP 7: Price set to ${price}")
+                        return True
+                except:
+                    continue
+            
+            logger.warning("⚠️ STEP 7: No price input found")
+            return False
+        except Exception as e:
+            logger.error(f"❌ STEP 7: Failed to set price: {e}")
+            return False
+    
+    async def step_send_message(self):
+        """Step 8: Send message"""
+        try:
+            logger.info("📤 STEP 8: Looking for send button...")
+            
+            send_selectors = [
+                'button[aria-label*="send"]',
+                'button[aria-label*="Send"]',
+                '[data-testid="send-button"]',
+                '.send-button',
+                'button[type="submit"]',
+                'button:has-text("Send")',
+                'button:has-text("send")'
+            ]
+            
+            for selector in send_selectors:
+                try:
+                    send_button = await self.page.wait_for_selector(selector, timeout=2000)
+                    if send_button:
+                        await send_button.click()
+                        await self.page.wait_for_timeout(3000)
+                        logger.info("✅ STEP 8: Message sent")
+                        return True
+                except:
+                    continue
+            
+            logger.warning("⚠️ STEP 8: No send button found")
+            return False
+        except Exception as e:
+            logger.error(f"❌ STEP 8: Failed to send message: {e}")
+            return False
+
+    # ===== COMMON STEPS FOR EVERY PHASE =====
+    
+    async def dismiss_popups(self):
+        """Dismiss any popups that might interfere with navigation"""
+        try:
+            logger.info("🔍 Checking for popups to dismiss...")
+            
+            # Check for "Remind me later" button
+            remind_later_selectors = [
+                'button[data-sentry-element="Button"][data-sentry-source-file="PhoneNumberDialog.tsx"]',
+                'button:has-text("Remind me later")',
+                'button.mui-1o4eh22',
+                'button:has(.mui-35ezg3)'
+            ]
+            
+            for selector in remind_later_selectors:
+                try:
+                    popup_button = await self.page.wait_for_selector(selector, timeout=2000)
+                    if popup_button:
+                        logger.info(f"✅ Found popup button: {selector}")
+                        
+                        # Wait for button to be stable
+                        await self.page.wait_for_timeout(1000)
+                        
+                        # Scroll into view
+                        await popup_button.scroll_into_view_if_needed()
+                        await self.page.wait_for_timeout(1000)
+                        
+                        # Try clicking with multiple methods
+                        try:
+                            await popup_button.click()
+                            logger.info("✅ Popup clicked successfully")
+                        except:
+                            try:
+                                await popup_button.click(force=True)
+                                logger.info("✅ Popup force clicked successfully")
+                            except:
+                                # Try JavaScript click as last resort
+                                await self.page.evaluate("arguments[0].click();", popup_button)
+                                logger.info("✅ Popup JavaScript clicked successfully")
+                        
+                        await self.page.wait_for_timeout(3000)
+                        logger.info("✅ Dismissed popup")
+                        return True
+                except Exception as e:
+                    logger.info(f"❌ Popup selector failed: {selector} - {e}")
+                    continue
+            
+            logger.info("ℹ️ No popups found to dismiss")
+            return False
+        except Exception as e:
+            logger.warning(f"⚠️ Error checking for popups: {e}")
+            return False
+
+    async def simulate_human_behavior(self):
+        """Simulate human-like behavior to bypass anti-bot defenses"""
+        try:
+            logger.info("🤖 Simulating human behavior...")
+            
+            # Random mouse movements
+            await self.page.mouse.move(100, 100)
+            await self.page.wait_for_timeout(random.randint(500, 1500))
+            await self.page.mouse.move(200, 200)
+            await self.page.wait_for_timeout(random.randint(500, 1500))
+            await self.page.mouse.move(300, 150)
+            await self.page.wait_for_timeout(random.randint(500, 1500))
+            
+            # Random small scrolls
+            await self.page.evaluate("window.scrollBy(0, 50)")
+            await self.page.wait_for_timeout(random.randint(300, 800))
+            await self.page.evaluate("window.scrollBy(0, -30)")
+            await self.page.wait_for_timeout(random.randint(300, 800))
+            
+            # Random page interactions to look human
+            await self.page.keyboard.press('Tab')
+            await self.page.wait_for_timeout(random.randint(200, 600))
+            await self.page.keyboard.press('Tab')
+            await self.page.wait_for_timeout(random.randint(200, 600))
+            
+            logger.info("✅ Human behavior simulation completed")
+            
+        except Exception as e:
+            logger.warning(f"⚠️ Human behavior simulation failed: {e}")
+
+    async def wait_for_page_stability(self):
+        """Wait for page to be stable (no continuous movement)"""
+        try:
+            logger.info("⏳ Waiting for page to stabilize...")
+            
+            # First dismiss any popups
+            await self.dismiss_popups()
+            
+            # Wait for network to be idle
+            await self.page.wait_for_load_state('networkidle', timeout=15000)
+            
+            # Additional stability checks - wait for no movement
+            for i in range(3):
+                await self.page.wait_for_timeout(2000)
+                # Check if page is still moving by comparing scroll position
+                initial_scroll = await self.page.evaluate("window.pageYOffset")
+                await self.page.wait_for_timeout(1000)
+                final_scroll = await self.page.evaluate("window.pageYOffset")
+                
+                if abs(initial_scroll - final_scroll) < 5:  # Page is stable
+                    logger.info("✅ Page appears stable")
+                    break
+                else:
+                    logger.info(f"⏳ Page still moving, waiting... (attempt {i+1}/3)")
+            
+            # Final wait for any remaining animations
+            await self.page.wait_for_timeout(3000)
+            
+        except Exception as e:
+            logger.warning(f"⚠️ Page stability check failed: {e}")
+
+    async def step_click_messages_button(self):
+        """Common Step 1: Navigate to messages page (bypass anti-bot defense)"""
+        try:
+            logger.info("💬 COMMON STEP 1: Navigating to messages page...")
+            
+            # Wait for page to be stable first
+            await self.wait_for_page_stability()
+            
+            # Anti-bot defense bypass: Use human-like behavior
+            await self.simulate_human_behavior()
+            
+            # Method 1: Try direct navigation first (bypasses button clicking)
+            try:
+                logger.info("🌐 Attempting direct navigation to messages...")
+                await self.page.goto(CONFIG['messagesUrl'])
+                await self.page.wait_for_timeout(3000)
+                
+                # Verify we're on messages page
+                current_url = self.page.url
+                if '/messages' in current_url:
+                    logger.info("✅ Successfully navigated to messages page via direct URL")
+                    return True
+                else:
+                    logger.info(f"⏳ Direct navigation failed, still on: {current_url}")
+            except Exception as e:
+                logger.info(f"⏳ Direct navigation failed: {e}")
+            
+            # Method 2: Try browser history manipulation
+            try:
+                logger.info("🔄 Attempting browser history manipulation...")
+                await self.page.evaluate("window.history.pushState({}, '', '/messages');")
+                await self.page.wait_for_timeout(2000)
+                await self.page.reload()
+                await self.page.wait_for_timeout(3000)
+                
+                current_url = self.page.url
+                if '/messages' in current_url:
+                    logger.info("✅ Successfully navigated via history manipulation")
+                    return True
+            except Exception as e:
+                logger.info(f"⏳ History manipulation failed: {e}")
+            
+            # Method 3: Try keyboard navigation
+            try:
+                logger.info("⌨️ Attempting keyboard navigation...")
+                # Tab to find the Messages link
+                for i in range(10):  # Try up to 10 tabs
+                    await self.page.keyboard.press('Tab')
+                    await self.page.wait_for_timeout(500)
+                    
+                    # Check if we're focused on a Messages link
+                    focused_element = await self.page.evaluate("document.activeElement")
+                    if focused_element and ('messages' in str(focused_element).lower() or 'aria-label="Messages"' in str(focused_element)):
+                        logger.info("✅ Found Messages link via keyboard navigation")
+                        await self.page.keyboard.press('Enter')
+                        await self.page.wait_for_timeout(3000)
+                        
+                        current_url = self.page.url
+                        if '/messages' in current_url:
+                            logger.info("✅ Successfully navigated via keyboard")
+                            return True
+                        break
+            except Exception as e:
+                logger.info(f"⏳ Keyboard navigation failed: {e}")
+            
+            # Method 4: If all else fails, try clicking button with advanced bypass
+            
+            messages_selectors = [
+                'a[data-sentry-element="NavigationItem"][data-sentry-component="ChatMenuItem"][aria-label="Messages"]',
+                'a[data-sentry-element="NavigationItem"][data-sentry-component="ChatMenuItem"]',
+                'a.mui-kxf4kh[aria-label="Messages"]',
+                'a.mui-kxf4kh',
+                'a[aria-label="Messages"]',
+                'a[href="/messages"]',
+                'a:has-text("Messages")',
+                '[data-sentry-element="NavigationItem"]:has-text("Messages")',
+                'a[data-sentry-component="ChatMenuItem"]',
+                'a:has(svg[data-sentry-component="MessageCircleOutlineIcon"])'
+            ]
+            
+            for selector in messages_selectors:
+                try:
+                    logger.info(f"🔍 Trying selector: {selector}")
+                    
+                    # Wait for element with retries due to page glitching
+                    messages_button = None
+                    for attempt in range(3):
+                        try:
+                            messages_button = await self.page.wait_for_selector(selector, timeout=3000)
+                            if messages_button:
+                                break
+                        except:
+                            logger.info(f"⏳ Attempt {attempt + 1}/3 failed for selector: {selector}")
+                            await self.page.wait_for_timeout(2000)
+                    
+                    if messages_button:
+                        # Wait for page to stabilize again
+                        await self.page.wait_for_timeout(2000)
+                        
+                        # Scroll element into view and wait
+                        await messages_button.scroll_into_view_if_needed()
+                        await self.page.wait_for_timeout(2000)
+                        
+                        # Stealth click strategy to bypass anti-bot defense
+                        for click_attempt in range(3):
+                            try:
+                                # Check if element is still visible and clickable
+                                is_visible = await messages_button.is_visible()
+                                if not is_visible:
+                                    logger.info(f"⏳ Element not visible, retrying... (attempt {click_attempt + 1}/3)")
+                                    await self.page.wait_for_timeout(1000)
+                                    continue
+                                
+                                # Anti-bot defense bypass: Use stealth clicking
+                                logger.info(f"🎯 Attempting stealth click (attempt {click_attempt + 1}/3)")
+                                
+                                # Method 1: Hover first, then click (more human-like)
+                                await messages_button.hover()
+                                await self.page.wait_for_timeout(random.randint(200, 800))
+                                
+                                # Method 2: Use JavaScript click to bypass detection
+                                await self.page.evaluate("arguments[0].click();", messages_button)
+                                logger.info(f"✅ COMMON STEP 1: Messages button stealth clicked with selector: {selector}")
+                                
+                                # Wait and check if we successfully navigated
+                                await self.page.wait_for_timeout(3000)
+                                
+                                # Verify we're on messages page
+                                current_url = self.page.url
+                                if '/messages' in current_url:
+                                    logger.info("✅ Successfully navigated to messages page")
+                                    return True
+                                else:
+                                    logger.info(f"⏳ Still on {current_url}, trying again...")
+                                    
+                            except Exception as click_error:
+                                logger.info(f"⏳ Stealth click attempt {click_attempt + 1}/3 failed: {click_error}")
+                                
+                                # Fallback: Try regular click
+                                try:
+                                    await messages_button.click()
+                                    await self.page.wait_for_timeout(2000)
+                                    current_url = self.page.url
+                                    if '/messages' in current_url:
+                                        logger.info("✅ Fallback click successful")
+                                        return True
+                                except:
+                                    pass
+                                
+                                await self.page.wait_for_timeout(1000)
+                        
+                except Exception as e:
+                    logger.info(f"❌ Selector failed: {selector} - {e}")
+                    continue
+            
+            logger.warning("⚠️ COMMON STEP 1: No Messages button found")
+            return False
+        except Exception as e:
+            logger.error(f"❌ COMMON STEP 1: Failed to click Messages button: {e}")
+            return False
+    
+    async def step_click_new_mass_message(self):
+        """Common Step 2: Click new mass message button"""
+        try:
+            logger.info("➕ COMMON STEP 2: Clicking new mass message button...")
+            
+            new_message_selectors = [
+                'button[aria-label="New mass message"]',
+                'button[aria-label*="mass message"]',
+                '[data-sentry-element="Button"]:has-text("New mass message")',
+                'button:has(svg[viewBox="0 0 24 24"])'
+            ]
+            
+            for selector in new_message_selectors:
+                try:
+                    new_button = await self.page.wait_for_selector(selector, timeout=3000)
+                    if new_button:
+                        await new_button.click()
+                        await self.page.wait_for_timeout(2000)
+                        logger.info("✅ COMMON STEP 2: New mass message button clicked")
+                        return True
+                except:
+                    continue
+            
+            logger.warning("⚠️ COMMON STEP 2: No new mass message button found")
+            return False
+        except Exception as e:
+            logger.error(f"❌ COMMON STEP 2: Failed to click new mass message button: {e}")
+            return False
+    
+    async def step_click_select_lists(self):
+        """Common Step 3: Click select lists button"""
+        try:
+            logger.info("📋 COMMON STEP 3: Clicking select lists button...")
+            
+            select_lists_selectors = [
+                'button:has-text("Select lists")',
+                '[data-sentry-element="Button"]:has-text("Select lists")',
+                'button:has(p:has-text("Select lists"))',
+                'button[class*="MuiButton"]:has-text("Select lists")'
+            ]
+            
+            for selector in select_lists_selectors:
+                try:
+                    select_button = await self.page.wait_for_selector(selector, timeout=3000)
+                    if select_button:
+                        await select_button.click()
+                        await self.page.wait_for_timeout(2000)
+                        logger.info("✅ COMMON STEP 3: Select lists button clicked")
+                        return True
+                except:
+                    continue
+            
+            logger.warning("⚠️ COMMON STEP 3: No select lists button found")
+            return False
+        except Exception as e:
+            logger.error(f"❌ COMMON STEP 3: Failed to click select lists button: {e}")
+            return False
+    
+    async def step_select_all_members(self):
+        """Common Step 4: Select all members radio button"""
+        try:
+            logger.info("👥 COMMON STEP 4: Selecting all members...")
+            
+            all_members_selectors = [
+                'input[type="radio"][value="6"]',
+                'span[class*="MuiRadio-root"] input[type="radio"]',
+                '[data-sentry-element="Radio"] input[type="radio"]',
+                'input[type="radio"]'
+            ]
+            
+            for selector in all_members_selectors:
+                try:
+                    radio_button = await self.page.wait_for_selector(selector, timeout=3000)
+                    if radio_button:
+                        await radio_button.click()
+                        await self.page.wait_for_timeout(1000)
+                        logger.info("✅ COMMON STEP 4: All members selected")
+                        return True
+                except:
+                    continue
+            
+            logger.warning("⚠️ COMMON STEP 4: No all members radio button found")
+            return False
+        except Exception as e:
+            logger.error(f"❌ COMMON STEP 4: Failed to select all members: {e}")
+            return False
+
+    async def step_click_save_button(self):
+        """Common Step 5: Click Save button (common for all phases)"""
+        try:
+            logger.info("💾 COMMON STEP 5: Clicking Save button...")
+            
+            # Use the specific selector you provided
+            selector = 'button.MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeLarge.MuiButton-textSizeLarge.MuiButton-colorPrimary.MuiButton-disableElevation.MuiButton-fullWidth:has-text("Save")'
+            
+            try:
+                await self.page.wait_for_selector(selector, timeout=10000)
+                await self.page.click(selector)
+                logger.info("✅ COMMON STEP 5: Save button clicked")
+                return True
+            except:
+                # Fallback selectors
+                fallback_selectors = [
+                    'button:has-text("Save")',
+                    'button[type="button"]:has-text("Save")',
+                    '.MuiButton-root:has-text("Save")',
+                    'button.MuiButtonBase-root:has-text("Save")'
+                ]
+                
+                for fallback_selector in fallback_selectors:
+                    try:
+                        await self.page.wait_for_selector(fallback_selector, timeout=5000)
+                        await self.page.click(fallback_selector)
+                        logger.info(f"✅ COMMON STEP 5: Save button clicked with fallback selector: {fallback_selector}")
+                        return True
+                    except:
+                        continue
+                
+                logger.error("❌ COMMON STEP 5: Could not find Save button")
+                return False
+                
+        except Exception as e:
+            logger.error(f"❌ COMMON STEP 5: Error clicking Save button: {e}")
+            return False
+    
+    # ===== MESSAGE TYPE FUNCTIONS =====
+    
+    async def send_text_only_message(self, conversation_element, message):
+        """Send text-only message (4 phases)"""
+        try:
+            logger.info("💬 Sending TEXT-ONLY message...")
+            
+            # Step 1: Click conversation
+            if not await self.step_click_conversation(conversation_element):
+                return False
+            
+            # Step 2: Wait for message input
+            if not await self.step_wait_for_message_input():
+                return False
+            
+            # Step 3: Fill message text
+            if not await self.step_fill_message_text(message):
+                return False
+            
+            # Step 8: Send message
+            if not await self.step_send_message():
+                return False
+            
+            logger.info("✅ TEXT-ONLY message sent successfully")
+            return True
+        except Exception as e:
+            logger.error(f"❌ Failed to send text-only message: {e}")
+            return False
+    
+    async def send_bundle_text_message(self, conversation_element, message, bundle_size, price):
+        """Send bundle + text message (1 phase)"""
+        try:
+            logger.info(f"📦 Sending BUNDLE+TEXT message (size: {bundle_size}, price: ${price})...")
+            
+            # Step 1: Click conversation
+            if not await self.step_click_conversation(conversation_element):
+                return False
+            
+            # Step 2: Wait for message input
+            if not await self.step_wait_for_message_input():
+                return False
+            
+            # Step 3: Fill message text
+            if not await self.step_fill_message_text(message):
+                return False
+            
+            # Step 4: Click attach button
+            if not await self.step_click_attach_button():
+                return False
+            
+            # Step 5: Upload media files (you'll need to specify file paths)
+            logger.info("⚠️ STEP 5: Media upload step skipped - specify file paths in configuration")
+            
+            # Step 6: Select bundle option
+            if bundle_size > 1:
+                if not await self.step_select_bundle_option(bundle_size):
+                    logger.warning("⚠️ Bundle option not found, continuing without bundle")
+            
+            # Step 7: Set price
+            if price:
+                if not await self.step_set_price(price):
+                    logger.warning("⚠️ Price input not found, continuing without price")
+            
+            # Step 8: Send message
+            if not await self.step_send_message():
+                return False
+            
+            logger.info("✅ BUNDLE+TEXT message sent successfully")
+            return True
+        except Exception as e:
+            logger.error(f"❌ Failed to send bundle+text message: {e}")
+            return False
+    
+    async def send_photo_text_message(self, conversation_element, message, photo_path=None):
+        """Send photo + text message (1 phase)"""
+        try:
+            logger.info("📸 Sending PHOTO+TEXT message...")
+            
+            # Step 1: Click conversation
+            if not await self.step_click_conversation(conversation_element):
+                return False
+            
+            # Step 2: Wait for message input
+            if not await self.step_wait_for_message_input():
+                return False
+            
+            # Step 3: Fill message text
+            if not await self.step_fill_message_text(message):
+                return False
+            
+            # Step 4: Click attach button
+            if not await self.step_click_attach_button():
+                return False
+            
+            # Step 5: Upload photo if provided
+            if photo_path and os.path.exists(photo_path):
+                if not await self.step_upload_media([photo_path]):
+                    logger.warning("⚠️ Photo upload failed, continuing without photo")
+            else:
+                logger.warning("⚠️ No photo path provided or file doesn't exist")
+            
+            # Step 8: Send message
+            if not await self.step_send_message():
+                return False
+            
+            logger.info("✅ PHOTO+TEXT message sent successfully")
+            return True
+        except Exception as e:
+            logger.error(f"❌ Failed to send photo+text message: {e}")
+            return False
+    
+    async def choose_filter_in_popup(self, filter_name):
+        """Robustly select a filter from the filter popup, matching posting bot logic"""
+        try:
+            logger.info(f"🎯 Looking for filter in popup: '{filter_name}'...")
+            # Wait for popup to appear
+            popup_selectors = [
+                '[role="menu"]', '[role="listbox"]', '.MuiMenu-root', '.MuiPopover-root', '[class*="menu"]', '[class*="popup"]', '[class*="dropdown"]'
+            ]
+            popup = None
+            for selector in popup_selectors:
+                try:
+                    popup = await self.page.wait_for_selector(selector, timeout=5000)
+                    if popup:
+                        logger.info(f"✅ Found filter popup with selector: {selector}")
+                        break
+                except Exception as e:
+                    logger.debug(f"⚠️ Popup selector {selector} failed: {e}")
+            if not popup:
+                logger.error("❌ Could not find filter popup")
+                return False
+            # Query all filter options inside the popup
+            filter_options = await self.page.query_selector_all(f'{selector} button, {selector} [role="menuitem"], {selector} [role="option"], {selector} li, {selector} div[onclick], {selector} span')
+            logger.info(f"🔍 Found {len(filter_options)} filter options in popup")
+            # Try exact match (case-insensitive)
+            filter_name_lower = filter_name.lower()
+            found = None
+            for option in filter_options:
+                text = (await option.inner_text()).strip().lower()
+                if filter_name_lower == text:
+                    found = option
+                    logger.info(f"✅ Found exact filter match: '{text}'")
+                    break
+            # If not found, try partial match
+            if not found:
+                for option in filter_options:
+                    text = (await option.inner_text()).strip().lower()
+                    if filter_name_lower in text or any(word in text for word in filter_name_lower.split()):
+                        found = option
+                        logger.info(f"✅ Found partial filter match: '{text}'")
+                        break
+            if not found:
+                logger.error(f"❌ Could not find filter '{filter_name}' in popup")
+                # Log all available options for debugging
+                try:
+                    all_texts = []
+                    for o in filter_options:
+                        text = await o.inner_text()
+                        all_texts.append(text)
+                    logger.info(f"🔍 Available filter options: {all_texts}")
+                except Exception as debug_e:
+                    logger.warning(f"⚠️ Could not get filter options for debugging: {debug_e}")
+                return False
+            # Scroll into view and click (with JS fallback)
+            try:
+                await found.scroll_into_view_if_needed()
+                await found.click()
+                logger.info(f"✅ Clicked filter: '{await found.inner_text()}'.")
+            except Exception as e:
+                logger.warning(f"⚠️ Normal click failed, trying JS click: {e}")
+                try:
+                    await self.page.evaluate('(el) => el.click()', found)
+                    logger.info(f"✅ Clicked filter with JS: '{await found.inner_text()}'.")
+                except Exception as js_e:
+                    logger.error(f"❌ JS click also failed: {js_e}")
+                    return False
+            return True
+        except Exception as e:
+            logger.error(f"❌ Error in choose_filter_in_popup: {e}")
+            return False
+    
+    async def run_mass_dm_session(self, phase_time):
+        """Run a mass DM session for a specific phase"""
+        try:
+            self.current_phase = PHASES.get(phase_time)
+            if not self.current_phase:
+                logger.error(f"❌ No configuration found for phase time: {phase_time}")
+                return False
+            
+            excel_file = self.current_phase['file']
+            message_type = self.current_phase['type']
+            
+            logger.info(f"🚀 Starting mass DM session for {phase_time}")
+            logger.info(f"📁 File: {excel_file}")
+            logger.info(f"📝 Type: {message_type}")
+            logger.info(f"📋 Description: {self.current_phase['description']}")
+            
+            # Initialize message manager for this phase
+            self.message_manager = MessageManager(excel_file)
+            
+            # Check login status - cookies are loaded, so assume logged in
+            logger.info("✅ Assuming logged in (cookies loaded successfully)")
+            # if not await self.check_if_logged_in():
+            #     logger.error("❌ Not logged in - cannot proceed")
+            #     return False
+            
+            # Navigate to messages
+            if not await self.navigate_to_messages():
+                logger.error("❌ Could not navigate to messages")
+                return False
+            
+            # ===== COMMON STEPS FOR EVERY PHASE =====
+            logger.info("🔄 Executing common steps for mass DM...")
+            
+            # Common Step 1: Click Messages button
+            if not await self.step_click_messages_button():
+                logger.error("❌ Could not click Messages button")
+                return False
+            
+            # Delay after clicking Messages button
+            await self.page.wait_for_timeout(3000)
+            logger.info("⏳ Waiting 3 seconds after Messages button...")
+            
+            # Common Step 2: Click new mass message button
+            if not await self.step_click_new_mass_message():
+                logger.error("❌ Could not click new mass message button")
+                return False
+            
+            # Delay after clicking new mass message button
+            await self.page.wait_for_timeout(3000)
+            logger.info("⏳ Waiting 3 seconds after new mass message button...")
+            
+            # Common Step 3: Click select lists button
+            if not await self.step_click_select_lists():
+                logger.error("❌ Could not click select lists button")
+                return False
+            
+            # Delay after clicking select lists button
+            await self.page.wait_for_timeout(2000)
+            logger.info("⏳ Waiting 2 seconds after select lists button...")
+            
+            # Common Step 4: Select all members
+            if not await self.step_select_all_members():
+                logger.error("❌ Could not select all members")
+                return False
+            
+            # Delay after selecting all members
+            await self.page.wait_for_timeout(2000)
+            logger.info("⏳ Waiting 2 seconds after selecting all members...")
+            
+            # Common Step 5: Click Save button
+            if not await self.step_click_save_button():
+                logger.error("❌ Could not click Save button")
+                return False
+            
+            # Delay after clicking Save button
+            await self.page.wait_for_timeout(3000)
+            logger.info("⏳ Waiting 3 seconds after Save button...")
+            
+            logger.info("✅ Common steps completed successfully")
+            
+            # Wait for the mass DM interface to fully load
+            logger.info("🎯 Waiting for mass DM interface to fully load...")
+            await self.page.wait_for_timeout(5000)  # Wait 5 seconds for interface to load
+            
+            # Debug: Take a screenshot to see what's visible
+            try:
+                await self.page.screenshot(path="debug_mass_dm_interface.png")
+                logger.info("📸 Debug screenshot saved: debug_mass_dm_interface.png")
+            except Exception as e:
+                logger.warning(f"⚠️ Could not take debug screenshot: {e}")
+            
+            # Wait for the textarea to be visible before proceeding
+            try:
+                textarea_selector = 'textarea[placeholder="Type a message..."]'
+                await self.page.wait_for_selector(textarea_selector, timeout=15000)
+                logger.info("✅ Textarea is visible and ready")
+            except Exception as e:
+                logger.error(f"❌ Textarea not found after common steps: {e}")
+                return False
+            
+            logger.info("🎯 Mass DM interface is ready - proceeding with phase-specific steps...")
+            
+            # Get random message
+            message = self.message_manager.get_random_message()
+            logger.info(f"📝 Selected message: '{str(message)[:50]}...'")
+            
+            # Debug: Check what elements are visible on the page
+            try:
+                visible_elements = await self.page.evaluate("""
+                    const elements = document.querySelectorAll('button, textarea, input, svg');
+                    const visible = [];
+                    for (let el of elements) {
+                        if (el.offsetWidth > 0 && el.offsetHeight > 0 && el.style.display !== 'none') {
+                            visible.push({
+                                tag: el.tagName,
+                                class: el.className,
+                                placeholder: el.placeholder || '',
+                                ariaLabel: el.getAttribute('aria-label') || '',
+                                text: el.textContent ? el.textContent.substring(0, 50) : ''
+                            });
+                        }
+                    }
+                    return visible.slice(0, 20);
+                """)
+                logger.info(f"🔍 Debug: Found {len(visible_elements)} visible elements")
+                for i, elem in enumerate(visible_elements[:10]):  # Log first 10
+                    logger.info(f"🔍 Element {i}: {elem}")
+            except Exception as e:
+                logger.warning(f"⚠️ Could not debug visible elements: {e}")
+            
+            # ===== PHASE-SPECIFIC STEPS =====
+            logger.info(f"🎯 Executing phase-specific steps for {message_type}...")
+            
+            if message_type == 'text_only':
+                # Text-only phase: click textarea, fill message, send
+                logger.info("💬 TEXT-ONLY PHASE: Starting text-only flow...")
+                
+                # Step 6: Click textarea
+                try:
+                    textarea_selector = 'textarea[placeholder="Type a message..."]'
+                    await self.page.wait_for_selector(textarea_selector, timeout=10000)
+                    await self.page.click(textarea_selector)
+                    logger.info("✅ Step 6: Clicked textarea")
+                except Exception as e:
+                    logger.error(f"❌ Step 6: Could not click textarea: {e}")
+                    return False
+                
+                await self.page.wait_for_timeout(2000)
+                logger.info("⏳ Waiting 2 seconds after clicking textarea...")
+                
+                # Step 7: Type the message
+                try:
+                    await self.page.fill(textarea_selector, message)
+                    logger.info(f"✅ Step 7: Typed message: '{str(message)[:50]}...'")
+                except Exception as e:
+                    logger.error(f"❌ Step 7: Could not type message: {e}")
+                    return False
+                
+                await self.page.wait_for_timeout(2000)
+                logger.info("⏳ Waiting 2 seconds after typing message...")
+                
+                # Step 8: Click Send button
+                try:
+                    send_button_selector = 'button[aria-label="Send"]'
+                    await self.page.wait_for_selector(send_button_selector, timeout=10000)
+                    await self.page.click(send_button_selector)
+                    logger.info("✅ Step 8: Clicked Send button")
+                except Exception as e:
+                    logger.error(f"❌ Step 8: Could not click Send button: {e}")
+                    return False
+                
+                # Step 9: Wait 15 seconds
+                logger.info("⏳ Step 9: Waiting 15 seconds after sending...")
+                await self.page.wait_for_timeout(15000)
+                
+                logger.info("✅ Text-only message sent successfully")
+                
+            elif message_type == 'bundle_text':
+                # Bundle+Text phase: click textarea, type caption, select from vault, set price
+                logger.info("📦 BUNDLE+TEXT PHASE: Starting bundle+text flow...")
+                
+                # Step 6: Click textarea and type caption (same as others)
+                try:
+                    textarea_selector = 'textarea[placeholder="Type a message..."]'
+                    await self.page.wait_for_selector(textarea_selector, timeout=10000)
+                    await self.page.click(textarea_selector)
+                    logger.info("✅ Step 6: Clicked textarea")
+                except Exception as e:
+                    logger.error(f"❌ Step 6: Could not click textarea: {e}")
+                    return False
+                
+                await self.page.wait_for_timeout(3000)
+                logger.info("⏳ Waiting 3 seconds after clicking textarea...")
+                
+                # Step 7: Type the message
+                try:
+                    await self.page.fill(textarea_selector, message)
+                    logger.info(f"✅ Step 7: Typed message: '{str(message)[:50]}...'")
+                except Exception as e:
+                    logger.error(f"❌ Step 7: Could not type message: {e}")
+                    return False
+                
+                await self.page.wait_for_timeout(3000)
+                logger.info("⏳ Waiting 3 seconds after typing message...")
+                
+                # Step 8: Click photo library button (same as photo+text)
+                try:
+                    # Try multiple selectors for the photo library button
+                    photo_library_selectors = [
+                        'svg[data-sentry-element="PhotoLibraryOutlinedIcon"]:visible',
+                        'button svg[data-sentry-element="PhotoLibraryOutlinedIcon"]',
+                        'button:has(svg[data-sentry-element="PhotoLibraryOutlinedIcon"])',
+                        'button[aria-label*="vault"]',
+                        'button[aria-label*="media"]',
+                        'button[aria-label*="photo"]'
+                    ]
+                    
+                    photo_library_clicked = False
+                    for selector in photo_library_selectors:
+                        try:
+                            await self.page.wait_for_selector(selector, timeout=5000)
+                            await self.page.click(selector)
+                            logger.info(f"✅ Step 8: Clicked photo library button with selector: {selector}")
+                            photo_library_clicked = True
+                            break
+                        except Exception as e:
+                            logger.debug(f"⚠️ Selector {selector} failed: {e}")
+                            continue
+                    
+                    if not photo_library_clicked:
+                        logger.error("❌ Step 8: Could not click photo library button with any selector")
+                        return False
+                        
+                except Exception as e:
+                    logger.error(f"❌ Step 8: Could not click photo library button: {e}")
+                    return False
+                
+                await self.page.wait_for_timeout(3000)
+                logger.info("⏳ Waiting 3 seconds after clicking photo library...")
+                
+                # Step 9: Click filter button to open filter menu
+                try:
+                    filter_button_selector = 'div[role="combobox"][aria-label="folders"]'
+                    await self.page.wait_for_selector(filter_button_selector, timeout=10000)
+                    await self.page.click(filter_button_selector)
+                    logger.info("✅ Step 9: Clicked filter button")
+                except Exception as e:
+                    logger.error(f"❌ Step 9: Could not click filter button: {e}")
+                    return False
+                
+                await self.page.wait_for_timeout(3000)
+                logger.info("⏳ Waiting 3 seconds after clicking filter button...")
+                
+                # Step 10: Select filter from configuration
+                try:
+                    filter_name = self.current_phase.get('filter', 'naked videos')
+                    logger.info(f"🔍 Looking for filter: '{filter_name}'")
+                    if not await self.choose_filter_in_popup(filter_name):
+                        logger.error(f"❌ Could not select filter '{filter_name}' in popup")
+                        return False
+                except Exception as e:
+                    logger.error(f"❌ Step 10: Could not select filter '{filter_name}': {e}")
+                    return False
+                
+                await self.page.wait_for_timeout(3000)
+                logger.info("⏳ Waiting 3 seconds after selecting filter...")
+                
+                # Step 11: Scroll to load more media
+                try:
+                    # Scroll the media container multiple times
+                    for i in range(3):
+                        await self.page.evaluate("""
+                            const containers = document.querySelectorAll('.MuiDrawer-root, [role="dialog"]');
+                            for (let container of containers) {
+                                if (container.scrollHeight > container.clientHeight) {
+                                    container.scrollTop = container.scrollHeight;
+                                }
+                            }
+                        """)
+                        await self.page.wait_for_timeout(2000)
+                        logger.info(f"✅ Step 11: Scroll {i+1}/3 completed")
+                except Exception as e:
+                    logger.warning(f"⚠️ Step 11: Scroll failed: {e}")
+                
+                # Step 12: Select 1 or 2 random media (adjustable)
+                try:
+                    # Find all media selection buttons
+                    media_buttons = await self.page.query_selector_all('button[aria-label="Select media"], button[aria-label*="Select"], [role="button"][aria-label*="Select"]')
+                    
+                    if len(media_buttons) == 0:
+                        logger.error("❌ Step 12: No media buttons found")
+                        return False
+                    
+                    # Get bundle size from configuration (default 2, adjustable)
+                    bundle_size = self.current_phase.get('bundle_size', 2)
+                    num_to_select = min(bundle_size, len(media_buttons))
+                    
+                    # Select random media items
+                    import random
+                    selected_indices = random.sample(range(len(media_buttons)), num_to_select)
+                    
+                    for i, selected_index in enumerate(selected_indices):
+                        selected_button = media_buttons[selected_index]
+                        
+                        # Scroll into view and click
+                        await selected_button.scroll_into_view_if_needed()
+                        await selected_button.click()
+                        await self.page.wait_for_timeout(2000)  # Wait between selections
+                        logger.info(f"✅ Step 12: Selected media item {selected_index + 1}/{len(media_buttons)} ({i+1}/{num_to_select})")
+                    
+                except Exception as e:
+                    logger.error(f"❌ Step 12: Could not select media: {e}")
+                    return False
+                
+                await self.page.wait_for_timeout(3000)
+                logger.info("⏳ Waiting 3 seconds after selecting media...")
+                
+                # Step 13: Click "Add media" button (with JS fallback for overlay issues)
+                try:
+                    add_media_selector = 'button[data-sentry-element="Button"]:has-text("Add Media")'
+                    add_media_button = await self.page.wait_for_selector(add_media_selector, timeout=10000)
+                    
+                    # Try normal click first
+                    try:
+                        await add_media_button.click()
+                        logger.info("✅ Step 13: Clicked Add media button")
+                    except Exception as click_error:
+                        logger.warning(f"⚠️ Normal click failed, trying JS click: {click_error}")
+                        # JS click fallback to handle pointer event interception
+                        try:
+                            await self.page.evaluate('(el) => el.click()', add_media_button)
+                            logger.info("✅ Step 13: Clicked Add media button with JS fallback")
+                        except Exception as js_error:
+                            logger.error(f"❌ Both normal and JS clicks failed: {js_error}")
+                            return False
+                except Exception as e:
+                    logger.error(f"❌ Step 13: Could not find or click Add media button: {e}")
+                    return False
+                
+                await self.page.wait_for_timeout(3000)
+                logger.info("⏳ Waiting 3 seconds after adding media...")
+                await self.page.evaluate("document.body.style.zoom = '0.8'")
+
+                # Debug: Check for any confirmation buttons after clicking Add media
+                try:
+                    confirmation_buttons = await self.page.evaluate("""
+                        () => {
+                            const buttons = document.querySelectorAll('button');
+                            const results = [];
+                            for (let btn of buttons) {
+                                if (btn.offsetWidth > 0 && btn.offsetHeight > 0) {
+                                    const text = btn.textContent?.trim().toLowerCase();
+                                    if (text && (text.includes('confirm') || text.includes('done') || text.includes('add') || text.includes('ok') || text.includes('save'))) {
+                                        results.push({
+                                            text: btn.textContent?.trim(),
+                                            ariaLabel: btn.getAttribute('aria-label'),
+                                            className: btn.className,
+                                            disabled: btn.disabled
+                                        });
+                                    }
+                                }
+                            }
+                            return results;
+                        }
+                    """)
+                    logger.info(f"🔍 Confirmation buttons found: {confirmation_buttons}")
+                    
+                    # If we find a confirmation button, try clicking it
+                    if confirmation_buttons:
+                        for button_info in confirmation_buttons:
+                            if not button_info.get('disabled'):
+                                try:
+                                    await self.page.click(f'button:has-text("{button_info["text"]}")')
+                                    logger.info(f"✅ Clicked confirmation button: {button_info['text']}")
+                                    await self.page.wait_for_timeout(2000)
+                                    break
+                                except Exception as e:
+                                    logger.debug(f"⚠️ Could not click confirmation button {button_info['text']}: {e}")
+                except Exception as e:
+                    logger.warning(f"⚠️ Could not check for confirmation buttons: {e}")
+
+                # Debug: Take a screenshot of the full interface to see what's visible
+                try:
+                    await self.page.screenshot(path="debug_after_add_media.png", full_page=True)
+                    logger.info("📸 Debug screenshot saved: debug_after_add_media.png")
+                except Exception as e:
+                    logger.warning(f"⚠️ Could not take debug screenshot: {e}")
+
+                # Debug: Check what's in the message area
+                try:
+                    message_content = await self.page.evaluate("""
+                        () => {
+                            const textarea = document.querySelector('textarea[placeholder=\"Type a message...\"]');
+                            if (textarea) {
+                                return {
+                                    value: textarea.value,
+                                    placeholder: textarea.placeholder,
+                                    visible: textarea.offsetWidth > 0 && textarea.offsetHeight > 0
+                                };
+                            }
+                            return null;
+                        }
+                    """)
+                    logger.info(f"🔍 Message area content: {message_content}")
+                except Exception as e:
+                    logger.warning(f"⚠️ Could not check message content: {e}")
+
+                # Debug: Check for any media attachments in the message area
+                try:
+                    media_attachments = await self.page.evaluate("""
+                        () => {
+                            const attachments = document.querySelectorAll('[data-sentry-element*="media"], [class*="media"], [class*="attachment"]');
+                            const results = [];
+                            for (let el of attachments) {
+                                if (el.offsetWidth > 0 && el.offsetHeight > 0) {
+                                    results.push({
+                                        tagName: el.tagName,
+                                        className: el.className,
+                                        dataElement: el.getAttribute('data-sentry-element'),
+                                        ariaLabel: el.getAttribute('aria-label'),
+                                        textContent: el.textContent?.substring(0, 50)
+                                    });
+                                }
+                            }
+                            return results;
+                        }
+                    """)
+                    logger.info(f"🔍 Media attachments found: {media_attachments}")
+                except Exception as e:
+                    logger.warning(f"⚠️ Could not check media attachments: {e}")
+
+                # Step 14: Click price tag button (wait for it to be enabled first)
+                try:
+                    price_tag_selector = 'button[aria-label="Set price"][data-sentry-element="StyledMessageIcon"]'
+                    
+                    # Wait for the button to become enabled (not disabled)
+                    logger.info("⏳ Waiting for price tag button to become enabled...")
+                    max_wait_time = 30000  # 30 seconds
+                    start_time = time.time()
+                    
+                    while time.time() - start_time < max_wait_time:
+                        try:
+                            price_tag_button = await self.page.wait_for_selector(price_tag_selector, timeout=5000)
+                            
+                            # Check if button is enabled
+                            is_enabled = await self.page.evaluate("(el) => !el.disabled", price_tag_button)
+                            
+                            if is_enabled:
+                                logger.info("✅ Price tag button is now enabled!")
+                                break
+                            else:
+                                logger.info("⏳ Price tag button still disabled, waiting...")
+                                await self.page.wait_for_timeout(2000)  # Wait 2 seconds before checking again
+                                
+                        except Exception as e:
+                            logger.debug(f"⚠️ Error checking button state: {e}")
+                            await self.page.wait_for_timeout(2000)
+                    
+                    # Final check - get the button and verify it's enabled
+                    price_tag_button = await self.page.wait_for_selector(price_tag_selector, timeout=10000)
+                    
+                    # Debug: Check final button state
+                    button_state = await self.page.evaluate("""
+                        (el) => {
+                            return {
+                                disabled: el.disabled,
+                                enabled: !el.disabled,
+                                visible: el.offsetWidth > 0 && el.offsetHeight > 0,
+                                display: el.style.display,
+                                pointerEvents: el.style.pointerEvents,
+                                className: el.className,
+                                ariaLabel: el.getAttribute('aria-label'),
+                                textContent: el.textContent
+                            }
+                        }
+                    """, price_tag_button)
+                    logger.info(f"🔍 Final price tag button state: {button_state}")
+                    
+                    # Try normal click first
+                    try:
+                        await price_tag_button.click()
+                        logger.info("✅ Step 14: Clicked price tag button")
+                    except Exception as click_error:
+                        logger.warning(f"⚠️ Normal click failed, trying JS click: {click_error}")
+                        # JS click fallback to handle pointer event interception
+                        try:
+                            await self.page.evaluate('(el) => el.click()', price_tag_button)
+                            logger.info("✅ Step 14: Clicked price tag button with JS fallback")
+                        except Exception as js_error:
+                            logger.error(f"❌ Both normal and JS clicks failed: {js_error}")
+                            return False
+                except Exception as e:
+                    logger.error(f"❌ Step 14: Could not find or click price tag button: {e}")
+                    return False
+                
+                await self.page.wait_for_timeout(3000)
+                logger.info("⏳ Waiting 3 seconds after clicking price tag...")
+                
+                # Step 15: Type price amount (adjustable, default 15.99)
+                try:
+                    price_input_selector = 'input[name="price"][type="number"]'
+                    await self.page.wait_for_selector(price_input_selector, timeout=10000)
+                    await self.page.click(price_input_selector)
+                    
+                    # Get price from configuration (adjustable)
+                    price = self.current_phase.get('price', 15.99)
+                    await self.page.fill(price_input_selector, str(price))
+                    logger.info(f"✅ Step 15: Typed price amount: ${price}")
+                except Exception as e:
+                    logger.error(f"❌ Step 15: Could not type price: {e}")
+                    return False
+                
+                await self.page.wait_for_timeout(3000)
+                logger.info("⏳ Waiting 3 seconds after typing price...")
+                
+                # Step 16: Click "Set the price" button
+                try:
+                    set_price_selector = 'button:has-text("Set the price")'
+                    await self.page.wait_for_selector(set_price_selector, timeout=10000)
+                    await self.page.click(set_price_selector)
+                    logger.info("✅ Step 16: Clicked Set the price button")
+                except Exception as e:
+                    logger.error(f"❌ Step 16: Could not click Set the price button: {e}")
+                    return False
+                
+                await self.page.wait_for_timeout(3000)
+                logger.info("⏳ Waiting 3 seconds after setting price...")
+                
+                # Step 17: Click Send button
+                try:
+                    send_button_selector = 'button[aria-label="Send"]'
+                    await self.page.wait_for_selector(send_button_selector, timeout=10000)
+                    await self.page.click(send_button_selector)
+                    logger.info("✅ Step 17: Clicked Send button")
+                except Exception as e:
+                    logger.error(f"❌ Step 17: Could not click Send button: {e}")
+                    return False
+                
+                # Step 18: Wait 15 seconds
+                logger.info("⏳ Step 18: Waiting 15 seconds after sending...")
+                await self.page.wait_for_timeout(15000)
+                
+                logger.info("✅ Bundle+Text message sent successfully")
+                
+            elif message_type == 'photo_text':
+                # Photo+Text phase: click textarea, type caption, click photo library, select from vault
+                logger.info("📸 PHOTO+TEXT PHASE: Starting photo+text flow...")
+                # Step 6: Click textarea and type caption (same as text-only)
+                try:
+                    textarea_selector = 'textarea[placeholder="Type a message..."]'
+                    await self.page.wait_for_selector(textarea_selector, timeout=10000)
+                    await self.page.click(textarea_selector)
+                    logger.info("✅ Step 6: Clicked textarea")
+                except Exception as e:
+                    logger.error(f"❌ Step 6: Could not click textarea: {e}")
+                    return False
+                await self.page.wait_for_timeout(2000)
+                logger.info("⏳ Waiting 2 seconds after clicking textarea...")
+                # Step 7: Type the message
+                try:
+                    await self.page.fill(textarea_selector, message)
+                    logger.info(f"✅ Step 7: Typed message: '{str(message)[:50]}...'")
+                except Exception as e:
+                    logger.error(f"❌ Step 7: Could not type message: {e}")
+                    return False
+                await self.page.wait_for_timeout(2000)
+                logger.info("⏳ Waiting 2 seconds after typing message...")
+                # Step 8: Click photo library button (same as bundle+text)
+                try:
+                    photo_library_selectors = [
+                        'svg[data-sentry-element="PhotoLibraryOutlinedIcon"]:visible',
+                        'button svg[data-sentry-element="PhotoLibraryOutlinedIcon"]',
+                        'button:has(svg[data-sentry-element="PhotoLibraryOutlinedIcon"])',
+                        'button[aria-label*="vault"]',
+                        'button[aria-label*="media"]',
+                        'button[aria-label*="photo"]'
+                    ]
+                    photo_library_clicked = False
+                    for selector in photo_library_selectors:
+                        try:
+                            await self.page.wait_for_selector(selector, timeout=5000)
+                            await self.page.click(selector)
+                            logger.info(f"✅ Step 8: Clicked photo library button with selector: {selector}")
+                            photo_library_clicked = True
+                            break
+                        except Exception as e:
+                            logger.debug(f"⚠️ Selector {selector} failed: {e}")
+                            continue
+                    if not photo_library_clicked:
+                        logger.error("❌ Step 8: Could not click photo library button with any selector")
+                        return False
+                except Exception as e:
+                    logger.error(f"❌ Step 8: Could not click photo library button: {e}")
+                    return False
+                await self.page.wait_for_timeout(3000)
+                logger.info("⏳ Waiting 3 seconds after clicking photo library...")
+                # Step 9: Click filter button to open filter menu
+                try:
+                    filter_button_selector = 'div[role="combobox"][aria-label="folders"]'
+                    await self.page.wait_for_selector(filter_button_selector, timeout=10000)
+                    await self.page.click(filter_button_selector)
+                    logger.info("✅ Step 9: Clicked filter button")
+                except Exception as e:
+                    logger.error(f"❌ Step 9: Could not click filter button: {e}")
+                    return False
+                await self.page.wait_for_timeout(3000)
+                logger.info("⏳ Waiting 3 seconds after clicking filter button...")
+                # Step 10: Select filter from configuration (use choose_filter_in_popup)
+                try:
+                    filter_name = self.current_phase.get('filter', 'lingerie photo')
+                    logger.info(f"🔍 Looking for filter: '{filter_name}'")
+                    if not await self.choose_filter_in_popup(filter_name):
+                        logger.error(f"❌ Could not select filter '{filter_name}' in popup")
+                        return False
+                except Exception as e:
+                    logger.error(f"❌ Step 10: Could not select filter '{filter_name}': {e}")
+                    return False
+                await self.page.wait_for_timeout(3000)
+                logger.info("⏳ Waiting 3 seconds after selecting filter...")
+                # Step 11: Scroll to load more media (same as bundle+text)
+                try:
+                    for i in range(3):
+                        await self.page.evaluate("""
+                            const containers = document.querySelectorAll('.MuiDrawer-root, [role="dialog"]');
+                            for (let container of containers) {
+                                if (container.scrollHeight > container.clientHeight) {
+                                    container.scrollTop = container.scrollHeight;
+                                }
+                            }
+                        """)
+                        await self.page.wait_for_timeout(2000)
+                        logger.info(f"✅ Step 11: Scroll {i+1}/3 completed")
+                except Exception as e:
+                    logger.warning(f"⚠️ Step 11: Scroll failed: {e}")
+                # Step 12: Select 1 random media (same as bundle+text)
+                try:
+                    media_buttons = await self.page.query_selector_all('button[aria-label="Select media"], button[aria-label*="Select"], [role="button"][aria-label*="Select"]')
+                    if len(media_buttons) == 0:
+                        logger.error("❌ Step 12: No media buttons found")
+                        return False
+                    import random
+                    selected_index = random.randint(0, len(media_buttons) - 1)
+                    selected_button = media_buttons[selected_index]
+                    await selected_button.scroll_into_view_if_needed()
+                    await selected_button.click()
+                    logger.info(f"✅ Step 12: Selected media item {selected_index + 1}/{len(media_buttons)}")
+                except Exception as e:
+                    logger.error(f"❌ Step 12: Could not select media: {e}")
+                    return False
+                await self.page.wait_for_timeout(2000)
+                logger.info("⏳ Waiting 2 seconds after selecting media...")
+                # Step 13: Click "Add media" button (with JS fallback)
+                try:
+                    add_media_selector = 'button[data-sentry-element="Button"]:has-text("Add Media")'
+                    add_media_button = await self.page.wait_for_selector(add_media_selector, timeout=10000)
+                    try:
+                        await add_media_button.click()
+                        logger.info("✅ Step 13: Clicked Add media button")
+                    except Exception as click_error:
+                        logger.warning(f"⚠️ Normal click failed, trying JS click: {click_error}")
+                        try:
+                            await self.page.evaluate('(el) => el.click()', add_media_button)
+                            logger.info("✅ Step 13: Clicked Add media button with JS fallback")
+                        except Exception as js_error:
+                            logger.error(f"❌ Both normal and JS clicks failed: {js_error}")
+                            return False
+                except Exception as e:
+                    logger.error(f"❌ Step 13: Could not find or click Add media button: {e}")
+                    return False
+                await self.page.wait_for_timeout(3000)
+                logger.info("⏳ Waiting 3 seconds after adding media...")
+                
+                # Step 14: Click Send button
+                try:
+                    send_button_selector = 'button[aria-label="Send"]'
+                    await self.page.wait_for_selector(send_button_selector, timeout=10000)
+                    await self.page.click(send_button_selector)
+                    logger.info("✅ Step 14: Clicked Send button")
+                except Exception as e:
+                    logger.error(f"❌ Step 14: Could not click Send button: {e}")
+                    return False
+                
+                # Step 15: Click Confirm button (for photo+text confirmation dialog)
+                try:
+                    await self.page.wait_for_timeout(3000)  # Wait for confirmation dialog
+                    confirm_button_selector = 'button[data-sentry-element="Button"]:has-text("Confirm")'
+                    await self.page.wait_for_selector(confirm_button_selector, timeout=10000)
+                    await self.page.click(confirm_button_selector)
+                    logger.info("✅ Step 15: Clicked Confirm button")
+                except Exception as e:
+                    logger.warning(f"⚠️ Step 15: Could not click Confirm button (may not be needed): {e}")
+                
+                # Step 16: Wait 15 seconds
+                logger.info("⏳ Step 16: Waiting 15 seconds after sending...")
+                await self.page.wait_for_timeout(15000)
+                
+                logger.info("✅ Photo+Text message sent successfully")
+            
+            # Move message to used file
+            self.message_manager.move_to_used_messages(message)
+            
+            logger.info(f"✅ Mass DM session completed successfully for {message_type} phase")
+            return True
+            
+        except Exception as e:
+            logger.error(f"❌ Error in mass DM session: {e}")
+            return False
+    
+    async def run(self):
+        """Main run method"""
+        try:
+            logger.info("🚀 Starting Fanvue Mass DM Bot...")
+            
+            if not await self.init_browser():
+                logger.error("❌ Failed to initialize browser")
+                return False
+            
+            # For testing, run a specific phase
+            if CONFIG['testMode']:
+                logger.info("🧪 Running in test mode...")
+                success = await self.run_mass_dm_session('13:00')  # Test with bundle+text phase
+            else:
+                # Get current time and determine which phase to run
+                current_time = datetime.now()
+                current_time_str = current_time.strftime('%H:%M')
+                logger.info(f"🕐 Current time: {current_time_str}")
+
+                # Find the appropriate phase to run within window
+                phase_to_run = None
+                for phase_time_str in PHASES.keys():
+                    # Parse phase time
+                    phase_hour, phase_minute = map(int, phase_time_str.split(':'))
+                    phase_time = current_time.replace(hour=phase_hour, minute=phase_minute, second=0, microsecond=0)
+
+                    # Calculate window - 3 hours for 8 AM phase, 1 hour for 2 AM phase, 2 hours for others
+                    window_start = phase_time
+                    if phase_time_str == '08:00':
+                        window_end = phase_time + timedelta(hours=3)  # 8 AM to 11 AM
+                    elif phase_time_str == '02:00':
+                        window_end = phase_time + timedelta(hours=1)  # 2 AM to 3 AM
+                    else:
+                        window_end = phase_time + timedelta(hours=2)  # 2 hours for other phases
+
+                    # Check if current time is within the window
+                    if window_start <= current_time < window_end:
+                        phase_to_run = phase_time_str
+                        logger.info(f"⏰ Phase {phase_time_str} is active (window: {window_start.strftime('%H:%M')} - {window_end.strftime('%H:%M')})")
+                        break
+                    else:
+                        logger.debug(f"⏰ Phase {phase_time_str} not active (window: {window_start.strftime('%H:%M')} - {window_end.strftime('%H:%M')})")
+
+                if phase_to_run:
+                    # Check if this phase has already been completed today
+                    if self.phase_tracker.is_phase_completed_today(phase_to_run):
+                        logger.info(f"⏰ Phase {phase_to_run} already completed today - skipping")
+                        success = True
+                    else:
+                        logger.info(f"🚀 Starting phase {phase_to_run} - not completed today")
+                        success = await self.run_mass_dm_session(phase_to_run)
+                        if success:
+                            # Mark phase as completed
+                            self.phase_tracker.mark_phase_completed(phase_to_run)
+                else:
+                    logger.info(f"⏰ No active phase window for current time {current_time_str}")
+                    logger.info("🧪 TESTING MODE: Forcing 21:00 phase")
+                    success = await self.run_mass_dm_session("21:00")
+                    if success:
+                        self.phase_tracker.mark_phase_completed("21:00")
+            
+            return success
+            
+        except Exception as e:
+            logger.error(f"❌ Error in main run: {e}")
+            return False
+        finally:
+            if self.browser:
+                await self.browser.close()
+            if hasattr(self, 'playwright'):
+                await self.playwright.stop()
+
+async def main():
+    """Main function"""
+    bot = FanvueMassDMBot()
+    success = await bot.run()
+    
+    if success:
+        logger.info("✅ Mass DM bot completed successfully")
+        exit(0)
+    else:
+        logger.error("❌ Mass DM bot failed")
+        exit(1)
+
+if __name__ == "__main__":
+    asyncio.run(main()) 

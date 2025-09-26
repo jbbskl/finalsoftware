@@ -1,0 +1,29 @@
+[
+  {
+    "id": "admin-1",
+    "email": "admin@botscontrol.com",
+    "name": "System Administrator",
+    "role": "admin",
+    "userType": "admin",
+    "emailVerified": true,
+    "subscription": {
+      "plan": "enterprise",
+      "features": [
+        "all_bots",
+        "all_platforms",
+        "monitoring",
+        "analytics",
+        "subscription_management",
+        "user_management"
+      ],
+      "maxBots": 1000,
+      "maxConfigs": 1000,
+      "expiresAt": "2026-09-09T11:22:24.613Z"
+    },
+    "permissions": [
+      "*"
+    ],
+    "createdAt": "2025-09-09T11:22:24.617Z",
+    "lastLoginAt": "2025-09-09T11:22:24.617Z"
+  }
+]

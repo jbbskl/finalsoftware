@@ -1,0 +1,222 @@
+headless: false
+timezone: "Europe/Amsterdam"   # used for schedule.at parsing
+
+timeouts:
+  default_ms: 15000
+  long_ms: 30000
+
+retries:
+  clicks: 3
+
+pace:
+  between_models:
+    mode: "fixed"            # fixed | random | none
+    fixed_seconds: 120
+  between_campaigns:
+    mode: "random"
+    random_min_seconds: 60
+    random_max_seconds: 180
+
+cookies_path: "./cookies/f2f_cookies.json"
+
+# OPTIONAL global message defaults (campaign > model > global)
+message:
+  excel:
+    path: "./dm_text/global.xlsx"
+    sheet: "Sheet1"
+    column: "A"
+    pick_strategy: "sequential"     # sequential | random
+
+# OPTIONAL global archive policy for messages
+message_archive:
+  type: "json"                      # "json" | "excel"
+  auto_path: true                   # true = auto-generate per-file archives, false = use explicit path
+  archive_dir: "./dm_archive"       # directory for auto-generated archives
+  json_path: "./dm_archive/used_global.json"  # explicit path (used when auto_path: false)
+  excel:
+    path: "./dm_archive/used_global.xlsx"
+    sheet: "Used"
+    column: "A"
+  replenish_when_empty: true
+  after_replenish_clear_archive: false   # only used for JSON
+
+models:
+  - name: "amalia.a"
+
+    # Optional per-model pacing override (between its campaigns)
+    pace:
+      between_campaigns:
+        mode: "fixed"
+        fixed_seconds: 45
+
+    # Optional nested folders parent for media campaigns
+    nested_folders:
+      parent: "software"
+
+    # OPTIONAL per-model message defaults (override global)
+    message:
+      excel:
+        path: "./dm_text/amalia_msgs.xlsx"
+        sheet: "Sheet1"
+        column: "A"
+        pick_strategy: "sequential"
+
+    # OPTIONAL per-model archive override
+    message_archive:
+      type: "json"
+      json_path: "./dm_archive/amalia_used.json"
+      replenish_when_empty: true
+      after_replenish_clear_archive: false
+
+    campaigns:
+      # Campaign 1 — Followers only Text, run at 10:15 local
+      - name: "welcome_followers_text"
+        schedule: { at: "10:15" }          # waits until HH:MM local before launching
+        audience: "followers"              # followers | fans | both
+        type: "text"                       # text | tip | media
+        # OPTIONAL per-campaign message override:
+        # message:
+        #   excel: { path: "...", sheet: "...", column: "A", pick_strategy: "random" }
+        # OPTIONAL per-campaign archive override:
+        # message_archive: { ... }
+
+      # Campaign 2 — Fans Tip, random pick, scheduled
+      - name: "fans_tip_push"
+        schedule: { at: "13:00" }
+        audience: "fans"
+        type: "tip"
+        message:
+          excel:
+            path: "./dm_text/amalia_tip_copy.xlsx"
+            sheet: "Sheet1"
+            column: "A"
+            pick_strategy: "random"
+        tip:
+          amount: 12.00                   # min 5 max 2500 (auto-clamped)
+
+      # Campaign 3 — Media (Free), both audiences
+      - name: "both_media_free"
+        audience: "both"
+        type: "media"
+        message:
+          excel:
+            path: "./dm_text/amalia_media_captions.xlsx"
+            sheet: "Sheet1"
+            column: "A"
+            pick_strategy: "sequential"
+        folder_filter:
+          name_contains: "lingerie foto"
+        media:
+          count: 4
+          type: "photo"
+        paid:
+          enabled: false
+
+      # Campaign 4 — Media (Paid)
+      - name: "both_media_paid"
+        audience: "both"
+        type: "media"
+        message:
+          excel:
+            path: "./dm_text/amalia_media_captions.xlsx"
+            sheet: "Sheet1"
+            column: "A"
+            pick_strategy: "random"
+        folder_filter:
+          name_contains: "vip"
+        media:
+          count: 2
+          type: "video"
+        paid:
+          enabled: true
+          price: 9.99
+
+  # Example second model
+  - name: "sophie.b"
+    campaigns:
+      - name: "daily_welcome"
+        audience: "followers"
+        type: "text"
+        message:
+          excel:
+            path: "./dm_text/sophie_welcome.xlsx"
+            sheet: "Sheet1"
+            column: "A"
+            pick_strategy: "sequential"
+
+      - name: "fans_premium"
+        audience: "fans"
+        type: "media"
+        message:
+          excel:
+            path: "./dm_text/sophie_premium.xlsx"
+            sheet: "Sheet1"
+            column: "A"
+            pick_strategy: "random"
+        folder_filter:
+          name_contains: "premium"
+        media:
+          count: 3
+          type: "photo"
+        paid:
+          enabled: true
+          price: 15.00
+
+  # Example third model with inline messages (no Excel)
+  - name: "test.model"
+    campaigns:
+      - name: "quick_test"
+        audience: "followers"
+        type: "text"
+        message:
+          inline:
+            - "Hey babe! 💕"
+            - "How's your day going? 😘"
+            - "Miss you! ❤️"
+
+# ========================= ARCHIVE SYSTEM EXAMPLES =========================
+# 
+# APPROACH 1: AUTO-GENERATED PER-FILE ARCHIVES (RECOMMENDED)
+# With auto_path: true, each Excel file gets its own JSON archive:
+#
+# dm_text/amalia_messages.xlsx → dm_archive/amalia_messages_used.json
+# dm_text/amalia_tips.xlsx → dm_archive/amalia_tips_used.json
+# dm_text/sophie_welcome.xlsx → dm_archive/sophie_welcome_used.json
+#
+# Global config:
+# message_archive:
+#   type: "json"
+#   auto_path: true
+#   archive_dir: "./dm_archive"
+#   replenish_when_empty: true
+#
+# APPROACH 2: SINGLE GLOBAL ARCHIVE
+# With auto_path: false, all messages go to one archive:
+#
+# message_archive:
+#   type: "json"
+#   auto_path: false
+#   json_path: "./dm_archive/used_global.json"
+#   replenish_when_empty: true
+#
+# APPROACH 3: EXCEL ARCHIVES
+# Store used messages in Excel files instead of JSON:
+#
+# message_archive:
+#   type: "excel"
+#   excel:
+#     path: "./dm_archive/used_global.xlsx"
+#     sheet: "Used"
+#     column: "A"
+#   replenish_when_empty: true
+#
+# APPROACH 4: PER-MODEL OVERRIDES
+# Override global archive settings for specific models:
+#
+# models:
+#   - name: "special.model"
+#     message_archive:
+#       type: "json"
+#       auto_path: false
+#       json_path: "./dm_archive/special_model_used.json"
+#       replenish_when_empty: false

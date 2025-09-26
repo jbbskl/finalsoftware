@@ -1,0 +1,22 @@
+[
+  {
+    "name": "session_id",
+    "value": "YOUR_SESSION_ID_HERE",
+    "domain": ".fanvue.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "auth_token",
+    "value": "YOUR_AUTH_TOKEN_HERE",
+    "domain": ".fanvue.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Lax"
+  }
+]

@@ -1,0 +1,132 @@
+# Global runner options
+headless: true     # Set to false for debugging/watching
+test_mode: false   # Set to true for safe testing without actually sending
+timeouts:
+  default_ms: 15000
+  long_ms: 45000
+retries:
+  clicks: 3
+
+# Optional pacing between campaigns
+pace:
+  between_min_s: 8
+  between_max_s: 18
+
+# Close browser between each campaign for stealth (recommended true)
+reopen_between_campaigns: true
+
+# Shuffle model order
+shuffle_models: false
+
+# ===== Per-model settings =====
+models:
+  - name: "Model Alpha"
+    # Optional: separate browser data directory per model
+    # If not specified, uses shared "./browser_data" directory
+    browser_data_dir: "./browser_data"
+
+    campaigns:
+      # ---------- TEXT ONLY ----------
+      - name: "Warm-up text blast"
+        kind: "text_only"
+        audience:
+          send_to:
+            fans: true
+            muted: false
+            following: false
+            recent:
+              enabled: true
+              days_back: 0 # 0 = today only -> popup Save
+          exclude:
+            fans: false
+            muted: true
+            following: false
+            recent:
+              enabled: false
+              days_back: 0
+
+        captions:
+          enabled: true
+          type: excel         # excel | json | static
+          excel:
+            path: "captions/alpha_dm.xlsx"
+            sheet: "Sheet1"
+            column: "A"
+          json:
+            path: "captions/alpha_dm.json"  # used if type=json
+          static: []                        # used if type=static
+          randomize: true
+
+          archive:
+            mode: json                      # json | excel
+            json_path: "captions/used_alpha_dm.json"
+            excel_path: "captions/used_alpha_dm.xlsx"
+            excel_sheet: "used"
+
+      # ---------- TEXT + MEDIA + PRICE ----------
+      - name: "PPV clip push"
+        kind: "text_media"
+        audience:
+            send_to:
+              fans: true
+              muted: false
+              following: true
+              recent:
+                enabled: true
+                days_back: 3   # pick start day within this month
+            exclude:
+              fans: false
+              muted: false
+              following: false
+              recent:
+                enabled: false
+                days_back: 0
+
+        captions:
+          enabled: true
+          type: json
+          json:
+            path: "captions/alpha_ppv_messages.json"
+          randomize: true
+          archive:
+            mode: excel
+            excel_path: "captions/alpha_ppv_used.xlsx"
+            excel_sheet: "used"
+
+        media:
+          enabled: true
+          folder_name: "naked photos"   # searched in Vault list
+          count: 2
+          scroll_passes: 6
+
+        price:
+          enabled: true
+          amount: 12.99  # OF minimum is 3
+
+  - name: "Model Beta"
+    # Using shared browser data directory (same as Model Alpha)
+    # Both models will share the same login session
+    browser_data_dir: "./browser_data"
+    campaigns:
+      - name: "Fans only text"
+        kind: "text_only"
+        audience:
+          send_to:
+            fans: true
+            muted: false
+            following: false
+            recent:
+              enabled: false
+              days_back: 0
+          exclude: {}
+
+        captions:
+          enabled: true
+          type: static
+          static:
+            - "hey babe 💕 got something spicy for you later…"
+            - "missed you! thought i'd drop in and say hi 😘"
+          randomize: true
+          archive:
+            mode: json
+            json_path: "captions/beta_dm_used.json"

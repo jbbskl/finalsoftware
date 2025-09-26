@@ -1,0 +1,46 @@
+# --- COOKIE-BASED AUTHENTICATION ---
+# Update cookies.json with fresh authentication cookies from your browser
+
+# --- runtime: tuned for VPS (headless by default) ---
+runtime:
+  headless: true           # use --headed for local testing
+  slow_mo_ms: 0            # bump to 50-150 when debugging selectors
+  cookies_file: ./cookies.json
+  base_url: https://www.fanvue.com
+  viewport_width: 1280
+  viewport_height: 800
+  default_timeout_ms: 25000
+
+# --- sensible defaults for jobs (can be overridden per job) ---
+defaults:
+  audience: subscribers            # subscribers | followers_and_subscribers
+  post_type: text                  # text | text_media | media
+  caption: ""                      # only used for text or text_media
+  folder_filter: null              # e.g., "naked videos" (optional)
+  media_titles: []                 # exact titles from vault (span[aria-label])
+  select_first_n: null             # fallback: pick first N if titles not given
+  price: null                      # optional, media/text_media only (best-effort UI)
+
+# --- batch of posts to run in sequence ---
+jobs:
+  - name: morning_text_blast
+    post_type: text
+    audience: subscribers
+    caption: "good morning ☀️ new drops later today!"
+
+  - name: teaser_for_all
+    post_type: text_media
+    audience: followers_and_subscribers
+    caption: "sneak peek 👀💋"
+    folder_filter: "naked videos"
+    media_titles:
+      - "IMG_6499"
+      - "IMG_6500"
+    price: null   # keep free for followers+subs
+
+  - name: paid_drop_duo
+    post_type: media
+    audience: subscribers
+    folder_filter: "naked videos"
+    select_first_n: 2
+    price: 7.99   # if UI supports price field, bot will set it (otherwise safely skips)

@@ -1,0 +1,22 @@
+2025/09/20-17:03:34.450 f403 Creating DB /Users/julianbik/Desktop/clients/fanvue final/posting bot/.fanvue_test_data/Default/IndexedDB/https_www.fanvue.com_0.indexeddb.leveldb since it was missing.
+2025/09/20-17:03:34.458 f403 Reusing MANIFEST /Users/julianbik/Desktop/clients/fanvue final/posting bot/.fanvue_test_data/Default/IndexedDB/https_www.fanvue.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/09/20-17:03:34.524 f403 Manual compaction at level-0 from '\x00\x02\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x03\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/09/20-17:03:34.542 f403 Level-0 table #5: started
+2025/09/20-17:03:34.547 f403 Level-0 table #5: 2942 bytes OK
+2025/09/20-17:03:34.553 f403 Delete type=0 #3
+2025/09/20-17:03:34.554 8a03 Manual compaction at level-0 from '\x00\x04\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x05\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/09/20-17:03:52.399 f403 Level-0 table #7: started
+2025/09/20-17:03:52.408 f403 Level-0 table #7: 524 bytes OK
+2025/09/20-17:03:52.413 f403 Delete type=0 #4
+2025/09/20-17:03:52.413 f403 Manual compaction at level-0 from '\x00\x05\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x06\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/09/20-17:03:52.416 8a03 Level-0 table #9: started
+2025/09/20-17:03:52.420 8a03 Level-0 table #9: 515 bytes OK
+2025/09/20-17:03:52.424 8a03 Delete type=0 #6
+2025/09/20-17:03:52.424 8a03 Manual compaction at level-0 from '\x00\x06\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x07\x00\x00\x00' @ 0 : 0; will stop at '\x00\x06\x00\x00\x05' @ 229 : 1
+2025/09/20-17:03:52.424 8a03 Compacting 1@0 + 1@1 files
+2025/09/20-17:03:52.428 8a03 Generated table #10@0: 13 keys, 485 bytes
+2025/09/20-17:03:52.428 8a03 Compacted 1@0 + 1@1 files => 485 bytes
+2025/09/20-17:03:52.432 8a03 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/09/20-17:03:52.432 8a03 Delete type=2 #7
+2025/09/20-17:03:52.432 8a03 Delete type=2 #9
+2025/09/20-17:03:52.432 8a03 Manual compaction at level-0 from '\x00\x06\x00\x00\x05' @ 229 : 1 .. '\x00\x07\x00\x00\x00' @ 0 : 0; will stop at (end)

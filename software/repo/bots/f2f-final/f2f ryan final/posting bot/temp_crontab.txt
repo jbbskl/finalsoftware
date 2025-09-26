@@ -1,0 +1,4 @@
+# F2F Posting Bot - Ryan's Models
+# Runs daily at 9:30 AM local time (8:30 AM Dutch time)
+# Automatically completes all 35 posts in rotation mode
+30 9 * * * "/Users/julianbik/Desktop/clients/f2f final/f2f ryan final/posting bot/run_bot_wrapper.sh"

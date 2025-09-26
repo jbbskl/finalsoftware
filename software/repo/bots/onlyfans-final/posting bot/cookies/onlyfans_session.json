@@ -1,0 +1,145 @@
+{
+  "cookies": [
+    {
+      "name": "_GRECAPTCHA",
+      "value": "09AG7bzvHStelelfOtqGHvVNCa-XUSltesaBF94AxWogxdPy8gEShjmxjwaBh0vI4DhmGeJR3l41ASunEZvtnkF_Q",
+      "domain": "recaptcha.net",
+      "path": "/recaptcha",
+      "expires": 1773865773.05061,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "__cf_bm",
+      "value": "y_4UUOpTNak19HJxQgBtjy61xJvZYdU9a2UIVWAQf7Q-1758313753-1.0.1.1-B5ZyXq2vgYmokX1B5KtQ2Eo0t5O1r5QoSOK_DtM32P.tuYnsReCi_JDb85tXZOSUPP5uSPyn82piT1sAg57Y8EQR0m7gGg7A3TdSNKiMw4A",
+      "domain": ".onlyfans.com",
+      "path": "/",
+      "expires": 1758315553.009883,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_cfuvid",
+      "value": "Od4SkveaO77jMkv1ix8x2.g1fuWbrJfJbtH3EYtwOoQ-1758313753094-0.0.1.1-604800000",
+      "domain": ".onlyfans.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "fp",
+      "value": "4f337fb07bbcd8e90e5ffea1c8e4361c4adaee19",
+      "domain": ".onlyfans.com",
+      "path": "/",
+      "expires": 1789849754,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "csrf",
+      "value": "cK40WnsN109c872993a17adb436c236a53d75b95",
+      "domain": "onlyfans.com",
+      "path": "/",
+      "expires": 1792873785.901409,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "lang",
+      "value": "en",
+      "domain": ".onlyfans.com",
+      "path": "/",
+      "expires": 1792873754.620128,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "cookiesAccepted",
+      "value": "all",
+      "domain": ".onlyfans.com",
+      "path": "/",
+      "expires": 1792873758.483111,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "sess",
+      "value": "s4g9f7florg0sujqsu70de72n6",
+      "domain": "onlyfans.com",
+      "path": "/",
+      "expires": 1759177785.901324,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "auth_id",
+      "value": "506486987",
+      "domain": "onlyfans.com",
+      "path": "/",
+      "expires": 1792873785.379252,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ref_src",
+      "value": "",
+      "domain": ".onlyfans.com",
+      "path": "/",
+      "expires": 1789849787,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "st",
+      "value": "a9938864a9446b5622978a7d712cf4510b0c28cfab38f9c485120d6710b1c6e5",
+      "domain": ".onlyfans.com",
+      "path": "/",
+      "expires": 1792873788.459225,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://onlyfans.com",
+      "localStorage": [
+        {
+          "name": "bcTokenSha",
+          "value": "4f337fb07bbcd8e90e5ffea1c8e4361c4adaee19"
+        },
+        {
+          "name": "initObject",
+          "value": "{\"value\":{\"pwaPublicKey\":\"BC46256EdWhyVgZvj1-fsh-_GcV7GsfcEAm5IF942nim_pFJVUPcB4EitK3kuEJAuTBfD371U5HZaMHEeAEONzs\",\"postMediaConfig\":{\"types\":[\"gif\",\"photo\",\"video\",\"stream\",\"audio\"],\"ext\":{\"gif\":\"gif\",\"photo\":\"jpe?g|gif|png|heic\",\"banking\":\"jpe?g|png\",\"vat_doc\":\"jpe?g|png|pdf\",\"video\":\"mp4|moo?v|m4v|mpe?g|wmv|avi|webm|mkv\",\"stream\":\"stream\",\"audio\":\"mp3|wav|ogg\",\"admin_tickets_requests\":\"jpe?g|png|pdf|mp3|mp4\",\"rf\":\"jpe?g|png|pdf\",\"profile_links\":\"jpe?g|gif|png|heic|webp\"},\"count\":{\"gif\":1,\"photo\":40,\"video\":1,\"stream\":1,\"audio\":1},\"params\":{\"photo\":{\"max_width\":10000,\"max_height\":10000,\"min_width\":16,\"min_height\":16},\"banking\":{\"max_file_size\":7340032,\"min_file_size\":102400,\"max_width\":10000,\"max_height\":10000,\"min_width\":800,\"min_height\":800,\"min_dpi\":0,\"min_format_size\":{\"x\":800,\"y\":1200}},\"vat_doc\":{\"max_file_size\":10485760,\"max_width\":10000,\"max_height\":10000,\"min_width\":800,\"min_height\":800,\"min_dpi\":0},\"rf\":{\"max_file_size\":10485760,\"max_width\":10000,\"max_height\":10000,\"min_width\":800,\"min_height\":800,\"min_dpi\":72}},\"prefix\":\"https://media.onlyfans.com\",\"thumbs_prefix\":\"https://cdn2.onlyfans.com\",\"geo_converter\":{\"hosts\":[\"convert.onlyfans.com\"],\"proto\":\"https\",\"path\":\"/file/upload\",\"args\":{\"preset\":\"of_beta\",\"protected_preset\":\"of_drm\",\"preset_png\":\"of_png\",\"isDelay\":true,\"needThumbs\":true},\"types\":[\"gif\",\"photo\",\"video\",\"audio\"]},\"extensions\":{\"gif\":[\".gif\",\"image/gif\"],\"photo\":[\".jpeg\",\"image/jpeg\",\"image/pjpeg\",\".jpg\",\".gif\",\"image/gif\",\".png\",\"image/png\",\"image/x-png\",\".heic\"],\"banking\":[\".jpeg\",\"image/jpeg\",\"image/pjpeg\",\".jpg\",\".png\",\"image/png\",\"image/x-png\"],\"vat_doc\":[\".jpeg\",\"image/jpeg\",\"image/pjpeg\",\".jpg\",\".png\",\"image/png\",\"image/x-png\",\".pdf\",\"application/pdf\",\"application/x-download\"],\"video\":[\".mp4\",\"application/mp4\",\"audio/mp4\",\"video/mp4\",\".moov\",\".mov\",\"video/quicktime\",\".m4v\",\".mpeg\",\"video/mpeg\",\".mpg\",\".wmv\",\"video/x-ms-wmv\",\"application/octet-stream\",\".avi\",\"video/avi\",\"video/msvideo\",\"video/x-msvideo\",\".webm\",\".mkv\",\"video/x-matroska\"],\"stream\":[\".stream\"],\"audio\":[\".mp3\",\"audio/mpeg\",\".wav\",\"audio/x-wav\",\".ogg\",\"application/ogg\"],\"admin_tickets_requests\":[\".jpeg\",\"image/jpeg\",\"image/pjpeg\",\".jpg\",\".png\",\"image/png\",\"image/x-png\",\".pdf\",\"application/pdf\",\"application/x-download\",\".mp3\",\"audio/mpeg\",\".mp4\",\"application/mp4\",\"audio/mp4\",\"video/mp4\"],\"rf\":[\".jpeg\",\"image/jpeg\",\"image/pjpeg\",\".jpg\",\".png\",\"image/png\",\"image/x-png\",\".pdf\",\"application/pdf\",\"application/x-download\"],\"profile_links\":[\".jpeg\",\"image/jpeg\",\"image/pjpeg\",\".jpg\",\".gif\",\"image/gif\",\".png\",\"image/png\",\"image/x-png\",\".heic\",\".webp\",\"image/webp\"]}},\"personalConfig\":{\"prefix\":\"/my/\",\"avatar\":{\"minWidth\":100,\"minHeight\":100,\"min_width\":100,\"min_height\":100,\"max_width\":10000,\"max_height\":10000},\"header\":{\"minWidth\":100,\"minHeight\":100,\"min_width\":100,\"min_height\":100,\"max_width\":10000,\"max_height\":10000},\"max_pinned_posts_count\":5},\"settings\":{\"isImageWatermarkNeeded\":true,\"userLoginPrefix\":\"u\",\"subscribeMinPrice\":4.99,\"subscribeMaxPrice\":50},\"paymentGatesEnabledForCardAdd\":[\"stripe\",\"securionpay_wl\",\"inovio\",\"ccbill\",\"nuvei\",\"nuvei_us\",\"ebanx\",\"worldpay_us\",\"checkout\"],\"cardsApiUrl\":\"https://cards.onlyfans.com/\",\"cards\":{\"securionpay\":{\"publicKeys\":[{\"publicKey\":\"pk_live_tHxz1MnE66sarkLtjgWQCtvF\",\"first\":[34,37,6011,[622126,622925],[624000,626999],[628200,628899],64,65,[3528,3589],2014,2149,36,[300,305],3095,38,39],\"users\":[{\"comparison\":\"less\",\"id\":3429365}]},{\"publicKey\":\"pk_live_tp4lY7jzjnWomr8G3KLAK9AL\"}]},\"securionpayWl\":{\"publicKey\":\"pk_live_zgecxqMufJXZfFF2JKqQ54BW\"},\"inovio\":{\"proxyHost\":null},\"checkout\":{\"baseUri\":\"https://api.checkout.com/\",\"publicKey\":\"pk_vzbr6i6fvnmclc5hj3oyznncbym\"}},\"allowedMessages\":[\"account_connected_to_another_user_google\",\"account_connected_to_another_user_twitter\",\"account_suspended\",\"code_verification_expired\",\"email_not_available\",\"email_already_exists\"],\"tipsMin\":5,\"tipsMinInternal\":1,\"addCardFrameUrl\":\"https://forms.onlyfans.com/\",\"isScanCardEnabled\":true,\"isPostsViewsEnabled\":true,\"isProfilesViewsEnabled\":true,\"isProfilesVisitsEnabled\":true,\"isClicksStatsEnabled\":true,\"faceIdAvailable\":true,\"cardVerification\":{\"maxAmount\":1.89,\"minAmount\":0.51},\"socialMediaProviders\":[{\"socialMedia\":\"instagram\",\"label\":\"Instagram\",\"isLink\":false,\"isShowAt\":false},{\"socialMedia\":\"x\",\"label\":\"X\",\"isLink\":false,\"isShowAt\":false},{\"socialMedia\":\"facebook\",\"label\":\"Facebook\",\"isLink\":false,\"isShowAt\":false},{\"socialMedia\":\"youtube\",\"label\":\"Youtube\",\"isLink\":false,\"isShowAt\":true},{\"socialMedia\":\"tiktok\",\"label\":\"Tiktok\",\"isLink\":false,\"isShowAt\":true},{\"socialMedia\":\"snapchat\",\"label\":\"Snapchat\",\"isLink\":false,\"isShowAt\":false},{\"socialMedia\":\"amazon\",\"label\":\"Amazon\",\"isLink\":true,\"isShowAt\":false},{\"socialMedia\":\"twitch\",\"label\":\"Twitch\",\"isLink\":false,\"isShowAt\":false},{\"socialMedia\":\"discord\",\"label\":\"Discord\",\"isLink\":true,\"isShowAt\":false},{\"socialMedia\":\"patreon\",\"label\":\"Patreon\",\"isLink\":false,\"isShowAt\":false},{\"socialMedia\":\"pinterest\",\"label\":\"Pinterest\",\"isLink\":false,\"isShowAt\":false},{\"socialMedia\":\"etsy\",\"label\":\"Etsy\",\"isLink\":true,\"isShowAt\":false},{\"socialMedia\":\"bereal\",\"label\":\"Bereal\",\"isLink\":true,\"isShowAt\":false},{\"socialMedia\":\"kick\",\"label\":\"Kick\",\"isLink\":false,\"isShowAt\":false},{\"socialMedia\":\"depop\",\"label\":\"Depop\",\"isLink\":false,\"isShowAt\":false},{\"socialMedia\":\"poshmark\",\"label\":\"Poshmark\",\"isLink\":false,\"isShowAt\":false},{\"socialMedia\":\"vsco\",\"label\":\"Vsco\",\"isLink\":true,\"isShowAt\":false},{\"socialMedia\":\"threads\",\"label\":\"Threads\",\"isLink\":false,\"isShowAt\":true},{\"socialMedia\":\"throne\",\"label\":\"Throne\",\"isLink\":false,\"isShowAt\":false},{\"socialMedia\":\"shopltk\",\"label\":\"Shopltk\",\"isLink\":false,\"isShowAt\":false},{\"socialMedia\":\"oftv\",\"label\":\"OFTV\",\"isLink\":false,\"isShowAt\":false},{\"socialMedia\":\"bsky\",\"label\":\"Bluesky\",\"isLink\":false,\"isShowAt\":false}],\"usersLinksMaxLimit\":20,\"socialButtonsMaxLimit\":10,\"upload\":{\"geoUploadTypes\":[\"gif\",\"photo\",\"video\",\"audio\"],\"geoUploadHosts\":[{\"host\":\"convert.onlyfans.com\",\"url\":\"https://convert.onlyfans.com/file/upload\"}],\"s3\":{\"uploadPath\":\"upload/\",\"secureUploadPath\":\"upload/secure/\"}},\"recaptchaEPublic\":\"6LcvNcwdAAAAAMWAuNRXH74u3QePsEzTm6GEjx0J\",\"recaptchaECPublic\":\"6LddGoYgAAAAAHD275rVBjuOYXiofr1u4pFS5lHn\",\"turnstile\":{\"managed\":\"0x4AAAAAAAxTpmbMvo7Qj6zy\",\"invisible\":\"0x4AAAAAAAxTqMnJc6h5lGQ5\"},\"isTwitterManualPostingEnabled\":false,\"captcha\":[\"turnstile\",\"recaptcha_enterprise\"]},\"datetime\":1758313754621,\"revision\":\"202509190748-a02ec2d7dd\"}"
+        },
+        {
+          "name": "cookiesAccepted",
+          "value": "all"
+        },
+        {
+          "name": "pvh",
+          "value": "{}"
+        },
+        {
+          "name": "_grecaptcha",
+          "value": "09AG7bzvEMyNqsq9DJPC4RVBT02tDkDcrHh8sTJh4E25VqPpwHsDRlOUrl61ebEaYijVXCAHk9aUw5C7zm7r2pP8MRf6uSwFAfItn4C6EHpRKzBISg3mZNEvbkj3mQzOYI"
+        },
+        {
+          "name": "user",
+          "value": "506486987"
+        }
+      ]
+    }
+  ]
+}

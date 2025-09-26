@@ -1,0 +1,55 @@
+{
+  "base_url": "https://www.fanvue.com",
+  "login_url": "https://www.fanvue.com/signin", 
+  "messages_url": "https://www.fanvue.com/messages",
+  "phases": {
+    "02:00": {
+      "file": "2.xlsx",
+      "type": "text_only",
+      "description": "Text only mass DM"
+    },
+    "08:00": {
+      "file": "8.xlsx",
+      "type": "text_only",
+      "description": "Text only mass DM"
+    },
+    "13:00": {
+      "file": "13.xlsx",
+      "type": "bundle_text",
+      "bundle_size": 3,
+      "price": 15,
+      "filter": "naked videos",
+      "description": "Bundle + Text mass DM"
+    },
+    "16:00": {
+      "file": "21.xlsx",
+      "type": "text_only",
+      "description": "Text only mass DM"
+    },
+    "18:00": {
+      "file": "18.xlsx",
+      "type": "photo_text",
+      "filter": "lingerie photo",
+      "description": "Photo + Text mass DM"
+    },
+    "21:00": {
+      "file": "22.xlsx",
+      "type": "text_only",
+      "description": "Text only mass DM"
+    }
+  },
+  "browser_settings": {
+    "headless": true,
+    "button_delay": 2,
+    "message_delay": 5,
+    "debug_mode": true
+  },
+  "mass_dm_settings": {
+    "min_dms": 1,
+    "max_dms": 5,
+    "delay_between_dms": 30
+  },
+  "files": {
+    "cookies": "fanvue-cookies.json"
+  }
+}

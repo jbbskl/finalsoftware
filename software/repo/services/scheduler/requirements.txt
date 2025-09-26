@@ -1,0 +1,6 @@
+croniter==2.0.5
+psycopg[binary]==3.1.19
+redis==5.0.3
+python-dotenv==1.0.1
+sqlalchemy==2.0.30
+requests==2.31.0

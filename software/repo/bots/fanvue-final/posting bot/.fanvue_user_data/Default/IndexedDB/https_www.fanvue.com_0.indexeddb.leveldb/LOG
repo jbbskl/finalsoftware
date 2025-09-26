@@ -1,0 +1,10 @@
+2025/09/20-17:07:11.360 8a03 Creating DB /Users/julianbik/Desktop/clients/fanvue final/posting bot/.fanvue_user_data/Default/IndexedDB/https_www.fanvue.com_0.indexeddb.leveldb since it was missing.
+2025/09/20-17:07:11.368 8a03 Reusing MANIFEST /Users/julianbik/Desktop/clients/fanvue final/posting bot/.fanvue_user_data/Default/IndexedDB/https_www.fanvue.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/09/20-17:07:11.392 f303 Level-0 table #5: started
+2025/09/20-17:07:11.397 f303 Level-0 table #5: 1722 bytes OK
+2025/09/20-17:07:11.408 f303 Delete type=0 #3
+2025/09/20-17:07:11.408 a303 Manual compaction at level-0 from '\x00\x02\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x03\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/09/20-17:07:11.414 a303 Level-0 table #7: started
+2025/09/20-17:07:11.416 a303 Level-0 table #7: 1577 bytes OK
+2025/09/20-17:07:11.422 a303 Delete type=0 #4
+2025/09/20-17:07:11.423 a303 Manual compaction at level-0 from '\x00\x04\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x05\x00\x00\x00' @ 0 : 0; will stop at (end)
