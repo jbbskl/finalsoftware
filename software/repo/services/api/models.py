@@ -135,3 +135,16 @@ class Secret(Base):
     name = Column(String(255), nullable=False)
     provider = Column(String(50), nullable=False)
     secret_ref = Column(String(500), nullable=False)
+
+# Bot instances table (renamed from bots to match requirements)
+class BotInstance(Base):
+    __tablename__ = "bot_instances"
+    
+    id = Column(String(36), primary_key=True)
+    org_id = Column(String(36), ForeignKey("organizations.id"), nullable=False)
+    name = Column(String(255), nullable=False)
+    platform = Column(String(100), nullable=False)
+    status = Column(String(50), nullable=False, default='inactive')
+    config_dir = Column(String(500), nullable=True)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())

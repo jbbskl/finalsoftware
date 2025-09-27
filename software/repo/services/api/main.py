@@ -3,7 +3,7 @@ from pydantic import BaseModel
 import os
 import datetime
 
-from routers import configs, schedules, runs
+from routers import configs, schedules, runs, bot_instances
 
 app = FastAPI(title="Control Plane API")
 
@@ -16,7 +16,12 @@ class Health(BaseModel):
 def healthz():
     return Health(status="ok", time=datetime.datetime.utcnow().isoformat()+"Z")
 
+@app.get("/health", response_model=Health)
+def health():
+    return Health(status="ok", time=datetime.datetime.utcnow().isoformat()+"Z")
+
 # Include routers
 app.include_router(configs.router)
 app.include_router(schedules.router)
 app.include_router(runs.router)
+app.include_router(bot_instances.router)

@@ -1,5 +1,5 @@
 # services/worker/worker.py
-import json, os, subprocess, tempfile, shutil
+import json, os, subprocess, tempfile, shutil, time
 from pathlib import Path
 from celery.utils.log import get_task_logger
 import boto3
@@ -89,3 +89,73 @@ def run_bot(self, image_ref: str, run_id: str, config: dict):
         # Clean up local artifacts
         shutil.rmtree(artifacts_dir, ignore_errors=True)
         return {"run_id": run_id, "exit_code": code, "artifacts_url": artifacts_url}
+
+@app.task(name="tasks.validate_bot")
+def validate_bot(instance_id: str, config_dir: str):
+    """Validate bot instance by checking required files"""
+    log.info(f"Validating bot instance {instance_id} in {config_dir}")
+    
+    try:
+        # Check if config_dir exists
+        config_path = Path(config_dir)
+        if not config_path.exists():
+            log.error(f"Config directory does not exist: {config_dir}")
+            return {"status": "error", "message": "Config directory not found"}
+        
+        # Check for required files
+        secrets_dir = config_path / "secrets"
+        storage_state_file = secrets_dir / "storageState.json"
+        config_file = config_path / "config.yaml"
+        
+        missing_files = []
+        if not storage_state_file.exists():
+            missing_files.append("secrets/storageState.json")
+        if not config_file.exists():
+            missing_files.append("config.yaml")
+        
+        if missing_files:
+            log.error(f"Missing required files: {missing_files}")
+            return {"status": "error", "message": f"Missing files: {', '.join(missing_files)}"}
+        
+        log.info(f"Bot instance {instance_id} validation successful")
+        return {"status": "success", "message": "Validation passed"}
+        
+    except Exception as e:
+        log.error(f"Error validating bot {instance_id}: {str(e)}")
+        return {"status": "error", "message": str(e)}
+
+@app.task(name="tasks.run_bot")
+def run_bot(instance_id: str, config_dir: str):
+    """Run bot instance - stub implementation"""
+    log.info(f"Starting bot run for instance {instance_id} in {config_dir}")
+    
+    try:
+        # Create logs directory
+        logs_dir = Path("/data/tenants") / "default" / instance_id / "logs"
+        logs_dir.mkdir(parents=True, exist_ok=True)
+        
+        # Create timestamped log file
+        timestamp = int(time.time())
+        log_file = logs_dir / f"run_{timestamp}.log"
+        
+        # Write initial log entry
+        with open(log_file, "w") as f:
+            f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Starting bot run for instance {instance_id}\n")
+            f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Config directory: {config_dir}\n")
+        
+        log.info(f"Created log file: {log_file}")
+        
+        # Simulate bot work (sleep for 2 seconds as requested)
+        time.sleep(2)
+        
+        # Write success message
+        with open(log_file, "a") as f:
+            f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Bot run completed successfully\n")
+            f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] SUCCESS\n")
+        
+        log.info(f"Bot run completed for instance {instance_id}")
+        return {"status": "success", "message": "Bot run completed", "log_file": str(log_file)}
+        
+    except Exception as e:
+        log.error(f"Error running bot {instance_id}: {str(e)}")
+        return {"status": "error", "message": str(e)}
