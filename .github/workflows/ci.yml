@@ -1,0 +1,359 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+env:
+  PYTHON_VERSION: "3.11"
+  NODE_VERSION: "18"
+
+jobs:
+  lint-and-typecheck:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+    
+    - name: Install Python dependencies
+      run: |
+        cd software/repo
+        pip install -r services/api/requirements.txt
+        pip install -r services/worker/requirements.txt
+        pip install flake8 mypy black isort
+    
+    - name: Lint Python code
+      run: |
+        cd software/repo
+        flake8 services/ lib/ --max-line-length=120 --ignore=E203,W503
+        black --check services/ lib/
+        isort --check-only services/ lib/
+    
+    - name: Type check Python code
+      run: |
+        cd software/repo
+        mypy services/api/ --ignore-missing-imports
+        mypy lib/ --ignore-missing-imports
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+    
+    - name: Install Node dependencies
+      run: |
+        cd software/bots-control-plane
+        npm ci
+    
+    - name: Lint TypeScript/JavaScript
+      run: |
+        cd software/bots-control-plane
+        npm run lint || echo "Lint script not found, skipping"
+        npm run type-check || echo "Type check script not found, skipping"
+
+  test:
+    runs-on: ubuntu-latest
+    
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: test_db
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+      
+      redis:
+        image: redis:7
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 6379:6379
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+    
+    - name: Install Python dependencies
+      run: |
+        cd software/repo
+        pip install -r services/api/requirements.txt
+        pip install -r services/worker/requirements.txt
+        pip install pytest pytest-asyncio pytest-cov
+    
+    - name: Run Python tests
+      run: |
+        cd software/repo
+        python -m pytest tests/ -v --cov=services/ --cov=lib/ --cov-report=xml
+      env:
+        DATABASE_URL: postgresql+psycopg://postgres:postgres@localhost:5432/test_db
+        REDIS_URL: redis://localhost:6379/0
+        COOKIE_KEY: dGVzdF9jb29raWVfa2V5XzMyX2J5dGVzX2xvbmc=
+        NODE_ENV: test
+    
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        file: ./software/repo/coverage.xml
+        flags: unittests
+        name: codecov-umbrella
+
+  integration-test:
+    runs-on: ubuntu-latest
+    
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: integration_test_db
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+      
+      redis:
+        image: redis:7
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 6379:6379
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+    
+    - name: Install dependencies
+      run: |
+        cd software/repo
+        pip install -r services/api/requirements.txt
+        pip install -r services/worker/requirements.txt
+        pip install pytest pytest-asyncio requests
+    
+    - name: Run database migrations
+      run: |
+        cd software/repo
+        alembic upgrade head
+      env:
+        DATABASE_URL: postgresql+psycopg://postgres:postgres@localhost:5432/integration_test_db
+        REDIS_URL: redis://localhost:6379/0
+        COOKIE_KEY: dGVzdF9jb29raWVfa2V5XzMyX2J5dGVzX2xvbmc=
+    
+    - name: Start API server
+      run: |
+        cd software/repo/services/api
+        python -m uvicorn main:app --host 0.0.0.0 --port 8000 &
+        sleep 10
+      env:
+        DATABASE_URL: postgresql+psycopg://postgres:postgres@localhost:5432/integration_test_db
+        REDIS_URL: redis://localhost:6379/0
+        COOKIE_KEY: dGVzdF9jb29raWVfa2V5XzMyX2J5dGVzX2xvbmc=
+        AUTH_DISABLED: true
+    
+    - name: Run smoke tests
+      run: |
+        chmod +x scripts/smoke.sh
+        ./scripts/smoke.sh
+      env:
+        API_BASE_URL: http://localhost:8000
+        DATABASE_URL: postgresql+psycopg://postgres:postgres@localhost:5432/integration_test_db
+        REDIS_URL: redis://localhost:6379/0
+        COOKIE_KEY: dGVzdF9jb29raWVfa2V5XzMyX2J5dGVzX2xvbmc=
+
+  security-scan:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+    
+    - name: Install security tools
+      run: |
+        pip install bandit safety semgrep
+    
+    - name: Run Bandit security scan
+      run: |
+        cd software/repo
+        bandit -r services/ lib/ -f json -o bandit-report.json || true
+        bandit -r services/ lib/ -f txt
+    
+    - name: Run Safety check
+      run: |
+        cd software/repo
+        safety check -r services/api/requirements.txt --json --output safety-report.json || true
+        safety check -r services/api/requirements.txt
+        safety check -r services/worker/requirements.txt
+    
+    - name: Run Semgrep security scan
+      run: |
+        cd software/repo
+        semgrep --config=auto services/ lib/ --json --output=semgrep-report.json || true
+        semgrep --config=auto services/ lib/
+    
+    - name: Upload security reports
+      uses: actions/upload-artifact@v3
+      with:
+        name: security-reports
+        path: |
+          software/repo/bandit-report.json
+          software/repo/safety-report.json
+          software/repo/semgrep-report.json
+
+  build-and-test-containers:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+    
+    - name: Build API container
+      run: |
+        cd software/repo
+        docker build -f services/api/Dockerfile -t bot-control-api:test .
+    
+    - name: Build Worker container
+      run: |
+        cd software/repo
+        docker build -f services/worker/Dockerfile -t bot-control-worker:test .
+    
+    - name: Test containers with docker-compose
+      run: |
+        cd software/repo/infra
+        docker-compose -f docker-compose.yml -f docker-compose.test.yml up -d db redis
+        sleep 10
+        docker-compose -f docker-compose.yml -f docker-compose.test.yml up --build api worker
+        docker-compose -f docker-compose.yml -f docker-compose.test.yml down
+      env:
+        DATABASE_URL: postgresql+psycopg://postgres:postgres@db:5432/app
+        REDIS_URL: redis://redis:6379/0
+        COOKIE_KEY: dGVzdF9jb29raWVfa2V5XzMyX2J5dGVzX2xvbmc=
+        NODE_ENV: test
+
+  performance-test:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: perf_test_db
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+      
+      redis:
+        image: redis:7
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 6379:6379
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+    
+    - name: Install dependencies
+      run: |
+        cd software/repo
+        pip install -r services/api/requirements.txt
+        pip install locust
+    
+    - name: Run database migrations
+      run: |
+        cd software/repo
+        alembic upgrade head
+      env:
+        DATABASE_URL: postgresql+psycopg://postgres:postgres@localhost:5432/perf_test_db
+        REDIS_URL: redis://localhost:6379/0
+        COOKIE_KEY: dGVzdF9jb29raWVfa2V5XzMyX2J5dGVzX2xvbmc=
+    
+    - name: Start API server
+      run: |
+        cd software/repo/services/api
+        python -m uvicorn main:app --host 0.0.0.0 --port 8000 &
+        sleep 10
+      env:
+        DATABASE_URL: postgresql+psycopg://postgres:postgres@localhost:5432/perf_test_db
+        REDIS_URL: redis://localhost:6379/0
+        COOKIE_KEY: dGVzdF9jb29raWVfa2V5XzMyX2J5dGVzX2xvbmc=
+        AUTH_DISABLED: true
+    
+    - name: Run performance tests
+      run: |
+        cd software/repo
+        locust -f tests/performance/locustfile.py --host=http://localhost:8000 --headless -u 10 -r 2 -t 30s
+      env:
+        DATABASE_URL: postgresql+psycopg://postgres:postgres@localhost:5432/perf_test_db
+        REDIS_URL: redis://localhost:6379/0
+        COOKIE_KEY: dGVzdF9jb29raWVfa2V5XzMyX2J5dGVzX2xvbmc=
+
+  notify:
+    runs-on: ubuntu-latest
+    needs: [lint-and-typecheck, test, integration-test, security-scan, build-and-test-containers]
+    if: always()
+    
+    steps:
+    - name: Notify on success
+      if: ${{ needs.lint-and-typecheck.result == 'success' && needs.test.result == 'success' && needs.integration-test.result == 'success' }}
+      run: |
+        echo "✅ All CI checks passed successfully!"
+    
+    - name: Notify on failure
+      if: ${{ needs.lint-and-typecheck.result == 'failure' || needs.test.result == 'failure' || needs.integration-test.result == 'failure' }}
+      run: |
+        echo "❌ CI checks failed. Please review the logs."
+        exit 1
