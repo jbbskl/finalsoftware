@@ -208,4 +208,48 @@
   body {
     @apply bg-background text-foreground;
   }
+  
+  /* Fix layout and zoom issues */
+  html, body {
+    height: 100%;
+    overflow-x: hidden;
+  }
+  
+  /* Ensure full width layout without gaps */
+  .min-h-screen {
+    min-height: 100vh;
+  }
+  
+  /* Fix sidebar and content alignment */
+  .flex {
+    display: flex;
+  }
+  
+  .flex-1 {
+    flex: 1 1 0%;
+  }
+  
+  .min-w-0 {
+    min-width: 0;
+  }
+  
+  /* Ensure proper background coverage */
+  .bg-background {
+    background-color: hsl(var(--background));
+  }
+  
+  .bg-sidebar {
+    background-color: hsl(var(--sidebar-background));
+  }
+  
+  /* Fix content padding and spacing */
+  main {
+    padding: 1.5rem;
+  }
+  
+  /* Ensure no gaps between sidebar and content */
+  .border-r {
+    border-right-width: 1px;
+    border-right-color: hsl(var(--border));
+  }
 }
