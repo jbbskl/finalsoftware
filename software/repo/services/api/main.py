@@ -8,8 +8,9 @@ import datetime
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..', 'lib'))
 from env_validation import get_config, setup_logging, EnvValidationError
 
-# Import rate limiting middleware
-from rate_limiter import rate_limit_middleware
+# Import rate limiting and security middleware
+from rate_limiter import rate_limit_middleware, configure_rate_limiter
+from security import setup_security_middleware, setup_request_logging
 
 from routers import configs, schedules, runs, billing, bot_instances, phases, monitoring, admin, affiliate, health
 
@@ -24,6 +25,15 @@ except EnvValidationError as e:
     sys.exit(1)
 
 app = FastAPI(title="Control Plane API")
+
+# Configure rate limiter
+configure_rate_limiter(config["rate_limit_per_minute"])
+
+# Setup security middleware
+setup_security_middleware(app, config)
+
+# Setup request logging
+setup_request_logging(app)
 
 # Add rate limiting middleware
 app.middleware("http")(rate_limit_middleware())

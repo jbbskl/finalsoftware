@@ -42,10 +42,13 @@ class RateLimiter:
         return True
 
 
-# Global rate limiter instance
-rate_limiter = RateLimiter(
-    requests_per_minute=int(os.getenv("RATE_LIMIT_PER_MINUTE", "30"))
-)
+# Global rate limiter instance - will be configured by main app
+rate_limiter = None
+
+def configure_rate_limiter(requests_per_minute: int = 30):
+    """Configure the global rate limiter."""
+    global rate_limiter
+    rate_limiter = RateLimiter(requests_per_minute)
 
 
 def get_client_ip(request: Request) -> str:
@@ -84,6 +87,12 @@ def check_rate_limit(request: Request) -> bool:
     Returns:
         True if request is allowed, raises HTTPException otherwise
     """
+    global rate_limiter
+    
+    if rate_limiter is None:
+        # Initialize with default if not configured
+        rate_limiter = RateLimiter(30)
+    
     client_ip = get_client_ip(request)
     
     if not rate_limiter.is_allowed(client_ip):
