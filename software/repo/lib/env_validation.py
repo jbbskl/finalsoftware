@@ -5,6 +5,7 @@ Environment variable validation and configuration.
 import os
 import sys
 import base64
+import logging
 from urllib.parse import urlparse
 from typing import Dict, Any, Optional
 
