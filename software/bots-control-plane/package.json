@@ -14,6 +14,7 @@
     "paranoid": "bash tools/paranoid/check-versions.sh && bash tools/paranoid/types-lint.sh && node tools/paranoid/smoke-web.mjs",
     "db:push": "DATABASE_URL=\"file:./prisma/dev.db\" prisma db push",
     "db:seed": "DATABASE_URL=\"file:./prisma/dev.db\" tsx prisma/seed.ts",
+    "seed": "tsx scripts/seed.ts",
     "db:setup": "DATABASE_URL=\"file:./prisma/dev.db\" prisma db push && DATABASE_URL=\"file:./prisma/dev.db\" tsx prisma/seed.ts",
     "auth:disable": "echo 'AUTH_DISABLED=true' > .env.local",
     "auth:enable": "echo 'AUTH_DISABLED=false' > .env.local && echo 'AUTH_SECRET=\"hi6wUnxqkwEEI8NeY/cArCV3jUg9+dDiCH7aYTkas38=\"' >> .env.local && echo 'NEXTAUTH_URL=\"http://localhost:3000\"' >> .env.local && echo 'DATABASE_URL=\"file:./prisma/dev.db\"' >> .env.local"
