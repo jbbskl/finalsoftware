@@ -3,74 +3,73 @@ Health check endpoint with system status monitoring.
 """
 
 import os
-import redis
+import sys
+from typing import Optional, Dict, Any
 from fastapi import APIRouter, Depends, HTTPException
-from sqlalchemy.orm import Session
-from sqlalchemy import text
 from pydantic import BaseModel
 
-from db import get_db
+# Add lib path for health checker
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..', 'lib'))
+from health import get_health_status, get_readiness_status
 
 router = APIRouter(prefix="/api", tags=["health"])
 
 
 class HealthResponse(BaseModel):
-    ok: bool
-    db: bool
-    redis: bool
-    worker: Optional[bool] = None
+    status: str
+    timestamp: str
+    services: Dict[str, Any]
+    system: Dict[str, Any]
+
+
+class ReadinessResponse(BaseModel):
+    ready: bool
+    timestamp: str
+    checks: Dict[str, Any]
 
 
 @router.get("/health", response_model=HealthResponse)
-async def health_check(db: Session = Depends(get_db)):
+async def health_check():
     """
     Comprehensive health check endpoint.
     
     Checks:
-    - Database connectivity
-    - Redis connectivity  
-    - Worker status (optional)
+    - Database connectivity and migrations
+    - Redis connectivity
+    - Worker status
+    - S3/MinIO connectivity (if configured)
+    - System metrics
     
     Returns:
-        HealthResponse with status of each component
+        HealthResponse with detailed status of all components
     """
-    health_status = {
-        "ok": True,
-        "db": False,
-        "redis": False,
-        "worker": None
-    }
-    
-    # Check database
-    try:
-        db.execute(text("SELECT 1"))
-        health_status["db"] = True
-    except Exception as e:
-        health_status["ok"] = False
-    
-    # Check Redis
-    try:
-        redis_url = os.getenv("REDIS_URL", "redis://localhost:6379/0")
-        r = redis.from_url(redis_url)
-        r.ping()
-        health_status["redis"] = True
-    except Exception as e:
-        health_status["ok"] = False
-    
-    # Check worker (optional)
-    try:
-        # Try to get a worker status from Redis
-        redis_url = os.getenv("REDIS_URL", "redis://localhost:6379/0")
-        r = redis.from_url(redis_url)
-        
-        # Check if there are any worker keys in Redis
-        worker_keys = r.keys("celery*")
-        if worker_keys:
-            health_status["worker"] = True
-        else:
-            health_status["worker"] = False
-    except Exception:
-        # Worker check is optional, don't fail health check
-        health_status["worker"] = None
-    
+    health_status = await get_health_status()
     return HealthResponse(**health_status)
+
+
+@router.get("/healthz", response_model=HealthResponse)
+async def healthz():
+    """
+    Kubernetes-style health check endpoint.
+    
+    Returns:
+        HealthResponse with status of all components
+    """
+    health_status = await get_health_status()
+    return HealthResponse(**health_status)
+
+
+@router.get("/readyz", response_model=ReadinessResponse)
+async def readyz():
+    """
+    Kubernetes-style readiness check endpoint.
+    
+    Checks:
+    - Database connectivity and migrations applied
+    - Redis connectivity
+    
+    Returns:
+        ReadinessResponse with readiness status
+    """
+    readiness_status = await get_readiness_status()
+    return ReadinessResponse(**readiness_status)
