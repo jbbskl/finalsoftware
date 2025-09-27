@@ -3,7 +3,7 @@ from pydantic import BaseModel
 import os
 import datetime
 
-from routers import configs, schedules, runs, billing
+from routers import configs, schedules, runs, billing, bot_instances
 
 app = FastAPI(title="Control Plane API")
 
@@ -21,3 +21,4 @@ app.include_router(configs.router)
 app.include_router(schedules.router)
 app.include_router(runs.router)
 app.include_router(billing.router)
+app.include_router(bot_instances.router)

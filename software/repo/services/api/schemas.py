@@ -145,8 +145,25 @@ class BotInstanceRead(BaseModel):
     bot_code: str
     status: str
     config_path: str
+    validation_status: Optional[str]
+    last_validated_at: Optional[datetime]
     created_at: datetime
     updated_at: datetime
 
     class Config:
         from_attributes = True
+
+class UploadCookiesResponse(BaseModel):
+    ok: bool = True
+
+class ValidateResponse(BaseModel):
+    job_id: Optional[str] = None
+    status: str  # 'queued' or 'completed'
+    result: Optional[dict] = None
+
+class StartRunResponse(BaseModel):
+    run_id: str
+    status: str  # 'queued'
+
+class StopRunResponse(BaseModel):
+    ok: bool = True

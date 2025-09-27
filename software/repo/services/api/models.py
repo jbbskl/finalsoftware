@@ -171,5 +171,7 @@ class BotInstance(Base):
     bot_code = Column(String(50), nullable=False)  # 'f2f_post', 'f2f_dm', 'of_post', etc.
     status = Column(String(50), nullable=False, default='inactive')  # 'inactive', 'active', 'error'
     config_path = Column(String(500), nullable=False)  # Path to config.yaml
+    validation_status = Column(String(50), nullable=True)  # 'pending', 'valid', 'invalid'
+    last_validated_at = Column(DateTime(timezone=True), nullable=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
