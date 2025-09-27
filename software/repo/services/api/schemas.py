@@ -225,3 +225,61 @@ class CopyDayRequest(BaseModel):
 class CopyDayResponse(BaseModel):
     copied_count: int
     skipped_count: int
+
+# Bot Instance schemas
+class BotInstanceRead(BaseModel):
+    id: str
+    owner_type: str
+    owner_id: str
+    bot_code: str
+    status: str
+    config_path: str
+    validation_status: Optional[str]
+    last_validated_at: Optional[datetime]
+    created_at: datetime
+    updated_at: datetime
+
+    class Config:
+        from_attributes = True
+
+# Phase schemas
+class PhaseCreate(BaseModel):
+    bot_instance_id: str
+    name: str
+    order_no: int
+    config_json: Dict[str, Any]
+
+class PhaseUpdate(BaseModel):
+    name: Optional[str] = None
+    order_no: Optional[int] = None
+    config_json: Optional[Dict[str, Any]] = None
+
+class PhaseRead(BaseModel):
+    id: str
+    bot_instance_id: str
+    name: str
+    order_no: int
+    config_json: Dict[str, Any]
+    created_at: datetime
+    updated_at: datetime
+
+    class Config:
+        from_attributes = True
+
+# Bot instance operation responses
+class UploadCookiesResponse(BaseModel):
+    success: bool
+    message: str
+
+class ValidateResponse(BaseModel):
+    success: bool
+    message: str
+    validation_status: Optional[str] = None
+
+class StartRunResponse(BaseModel):
+    run_id: str
+    status: str
+
+class StopRunResponse(BaseModel):
+    success: bool
+    message: str

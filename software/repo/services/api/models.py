@@ -72,18 +72,7 @@ class BotConfig(Base):
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
 
-class Schedule(Base):
-    __tablename__ = "schedules"
-    
-    id = Column(String(36), primary_key=True)
-    org_id = Column(String(36), ForeignKey("organizations.id"), nullable=False)
-    bot_id = Column(String(36), ForeignKey("bots.id"), nullable=False)
-    config_id = Column(String(36), ForeignKey("bot_configs.id"), nullable=False)
-    cron_expr = Column(String(100), nullable=False)
-    timezone = Column(String(50), nullable=False, default="UTC")
-    phase_json = Column(JSON, nullable=True)
-    is_active = Column(Boolean, default=True)
-    next_fire_at = Column(DateTime(timezone=True), nullable=False)
+# Removed duplicate Schedule class - using the one defined later in the file
 
 class Run(Base):
     __tablename__ = "runs"
@@ -199,6 +188,7 @@ class Phase(Base):
 
 class Schedule(Base):
     __tablename__ = "schedules"
+    __table_args__ = {"extend_existing": True}
     
     id = Column(String(36), primary_key=True)
     bot_instance_id = Column(String(36), ForeignKey("bot_instances.id"), nullable=False)
@@ -216,6 +206,7 @@ class Schedule(Base):
     
     # Constraints and indexes
     __table_args__ = (
+        {"extend_existing": True},
         CheckConstraint("(kind = 'full') OR (kind = 'phase' AND phase_id IS NOT NULL)", name="ck_schedule_kind_phase"),
         Index("ix_schedules_bot_instance_start", "bot_instance_id", "start_at"),
         Index("ix_schedules_start_dispatched", "start_at", "dispatched_at"),
