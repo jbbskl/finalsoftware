@@ -135,3 +135,41 @@ class Secret(Base):
     name = Column(String(255), nullable=False)
     provider = Column(String(50), nullable=False)
     secret_ref = Column(String(500), nullable=False)
+
+class Invoice(Base):
+    __tablename__ = "invoices"
+    
+    id = Column(String(36), primary_key=True)
+    provider = Column(String(50), nullable=False)  # 'stripe' or 'crypto'
+    status = Column(String(50), nullable=False, default='pending')  # 'pending', 'paid', 'failed'
+    amount_eur = Column(Integer, nullable=False)  # Amount in cents
+    url = Column(String(500), nullable=True)  # Payment URL
+    ext_id = Column(String(255), nullable=True)  # External provider ID (Stripe invoice ID, etc.)
+    owner_type = Column(String(20), nullable=False)  # 'user' or 'org'
+    owner_id = Column(String(36), nullable=False)  # User ID or Org ID
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+    paid_at = Column(DateTime(timezone=True), nullable=True)
+
+class Entitlement(Base):
+    __tablename__ = "entitlements"
+    
+    id = Column(String(36), primary_key=True)
+    owner_type = Column(String(20), nullable=False)  # 'user' or 'org'
+    owner_id = Column(String(36), nullable=False)  # User ID or Org ID
+    bot_code = Column(String(50), nullable=False)  # 'f2f_post', 'f2f_dm', 'of_post', etc.
+    units = Column(Integer, nullable=False)  # Number of units (models for agency, 1 for creator)
+    status = Column(String(50), nullable=False, default='active')  # 'active', 'inactive', 'expired'
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+    expires_at = Column(DateTime(timezone=True), nullable=True)
+
+class BotInstance(Base):
+    __tablename__ = "bot_instances"
+    
+    id = Column(String(36), primary_key=True)
+    owner_type = Column(String(20), nullable=False)  # 'user' or 'org'
+    owner_id = Column(String(36), nullable=False)  # User ID or Org ID
+    bot_code = Column(String(50), nullable=False)  # 'f2f_post', 'f2f_dm', 'of_post', etc.
+    status = Column(String(50), nullable=False, default='inactive')  # 'inactive', 'active', 'error'
+    config_path = Column(String(500), nullable=False)  # Path to config.yaml
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())

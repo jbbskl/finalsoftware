@@ -95,3 +95,58 @@ class DevRunRequest(BaseModel):
 class DevRunResponse(BaseModel):
     enqueued: bool
     run_id: str
+
+# Billing schemas
+class InvoiceCreateCreator(BaseModel):
+    kind: str = "creator"
+    bots: list[str]
+
+class InvoiceCreateAgency(BaseModel):
+    kind: str = "agency"
+    platforms: list[str]
+    models: int
+
+class InvoiceResponse(BaseModel):
+    invoice_id: str
+    invoice_url: str
+
+class InvoiceRead(BaseModel):
+    id: str
+    provider: str
+    status: str
+    amount_eur: int
+    url: Optional[str]
+    ext_id: Optional[str]
+    owner_type: str
+    owner_id: str
+    created_at: datetime
+    paid_at: Optional[datetime]
+
+    class Config:
+        from_attributes = True
+
+class EntitlementRead(BaseModel):
+    id: str
+    owner_type: str
+    owner_id: str
+    bot_code: str
+    units: int
+    status: str
+    created_at: datetime
+    expires_at: Optional[datetime]
+
+    class Config:
+        from_attributes = True
+
+class BotInstanceRead(BaseModel):
+    id: str
+    owner_type: str
+    owner_id: str
+    bot_code: str
+    status: str
+    config_path: str
+    created_at: datetime
+    updated_at: datetime
+
+    class Config:
+        from_attributes = True
