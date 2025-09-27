@@ -3,9 +3,17 @@ from pydantic import BaseModel
 import os
 import datetime
 
-from routers import configs, schedules, runs, billing, bot_instances, phases
+# Import rate limiting middleware
+import sys
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..', 'lib'))
+from rate_limiter import rate_limit_middleware
+
+from routers import configs, schedules, runs, billing, bot_instances, phases, monitoring, admin, affiliate, health
 
 app = FastAPI(title="Control Plane API")
+
+# Add rate limiting middleware
+app.middleware("http")(rate_limit_middleware())
 
 class Health(BaseModel):
     status: str
@@ -23,3 +31,7 @@ app.include_router(runs.router)
 app.include_router(billing.router)
 app.include_router(bot_instances.router)
 app.include_router(phases.router)
+app.include_router(monitoring.router)
+app.include_router(admin.router)
+app.include_router(affiliate.router)
+app.include_router(health.router)
