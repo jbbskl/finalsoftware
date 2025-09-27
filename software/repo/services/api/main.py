@@ -1,14 +1,27 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 import os
+import sys
 import datetime
 
-# Import rate limiting middleware
-import sys
+# Import environment validation and configuration
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..', 'lib'))
+from env_validation import get_config, setup_logging, EnvValidationError
+
+# Import rate limiting middleware
 from rate_limiter import rate_limit_middleware
 
 from routers import configs, schedules, runs, billing, bot_instances, phases, monitoring, admin, affiliate, health
+
+# Setup logging first
+setup_logging()
+
+# Validate environment variables at startup
+try:
+    config = get_config()
+except EnvValidationError as e:
+    print(f"❌ Environment validation failed: {e}")
+    sys.exit(1)
 
 app = FastAPI(title="Control Plane API")
 
