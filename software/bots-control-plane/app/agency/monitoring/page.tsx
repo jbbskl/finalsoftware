@@ -1,21 +1,11 @@
 import "server-only";
-import { redirect } from "next/navigation";
-import { getSession } from "@/lib/auth/session";
+import { requireRole } from "@/lib/auth/require-role";
+import MonitoringAgencyView from "@/components/monitoring/MonitoringAgencyView";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
-export default async function ClientMonitoringPage() {
-  const s = await getSession();
-  const AUTH_DISABLED = process.env.AUTH_DISABLED === "true";
-  if (!AUTH_DISABLED) {
-    if (!s) redirect("/login");
-    if (s.user.role !== "creator") redirect("/");
-  }
-  return (
-    <main className="p-6 space-y-4">
-      <h1 className="text-xl font-semibold">Monitoring</h1>
-      <div className="rounded-lg border p-4">Creator monitoring dashboard goes here (placeholder)</div>
-    </main>
-  );
+export default async function AgencyMonitoringPage() {
+  await requireRole("agency");
+  return <MonitoringAgencyView />;
 }
