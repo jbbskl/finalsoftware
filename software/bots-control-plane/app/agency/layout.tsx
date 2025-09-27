@@ -3,22 +3,28 @@ import Link from "next/link";
 
 export default function AgencyLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen flex">
-      <aside className="w-60 border-r p-4 space-y-2 bg-muted/50">
-        <div className="font-semibold text-lg mb-4">Agency</div>
-        <nav className="flex flex-col gap-1">
-          <Link href="/agency" className="p-2 rounded hover:bg-muted">Dashboard</Link>
-          <Link href="/agency/subscriptions" className="p-2 rounded hover:bg-muted">Subscriptions</Link>
-          <Link href="/agency/bots" className="p-2 rounded hover:bg-muted">Bots</Link>
-          <Link href="/agency/phases" className="p-2 rounded hover:bg-muted">Phases</Link>
-          <Link href="/agency/schedule" className="p-2 rounded hover:bg-muted">Schedule</Link>
-          <Link href="/agency/monitoring" className="p-2 rounded hover:bg-muted">Monitoring</Link>
-          <Link href="/agency/analytics" className="p-2 rounded hover:bg-muted">Analytics</Link>
-          <Link href="/agency/settings" className="p-2 rounded hover:bg-muted">Settings</Link>
-          <Link href="/agency/affiliate" className="p-2 rounded hover:bg-muted">Affiliate</Link>
+    <div className="min-h-screen flex bg-background">
+      <aside className="w-64 border-r border-border bg-sidebar text-sidebar-foreground flex-shrink-0">
+        <div className="p-4 border-b border-sidebar-border">
+          <div className="font-semibold text-lg text-sidebar-foreground">Agency</div>
+        </div>
+        <nav className="p-4 space-y-1">
+          <Link href="/agency" className="block p-2 rounded hover:bg-sidebar-accent text-sidebar-foreground hover:text-sidebar-accent-foreground transition-colors">Dashboard</Link>
+          <Link href="/agency/subscriptions" className="block p-2 rounded hover:bg-sidebar-accent text-sidebar-foreground hover:text-sidebar-accent-foreground transition-colors">Subscriptions</Link>
+          <Link href="/agency/bots" className="block p-2 rounded hover:bg-sidebar-accent text-sidebar-foreground hover:text-sidebar-accent-foreground transition-colors">Bots</Link>
+          <Link href="/agency/phases" className="block p-2 rounded hover:bg-sidebar-accent text-sidebar-foreground hover:text-sidebar-accent-foreground transition-colors">Phases</Link>
+          <Link href="/agency/schedule" className="block p-2 rounded hover:bg-sidebar-accent text-sidebar-foreground hover:text-sidebar-accent-foreground transition-colors">Schedule</Link>
+          <Link href="/agency/monitoring" className="block p-2 rounded hover:bg-sidebar-accent text-sidebar-foreground hover:text-sidebar-accent-foreground transition-colors">Monitoring</Link>
+          <Link href="/agency/analytics" className="block p-2 rounded hover:bg-sidebar-accent text-sidebar-foreground hover:text-sidebar-accent-foreground transition-colors">Analytics</Link>
+          <Link href="/agency/settings" className="block p-2 rounded hover:bg-sidebar-accent text-sidebar-foreground hover:text-sidebar-accent-foreground transition-colors">Settings</Link>
+          <Link href="/agency/affiliate" className="block p-2 rounded hover:bg-sidebar-accent text-sidebar-foreground hover:text-sidebar-accent-foreground transition-colors">Affiliate</Link>
         </nav>
       </aside>
-      <div className="flex-1">{children}</div>
+      <div className="flex-1 min-w-0 bg-background">
+        <div className="h-full overflow-auto">
+          {children}
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,0 +1,76 @@
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: finalsoftware
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: devpass
+    ports: ["5432:5432"]
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d finalsoftware"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  redis:
+    image: redis:7
+    ports: ["6379:6379"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  api:
+    build:
+      context: ./software/repo
+    environment:
+      DATABASE_URL: postgres://postgres:devpass@db:5432/finalsoftware
+      REDIS_URL: redis://redis:6379/0
+      COOKIE_KEY: change_me_32_bytes
+      NODE_ENV: development
+      API_PORT: 3000
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    ports: ["3000:3000"]
+    volumes:
+      - ./data:/data
+    restart: unless-stopped
+
+  worker:
+    build:
+      context: ./software/repo/services/worker
+    environment:
+      DATABASE_URL: postgres://postgres:devpass@db:5432/finalsoftware
+      REDIS_URL: redis://redis:6379/0
+    depends_on:
+      api:
+        condition: service_started
+      redis:
+        condition: service_healthy
+      db:
+        condition: service_healthy
+    volumes:
+      - ./data:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
+
+  flower:
+    image: mher/flower:1.0
+    environment:
+      CELERY_BROKER_URL: redis://redis:6379/0
+      FLOWER_PORT: 5555
+    ports: ["5555:5555"]
+    depends_on:
+      - redis
+    restart: unless-stopped
+
+volumes:
+  db_data:
