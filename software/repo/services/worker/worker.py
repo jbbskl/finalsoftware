@@ -56,6 +56,42 @@ def upload_artifacts_to_minio(artifacts_dir: Path, run_id: str):
         log.error(f"Unexpected error uploading artifacts: {e}")
         return None
 
+@app.task(name="tasks.validate_bot", bind=True, max_retries=0)
+def validate_bot(self, instance_id: str, config_dir: str):
+    """Validate bot instance configuration."""
+    log.info(f"Validating bot instance {instance_id} in {config_dir}")
+    
+    try:
+        # Check if config file exists
+        config_path = os.path.join(config_dir, "config.yaml")
+        if not os.path.exists(config_path):
+            log.error(f"Config file not found: {config_path}")
+            return {"instance_id": instance_id, "status": "invalid", "error": "Config file not found"}
+        
+        # Check if cookies file exists
+        cookies_path = os.path.join(config_dir, "secrets", "storageState.json")
+        if not os.path.exists(cookies_path):
+            log.warning(f"Cookies file not found: {cookies_path}")
+            return {"instance_id": instance_id, "status": "invalid", "error": "Cookies file not found"}
+        
+        # Basic validation - check config structure
+        import yaml
+        with open(config_path, 'r') as f:
+            config = yaml.safe_load(f)
+        
+        required_fields = ["bot_code", "headless", "timezone"]
+        for field in required_fields:
+            if field not in config:
+                log.error(f"Missing required field: {field}")
+                return {"instance_id": instance_id, "status": "invalid", "error": f"Missing field: {field}"}
+        
+        log.info(f"Validation successful for instance {instance_id}")
+        return {"instance_id": instance_id, "status": "valid"}
+        
+    except Exception as e:
+        log.error(f"Validation failed for instance {instance_id}: {e}")
+        return {"instance_id": instance_id, "status": "invalid", "error": str(e)}
+
 @app.task(name="tasks.run_bot", bind=True, max_retries=0)
 def run_bot(self, image_ref: str, run_id: str, config: dict):
     artifacts_dir = Path(f"/tmp/artifacts-{run_id}")
