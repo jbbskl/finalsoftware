@@ -1,11 +1,11 @@
 import "server-only";
 import { requireRole } from "@/lib/auth/require-role";
-import AdminDashboard from "@/components/admin/AdminDashboard";
+import AdminInvoices from "@/components/admin/AdminInvoices";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
-export default async function AdminDashboardPage() {
+export default async function AdminInvoicesPage() {
   await requireRole("admin");
-  return <AdminDashboard />;
+  return <AdminInvoices />;
 }
