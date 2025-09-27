@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { PageHeader } from "@/components/page-header"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -8,6 +8,10 @@ import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Skeleton } from "@/components/ui/skeleton"
+import { affiliateMe } from "@/lib/api-admin"
+import type { AffiliateInfo } from "@/lib/api-types"
+import { toast } from "sonner"
 import { 
   Copy, 
   Users, 
@@ -18,20 +22,28 @@ import {
   CheckCircle,
   Clock
 } from "lucide-react"
-import { useToast } from "@/hooks/use-toast"
 
 export default function AffiliatePage() {
-  const { toast } = useToast()
   const [email, setEmail] = useState("")
+  const [affiliateInfo, setAffiliateInfo] = useState<AffiliateInfo | null>(null)
+  const [loading, setLoading] = useState(true)
   
-  // Mock data
-  const referralLink = "https://botscontrol.com/ref/creator123"
-  const stats = {
-    clicks: 42,
-    signups: 8,
-    conversions: 3,
-    payouts: 240
+  useEffect(() => {
+    loadAffiliateInfo()
+  }, [])
+
+  const loadAffiliateInfo = async () => {
+    try {
+      const info = await affiliateMe()
+      setAffiliateInfo(info)
+    } catch (error) {
+      console.error("Error loading affiliate info:", error)
+    } finally {
+      setLoading(false)
+    }
   }
+  
+  const referralLink = `https://botscontrol.com/ref/${affiliateInfo?.code || 'creator123'}`
   
   const payouts = [
     {
@@ -62,26 +74,16 @@ export default function AffiliatePage() {
 
   const handleCopyLink = () => {
     navigator.clipboard.writeText(referralLink)
-    toast({
-      title: "Link copied!",
-      description: "Your referral link has been copied to clipboard.",
-    })
+    toast.success("Link copied!")
   }
 
   const handleInvite = () => {
     if (!email.trim()) {
-      toast({
-        title: "Email required",
-        description: "Please enter an email address.",
-        variant: "destructive"
-      })
+      toast.error("Please enter an email address")
       return
     }
     
-    toast({
-      title: "Invitation sent!",
-      description: `Invitation sent to ${email}`,
-    })
+    toast.success(`Invitation sent to ${email}`)
     setEmail("")
   }
 
@@ -94,57 +96,65 @@ export default function AffiliatePage() {
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {/* Stats Cards */}
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Clicks</CardTitle>
-            <TrendingUp className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">{stats.clicks}</div>
-            <p className="text-xs text-muted-foreground">
-              +12% from last month
-            </p>
-          </CardContent>
-        </Card>
+        {loading ? (
+          Array.from({ length: 4 }).map((_, i) => (
+            <Skeleton key={i} className="h-32" />
+          ))
+        ) : affiliateInfo ? (
+          <>
+            <Card>
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                <CardTitle className="text-sm font-medium">Total Clicks</CardTitle>
+                <TrendingUp className="h-4 w-4 text-muted-foreground" />
+              </CardHeader>
+              <CardContent>
+                <div className="text-2xl font-bold">{affiliateInfo.clicks_count}</div>
+                <p className="text-xs text-muted-foreground">
+                  Referral link clicks
+                </p>
+              </CardContent>
+            </Card>
 
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Signups</CardTitle>
-            <Users className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">{stats.signups}</div>
-            <p className="text-xs text-muted-foreground">
-              {((stats.signups / stats.clicks) * 100).toFixed(1)}% conversion rate
-            </p>
-          </CardContent>
-        </Card>
+            <Card>
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                <CardTitle className="text-sm font-medium">Signups</CardTitle>
+                <Users className="h-4 w-4 text-muted-foreground" />
+              </CardHeader>
+              <CardContent>
+                <div className="text-2xl font-bold">{affiliateInfo.signups_count}</div>
+                <p className="text-xs text-muted-foreground">
+                  Successful registrations
+                </p>
+              </CardContent>
+            </Card>
 
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Conversions</CardTitle>
-            <CheckCircle className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">{stats.conversions}</div>
-            <p className="text-xs text-muted-foreground">
-              Paid subscriptions
-            </p>
-          </CardContent>
-        </Card>
+            <Card>
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                <CardTitle className="text-sm font-medium">Paid Total</CardTitle>
+                <CheckCircle className="h-4 w-4 text-muted-foreground" />
+              </CardHeader>
+              <CardContent>
+                <div className="text-2xl font-bold">€{affiliateInfo.paid_total_eur / 100}</div>
+                <p className="text-xs text-muted-foreground">
+                  Total earnings
+                </p>
+              </CardContent>
+            </Card>
 
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Payouts</CardTitle>
-            <DollarSign className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">€{stats.payouts}</div>
-            <p className="text-xs text-muted-foreground">
-              Lifetime earnings
-            </p>
-          </CardContent>
-        </Card>
+            <Card>
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                <CardTitle className="text-sm font-medium">Referral Code</CardTitle>
+                <DollarSign className="h-4 w-4 text-muted-foreground" />
+              </CardHeader>
+              <CardContent>
+                <div className="text-2xl font-bold">{affiliateInfo.code}</div>
+                <p className="text-xs text-muted-foreground">
+                  Your unique code
+                </p>
+              </CardContent>
+            </Card>
+          </>
+        ) : null}
       </div>
 
       <Tabs defaultValue="referral" className="space-y-4">
