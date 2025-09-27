@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, DateTime, Boolean, Integer, ForeignKey, Text, JSON
+from sqlalchemy import Column, String, DateTime, Boolean, Integer, ForeignKey, Text, JSON, CheckConstraint, Index
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
 from db import Base
@@ -175,3 +175,47 @@ class BotInstance(Base):
     last_validated_at = Column(DateTime(timezone=True), nullable=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
+
+class Phase(Base):
+    __tablename__ = "phases"
+    
+    id = Column(String(36), primary_key=True)
+    bot_instance_id = Column(String(36), ForeignKey("bot_instances.id"), nullable=False)
+    name = Column(String(255), nullable=False)
+    order_no = Column(Integer, nullable=False)
+    config_json = Column(JSON, nullable=False)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
+    
+    # Relationships
+    bot_instance = relationship("BotInstance")
+    
+    # Constraints
+    __table_args__ = (
+        CheckConstraint("order_no >= 1 AND order_no <= 200", name="ck_phase_order_range"),
+        Index("ix_phases_bot_instance_order", "bot_instance_id", "order_no"),
+    )
+
+class Schedule(Base):
+    __tablename__ = "schedules"
+    
+    id = Column(String(36), primary_key=True)
+    bot_instance_id = Column(String(36), ForeignKey("bot_instances.id"), nullable=False)
+    kind = Column(String(20), nullable=False)  # 'full' or 'phase'
+    phase_id = Column(String(36), ForeignKey("phases.id"), nullable=True)
+    payload_json = Column(JSON, nullable=True)
+    start_at = Column(DateTime(timezone=True), nullable=False)
+    dispatched_at = Column(DateTime(timezone=True), nullable=True)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
+    
+    # Relationships
+    bot_instance = relationship("BotInstance")
+    phase = relationship("Phase")
+    
+    # Constraints and indexes
+    __table_args__ = (
+        CheckConstraint("(kind = 'full') OR (kind = 'phase' AND phase_id IS NOT NULL)", name="ck_schedule_kind_phase"),
+        Index("ix_schedules_bot_instance_start", "bot_instance_id", "start_at"),
+        Index("ix_schedules_start_dispatched", "start_at", "dispatched_at"),
+    )

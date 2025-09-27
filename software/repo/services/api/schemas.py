@@ -167,3 +167,61 @@ class StartRunResponse(BaseModel):
 
 class StopRunResponse(BaseModel):
     ok: bool = True
+
+# Phase schemas
+class PhaseCreate(BaseModel):
+    name: str
+    order_no: int
+    config_json: Dict[str, Any]
+
+class PhaseUpdate(BaseModel):
+    name: Optional[str] = None
+    order_no: Optional[int] = None
+    config_json: Optional[Dict[str, Any]] = None
+
+class PhaseRead(BaseModel):
+    id: str
+    bot_instance_id: str
+    name: str
+    order_no: int
+    config_json: Dict[str, Any]
+    created_at: datetime
+    updated_at: datetime
+
+    class Config:
+        from_attributes = True
+
+# Schedule schemas
+class ScheduleCreate(BaseModel):
+    bot_instance_id: str
+    kind: str  # 'full' or 'phase'
+    phase_id: Optional[str] = None
+    start_at: str  # ISO datetime string
+    payload_json: Optional[Dict[str, Any]] = None
+
+class ScheduleUpdate(BaseModel):
+    start_at: Optional[str] = None
+    payload_json: Optional[Dict[str, Any]] = None
+
+class ScheduleRead(BaseModel):
+    id: str
+    bot_instance_id: str
+    kind: str
+    phase_id: Optional[str]
+    payload_json: Optional[Dict[str, Any]]
+    start_at: datetime
+    dispatched_at: Optional[datetime]
+    created_at: datetime
+    updated_at: datetime
+
+    class Config:
+        from_attributes = True
+
+class CopyDayRequest(BaseModel):
+    bot_instance_id: str
+    from_date: str  # YYYY-MM-DD
+    to_date: str    # YYYY-MM-DD
+
+class CopyDayResponse(BaseModel):
+    copied_count: int
+    skipped_count: int
