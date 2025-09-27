@@ -1,9 +1,13 @@
 # services/worker/worker.py
-import json, os, subprocess, tempfile, shutil
+import json, os, subprocess, tempfile, shutil, sys
 from pathlib import Path
 from celery.utils.log import get_task_logger
 import boto3
 from botocore.exceptions import ClientError
+
+# Add lib path for crypto functions
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..', 'lib'))
+from crypto import decrypt_bot_cookies_to_temp, cleanup_temp_file, get_cookie_key_from_env, CryptoError
 
 from celery_app import app  # <-- import the SAME Celery app
 
@@ -56,8 +60,82 @@ def upload_artifacts_to_minio(artifacts_dir: Path, run_id: str):
         log.error(f"Unexpected error uploading artifacts: {e}")
         return None
 
+@app.task(name="tasks.validate_bot", bind=True, max_retries=0)
+def validate_bot(self, instance_id: str, config_dir: str):
+    """Validate bot instance configuration."""
+    log.info(f"Validating bot instance {instance_id} in {config_dir}")
+    
+    try:
+        # Check if config file exists
+        config_path = os.path.join(config_dir, "config.yaml")
+        if not os.path.exists(config_path):
+            log.error(f"Config file not found: {config_path}")
+            return {"instance_id": instance_id, "status": "invalid", "error": "Config file not found"}
+        
+        # Check if encrypted cookies file exists
+        encrypted_cookies_path = os.path.join(config_dir, "secrets", "storageState.enc")
+        if not os.path.exists(encrypted_cookies_path):
+            log.warning(f"Encrypted cookies file not found: {encrypted_cookies_path}")
+            return {"instance_id": instance_id, "status": "invalid", "error": "Encrypted cookies file not found"}
+        
+        # Decrypt cookies to temporary file for validation
+        temp_cookies_path = None
+        try:
+            cookie_key = get_cookie_key_from_env()
+            temp_cookies_path = decrypt_bot_cookies_to_temp(encrypted_cookies_path, cookie_key)
+            log.info(f"Decrypted cookies to temporary file: {temp_cookies_path}")
+        except CryptoError as e:
+            log.error(f"Failed to decrypt cookies: {e}")
+            return {"instance_id": instance_id, "status": "invalid", "error": f"Cookie decryption failed: {str(e)}"}
+        except Exception as e:
+            log.error(f"Unexpected error decrypting cookies: {e}")
+            return {"instance_id": instance_id, "status": "invalid", "error": f"Cookie decryption error: {str(e)}"}
+        
+        # Basic validation - check config structure
+        import yaml
+        with open(config_path, 'r') as f:
+            config = yaml.safe_load(f)
+        
+        required_fields = ["bot_code", "headless", "timezone"]
+        for field in required_fields:
+            if field not in config:
+                log.error(f"Missing required field: {field}")
+                return {"instance_id": instance_id, "status": "invalid", "error": f"Missing field: {field}"}
+        
+        log.info(f"Validation successful for instance {instance_id}")
+        result = {"instance_id": instance_id, "status": "valid"}
+        
+        # Clean up temporary cookies file
+        if temp_cookies_path:
+            cleanup_temp_file(temp_cookies_path)
+        
+        return result
+        
+    except Exception as e:
+        log.error(f"Validation failed for instance {instance_id}: {e}")
+        
+        # Clean up temporary cookies file on error
+        if temp_cookies_path:
+            cleanup_temp_file(temp_cookies_path)
+        
+        return {"instance_id": instance_id, "status": "invalid", "error": str(e)}
+
 @app.task(name="tasks.run_bot", bind=True, max_retries=0)
 def run_bot(self, image_ref: str, run_id: str, config: dict):
+    """
+    Run a bot with the given configuration.
+    
+    Args:
+        image_ref: Docker image reference
+        run_id: Unique run identifier
+        config: Bot configuration dict (may include schedule_meta for scheduled runs)
+    """
+    log.info(f"Starting bot run {run_id} with config: {config.get('bot_code', 'unknown')}")
+    
+    # Log schedule metadata if present
+    if 'schedule_meta' in config:
+        log.info(f"Schedule metadata: {config['schedule_meta']}")
+    
     artifacts_dir = Path(f"/tmp/artifacts-{run_id}")
     artifacts_dir.mkdir(parents=True, exist_ok=True)
 

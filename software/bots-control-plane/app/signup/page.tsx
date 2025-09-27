@@ -13,13 +13,37 @@ export default function SignupPage() {
     e.preventDefault();
     setErr(null); setLoading(true);
     try {
-      const res = await fetch("/api/auth/demo-login", {
+      const res = await fetch("/api/auth/signup", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ email: email || `${role}@example.com`, role })
+        body: JSON.stringify({ 
+          email: email || `${role}@example.com`, 
+          password: "Password123!", // Default password for demo
+          role 
+        })
       });
-      if (!res.ok) throw new Error(`Signup failed (${res.status})`);
-      r.push("/");
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.error || `Signup failed (${res.status})`);
+      }
+      
+      const data = await res.json();
+      console.log("Signup successful:", data);
+      
+      // Redirect based on role
+      switch (role) {
+        case "creator":
+          r.push("/creator");
+          break;
+        case "agency":
+          r.push("/agency");
+          break;
+        case "admin":
+          r.push("/admin");
+          break;
+        default:
+          r.push("/");
+      }
     } catch (e:any) {
       setErr(e?.message || "Signup failed");
     } finally { setLoading(false); }

@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
+import { auth } from "@/lib/auth";
 
 const AUTH_DISABLED = process.env.AUTH_DISABLED === "true";
 
-export function middleware(req: NextRequest) {
+export async function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
   const res = NextResponse.next();
 
@@ -21,8 +22,41 @@ export function middleware(req: NextRequest) {
     return res;
   }
 
-  // For all other routes, let NextAuth and page components handle authentication
-  // Don't do any redirects in middleware to avoid conflicts
+  // Check authentication for protected routes
+  const session = await auth();
+  
+  // If not authenticated, redirect to login
+  if (!session?.user && (pathname.startsWith("/creator") || pathname.startsWith("/agency") || pathname.startsWith("/admin"))) {
+    return NextResponse.redirect(new URL("/login", req.url));
+  }
+  
+  // If authenticated, check role-based access
+  if (session?.user) {
+    const userRole = (session.user as any).role || "creator";
+    
+    // Redirect to appropriate dashboard if accessing root
+    if (pathname === "/") {
+      const dashboardPath = userRole === "creator" ? "/creator" : 
+                           userRole === "agency" ? "/agency" : 
+                           userRole === "admin" ? "/admin" : "/creator";
+      return NextResponse.redirect(new URL(dashboardPath, req.url));
+    }
+    
+    // Check role-based route access
+    if (pathname.startsWith("/creator") && userRole !== "creator") {
+      const allowedPath = userRole === "agency" ? "/agency" : "/admin";
+      return NextResponse.redirect(new URL(allowedPath, req.url));
+    }
+    if (pathname.startsWith("/agency") && userRole !== "agency") {
+      const allowedPath = userRole === "creator" ? "/creator" : "/admin";
+      return NextResponse.redirect(new URL(allowedPath, req.url));
+    }
+    if (pathname.startsWith("/admin") && userRole !== "admin") {
+      const allowedPath = userRole === "creator" ? "/creator" : "/agency";
+      return NextResponse.redirect(new URL(allowedPath, req.url));
+    }
+  }
+
   return res;
 }
 
