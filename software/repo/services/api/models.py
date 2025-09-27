@@ -220,3 +220,47 @@ class Schedule(Base):
         Index("ix_schedules_bot_instance_start", "bot_instance_id", "start_at"),
         Index("ix_schedules_start_dispatched", "start_at", "dispatched_at"),
     )
+
+
+class WebhookEvent(Base):
+    """Webhook events for idempotency tracking."""
+    __tablename__ = "webhook_events"
+    
+    id = Column(String(100), primary_key=True)
+    provider = Column(String(50), nullable=False)
+    event_id = Column(String(100), nullable=False)
+    event_type = Column(String(50), nullable=False)
+    processed = Column(Boolean, nullable=False, default=False)
+    created_at = Column(DateTime(timezone=True), nullable=False, server_default=func.now())
+    processed_at = Column(DateTime(timezone=True), nullable=True)
+    error_message = Column(Text, nullable=True)
+    
+    # Constraints
+    __table_args__ = (
+        Index("ix_webhook_events_provider_event_id", "provider", "event_id"),
+    )
+
+
+class AuditLog(Base):
+    """Audit logs for security tracking."""
+    __tablename__ = "audit_logs"
+    
+    id = Column(String(100), primary_key=True)
+    user_id = Column(String(100), nullable=True)
+    user_role = Column(String(20), nullable=True)
+    action = Column(String(100), nullable=False)
+    resource_type = Column(String(50), nullable=True)
+    resource_id = Column(String(100), nullable=True)
+    ip_address = Column(String(45), nullable=True)
+    user_agent = Column(String(500), nullable=True)
+    success = Column(Boolean, nullable=False)
+    error_message = Column(Text, nullable=True)
+    created_at = Column(DateTime(timezone=True), nullable=False, server_default=func.now())
+    metadata = Column(JSON, nullable=True)
+    
+    # Constraints and indexes
+    __table_args__ = (
+        Index("ix_audit_logs_user_id_created_at", "user_id", "created_at"),
+        Index("ix_audit_logs_action_created_at", "action", "created_at"),
+        Index("ix_audit_logs_resource_type_resource_id", "resource_type", "resource_id"),
+    )
