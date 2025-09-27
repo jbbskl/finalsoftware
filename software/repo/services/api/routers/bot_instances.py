@@ -28,6 +28,7 @@ from schemas import (
 # Import lib modules with proper path handling
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..', 'lib'))
 from owners import get_tenant_base_path
+from crypto import encrypt_bot_cookies, get_cookie_key_from_env, CryptoError
 
 router = APIRouter(prefix="/api/bot-instances", tags=["bot-instances"])
 
@@ -61,16 +62,37 @@ async def upload_cookies(
     secrets_dir = f"{tenant_base}/bots/{instance_id}/secrets"
     os.makedirs(secrets_dir, exist_ok=True)
     
-    # Write file
-    file_path = f"{secrets_dir}/storageState.json"
+    # Write and encrypt file
+    temp_file_path = f"{secrets_dir}/storageState_temp.json"
+    encrypted_file_path = f"{secrets_dir}/storageState.enc"
     
     try:
+        # Get cookie encryption key
+        cookie_key = get_cookie_key_from_env()
+        
+        # Write to temporary file first
         content = await file.read()
-        with open(file_path, 'wb') as f:
+        with open(temp_file_path, 'wb') as f:
             f.write(content)
         
+        # Encrypt the file
+        encrypt_bot_cookies(temp_file_path, encrypted_file_path, cookie_key)
+        
+        # Clean up temporary file
+        os.unlink(temp_file_path)
+        
         return UploadCookiesResponse(ok=True)
+    except CryptoError as e:
+        # Clean up on crypto error
+        for path in [temp_file_path, encrypted_file_path]:
+            if os.path.exists(path):
+                os.unlink(path)
+        raise HTTPException(status_code=500, detail=f"Encryption failed: {str(e)}")
     except Exception as e:
+        # Clean up on any error
+        for path in [temp_file_path, encrypted_file_path]:
+            if os.path.exists(path):
+                os.unlink(path)
         raise HTTPException(status_code=500, detail=f"Failed to upload cookies: {str(e)}")
 
 

@@ -1,9 +1,13 @@
 # services/worker/worker.py
-import json, os, subprocess, tempfile, shutil
+import json, os, subprocess, tempfile, shutil, sys
 from pathlib import Path
 from celery.utils.log import get_task_logger
 import boto3
 from botocore.exceptions import ClientError
+
+# Add lib path for crypto functions
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..', 'lib'))
+from crypto import decrypt_bot_cookies_to_temp, cleanup_temp_file, get_cookie_key_from_env, CryptoError
 
 from celery_app import app  # <-- import the SAME Celery app
 
@@ -68,11 +72,24 @@ def validate_bot(self, instance_id: str, config_dir: str):
             log.error(f"Config file not found: {config_path}")
             return {"instance_id": instance_id, "status": "invalid", "error": "Config file not found"}
         
-        # Check if cookies file exists
-        cookies_path = os.path.join(config_dir, "secrets", "storageState.json")
-        if not os.path.exists(cookies_path):
-            log.warning(f"Cookies file not found: {cookies_path}")
-            return {"instance_id": instance_id, "status": "invalid", "error": "Cookies file not found"}
+        # Check if encrypted cookies file exists
+        encrypted_cookies_path = os.path.join(config_dir, "secrets", "storageState.enc")
+        if not os.path.exists(encrypted_cookies_path):
+            log.warning(f"Encrypted cookies file not found: {encrypted_cookies_path}")
+            return {"instance_id": instance_id, "status": "invalid", "error": "Encrypted cookies file not found"}
+        
+        # Decrypt cookies to temporary file for validation
+        temp_cookies_path = None
+        try:
+            cookie_key = get_cookie_key_from_env()
+            temp_cookies_path = decrypt_bot_cookies_to_temp(encrypted_cookies_path, cookie_key)
+            log.info(f"Decrypted cookies to temporary file: {temp_cookies_path}")
+        except CryptoError as e:
+            log.error(f"Failed to decrypt cookies: {e}")
+            return {"instance_id": instance_id, "status": "invalid", "error": f"Cookie decryption failed: {str(e)}"}
+        except Exception as e:
+            log.error(f"Unexpected error decrypting cookies: {e}")
+            return {"instance_id": instance_id, "status": "invalid", "error": f"Cookie decryption error: {str(e)}"}
         
         # Basic validation - check config structure
         import yaml
@@ -86,10 +103,21 @@ def validate_bot(self, instance_id: str, config_dir: str):
                 return {"instance_id": instance_id, "status": "invalid", "error": f"Missing field: {field}"}
         
         log.info(f"Validation successful for instance {instance_id}")
-        return {"instance_id": instance_id, "status": "valid"}
+        result = {"instance_id": instance_id, "status": "valid"}
+        
+        # Clean up temporary cookies file
+        if temp_cookies_path:
+            cleanup_temp_file(temp_cookies_path)
+        
+        return result
         
     except Exception as e:
         log.error(f"Validation failed for instance {instance_id}: {e}")
+        
+        # Clean up temporary cookies file on error
+        if temp_cookies_path:
+            cleanup_temp_file(temp_cookies_path)
+        
         return {"instance_id": instance_id, "status": "invalid", "error": str(e)}
 
 @app.task(name="tasks.run_bot", bind=True, max_retries=0)
