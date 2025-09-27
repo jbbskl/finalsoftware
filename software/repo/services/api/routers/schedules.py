@@ -3,6 +3,7 @@ Schedules CRUD API with time rules and day copy functionality.
 """
 
 import uuid
+import logging
 from typing import List, Optional
 from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
@@ -25,6 +26,7 @@ from schemas import (
 )
 
 router = APIRouter(prefix="/api", tags=["schedules"])
+log = logging.getLogger(__name__)
 
 
 @router.get("/schedules", response_model=List[ScheduleRead])
@@ -147,6 +149,8 @@ async def update_schedule(
 ):
     """
     Update a schedule. Clear dispatched_at if time changed to future.
+    Re-dispatch logic: if time is changed to the future, clear dispatched_at.
+    If changed within the next minute, let Beat catch it in next tick.
     """
     # Get schedule
     schedule = db.query(Schedule).filter(Schedule.id == schedule_id).first()
@@ -168,9 +172,16 @@ async def update_schedule(
                     detail="Updated schedule must be at least 1 hour in advance"
                 )
             
-            # Clear dispatched_at if moved to future
-            if new_start_at > datetime.now():
+            # Re-dispatch logic
+            now = datetime.now()
+            if new_start_at > now:
+                # Moved to future - clear dispatched_at to allow re-dispatch
                 schedule.dispatched_at = None
+                log.info(f"Schedule {schedule_id} moved to future, cleared dispatched_at")
+            elif abs((new_start_at - now).total_seconds()) <= 60:
+                # Within next minute - let Beat catch it in next tick
+                log.info(f"Schedule {schedule_id} within next minute, Beat will catch it")
+            # If moved to past, leave dispatched_at as is (already dispatched)
         
         schedule.start_at = new_start_at
     
@@ -187,18 +198,21 @@ async def update_schedule(
 async def delete_schedule(schedule_id: str, db: Session = Depends(get_db)):
     """
     Delete a schedule. Enforce 10m delete rule.
+    Safe delete: ensure 10m rule; if within 10m, reject 422.
     """
     # Get schedule
     schedule = db.query(Schedule).filter(Schedule.id == schedule_id).first()
     if not schedule:
         raise HTTPException(status_code=404, detail="Schedule not found")
     
-    # Enforce 10m delete rule
+    # Enforce 10m delete rule - strict enforcement
     if not can_delete(schedule.start_at):
         raise HTTPException(
             status_code=422,
             detail="Schedule can only be deleted at least 10 minutes before start time"
         )
+    
+    log.info(f"Deleting schedule {schedule_id} (safe delete - 10m rule satisfied)")
     
     # Delete schedule
     db.delete(schedule)
