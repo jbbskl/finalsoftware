@@ -11,6 +11,7 @@ from env_validation import get_config, setup_logging, EnvValidationError
 # Import rate limiting and security middleware
 from rate_limiter import rate_limit_middleware, configure_rate_limiter
 from security import setup_security_middleware, setup_request_logging
+from error_handler import setup_error_handlers
 
 from routers import configs, schedules, runs, billing, bot_instances, phases, monitoring, admin, affiliate, health
 
@@ -28,6 +29,9 @@ app = FastAPI(title="Control Plane API")
 
 # Configure rate limiter
 configure_rate_limiter(config["rate_limit_per_minute"])
+
+# Setup error handlers
+setup_error_handlers(app)
 
 # Setup security middleware
 setup_security_middleware(app, config)
