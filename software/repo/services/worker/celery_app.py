@@ -15,3 +15,6 @@ app.conf.broker_transport_options = {"visibility_timeout": 3600}
 
 # 🔑 This import registers tasks defined in worker.py
 import worker  # noqa: F401
+
+# 🔑 This import registers beat schedule and scheduler tasks
+import scheduler  # noqa: F401

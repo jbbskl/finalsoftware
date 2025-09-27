@@ -94,6 +94,20 @@ def validate_bot(self, instance_id: str, config_dir: str):
 
 @app.task(name="tasks.run_bot", bind=True, max_retries=0)
 def run_bot(self, image_ref: str, run_id: str, config: dict):
+    """
+    Run a bot with the given configuration.
+    
+    Args:
+        image_ref: Docker image reference
+        run_id: Unique run identifier
+        config: Bot configuration dict (may include schedule_meta for scheduled runs)
+    """
+    log.info(f"Starting bot run {run_id} with config: {config.get('bot_code', 'unknown')}")
+    
+    # Log schedule metadata if present
+    if 'schedule_meta' in config:
+        log.info(f"Schedule metadata: {config['schedule_meta']}")
+    
     artifacts_dir = Path(f"/tmp/artifacts-{run_id}")
     artifacts_dir.mkdir(parents=True, exist_ok=True)
 

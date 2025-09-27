@@ -103,6 +103,7 @@ class Run(Base):
     error_code = Column(String(100), nullable=True)
     artifacts_url = Column(String(500), nullable=True)
     cost_credits = Column(Integer, nullable=True)
+    summary_json = Column(JSON, nullable=True)
 
 class RunEvent(Base):
     __tablename__ = "run_events"
