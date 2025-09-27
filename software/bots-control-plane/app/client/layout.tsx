@@ -18,9 +18,9 @@ export default function ClientLayout({
         <AuthGuard allowedRoles={["user"]} allowedUserTypes={["creator"]}>
           <div className="flex h-screen bg-background">
             <NavSidebar />
-            <div className="flex flex-1 flex-col overflow-hidden">
+            <div className="flex flex-1 flex-col overflow-hidden bg-background">
               <Topbar />
-              <main className="flex-1 overflow-auto p-6">
+              <main className="flex-1 overflow-auto p-6 bg-background">
                 <div className="mb-4">
                   <h1 className="text-2xl font-bold text-blue-600">Creator Dashboard</h1>
                   <p className="text-muted-foreground">Manage your content creation bots</p>
